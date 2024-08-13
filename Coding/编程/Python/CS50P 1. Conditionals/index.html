@@ -11,19 +11,19 @@
       
       
       
-      <link rel="icon" href="assets/images/favicon.png">
+      <link rel="icon" href="../../../../assets/images/favicon.png">
       <meta name="generator" content="mkdocs-1.6.0, mkdocs-material-9.5.31">
     
     
       
-        <title>Chase's Blog</title>
+        <title>CS50P: 1. Conditionals - Chase's Blog</title>
       
     
     
-      <link rel="stylesheet" href="assets/stylesheets/main.3cba04c6.min.css">
+      <link rel="stylesheet" href="../../../../assets/stylesheets/main.3cba04c6.min.css">
       
         
-        <link rel="stylesheet" href="assets/stylesheets/palette.06af60db.min.css">
+        <link rel="stylesheet" href="../../../../assets/stylesheets/palette.06af60db.min.css">
       
       
 
@@ -42,7 +42,7 @@
       
     
     
-    <script>__md_scope=new URL(".",location),__md_hash=e=>[...e].reduce((e,_)=>(e<<5)-e+_.charCodeAt(0),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    <script>__md_scope=new URL("../../../..",location),__md_hash=e=>[...e].reduce((e,_)=>(e<<5)-e+_.charCodeAt(0),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
     
       
 
@@ -68,7 +68,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#welcome-to-mkdocs" class="md-skip">
+        <a href="#cs50p-1-conditionals" class="md-skip">
           Skip to content
         </a>
       
@@ -82,7 +82,7 @@
 
 <header class="md-header" data-md-component="header">
   <nav class="md-header__inner md-grid" aria-label="Header">
-    <a href="." title="Chase&#39;s Blog" class="md-header__button md-logo" aria-label="Chase's Blog" data-md-component="logo">
+    <a href="../../../.." title="Chase&#39;s Blog" class="md-header__button md-logo" aria-label="Chase's Blog" data-md-component="logo">
       
   
   <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54Z"/></svg>
@@ -102,7 +102,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Welcome to MkDocs
+              CS50P: 1. Conditionals
             
           </span>
         </div>
@@ -245,7 +245,7 @@
 
 <nav class="md-nav md-nav--primary md-nav--lifted" aria-label="Navigation" data-md-level="0">
   <label class="md-nav__title" for="__drawer">
-    <a href="." title="Chase&#39;s Blog" class="md-nav__button md-logo" aria-label="Chase's Blog" data-md-component="logo">
+    <a href="../../../.." title="Chase&#39;s Blog" class="md-nav__button md-logo" aria-label="Chase's Blog" data-md-component="logo">
       
   
   <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54Z"/></svg>
@@ -346,18 +346,78 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#commands" class="md-nav__link">
+  <a href="#_1" class="md-nav__link">
     <span class="md-ellipsis">
-      Commands
+      运算符
     </span>
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#project-layout" class="md-nav__link">
+  <a href="#_2" class="md-nav__link">
     <span class="md-ellipsis">
-      Project layout
+      布尔运算
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_3" class="md-nav__link">
+    <span class="md-ellipsis">
+      选择语句
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="选择语句">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#if" class="md-nav__link">
+    <span class="md-ellipsis">
+      if
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#elif" class="md-nav__link">
+    <span class="md-ellipsis">
+      elif
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#else" class="md-nav__link">
+    <span class="md-ellipsis">
+      else
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#match" class="md-nav__link">
+    <span class="md-ellipsis">
+      match
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#pythonic-expressions" class="md-nav__link">
+    <span class="md-ellipsis">
+      Pythonic Expressions
     </span>
   </a>
   
@@ -378,23 +438,120 @@
                   
 
 
-<h1 id="welcome-to-mkdocs">Welcome to MkDocs<a class="headerlink" href="#welcome-to-mkdocs" title="Anchor link to this section for reference">&para;</a></h1>
-<p>For full documentation visit <a href="https://www.mkdocs.org">mkdocs.org</a>.</p>
-<h2 id="commands">Commands<a class="headerlink" href="#commands" title="Anchor link to this section for reference">&para;</a></h2>
+<h1 id="cs50p-1-conditionals">CS50P: 1. Conditionals<a class="headerlink" href="#cs50p-1-conditionals" title="Anchor link to this section for reference">&para;</a></h1>
+<h2 id="_1">运算符<a class="headerlink" href="#_1" title="Anchor link to this section for reference">&para;</a></h2>
+<p>python中有 <code>&gt;=</code> 和 <code>&lt;=</code> ，其余和C一样</p>
+<p>python支持 <code>90 &lt;= score &lt;= 100</code></p>
+<table>
+<thead>
+<tr>
+<th>C</th>
+<th>Python</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>||</td>
+<td>or</td>
+</tr>
+<tr>
+<td>&amp;</td>
+<td>and</td>
+</tr>
+</tbody>
+</table>
+<h2 id="_2">布尔运算<a class="headerlink" href="#_2" title="Anchor link to this section for reference">&para;</a></h2>
+<p><code>True</code> or <code>False</code></p>
+<h2 id="_3">选择语句<a class="headerlink" href="#_3" title="Anchor link to this section for reference">&para;</a></h2>
+<h3 id="if">if<a class="headerlink" href="#if" title="Anchor link to this section for reference">&para;</a></h3>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-0-1">1</a></span>
+<span class="normal"><a href="#__codelineno-0-2">2</a></span>
+<span class="normal"><a href="#__codelineno-0-3">3</a></span>
+<span class="normal"><a href="#__codelineno-0-4">4</a></span>
+<span class="normal"><a href="#__codelineno-0-5">5</a></span>
+<span class="normal"><a href="#__codelineno-0-6">6</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1"></a><span class="k">if</span> <span class="n">x</span> <span class="o">&lt;</span> <span class="n">y</span><span class="p">:</span>
+<a id="__codelineno-0-2" name="__codelineno-0-2"></a>    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;x is less than y&quot;</span><span class="p">)</span>
+<a id="__codelineno-0-3" name="__codelineno-0-3"></a><span class="k">if</span> <span class="n">x</span> <span class="o">&gt;</span> <span class="n">y</span><span class="p">:</span>
+<a id="__codelineno-0-4" name="__codelineno-0-4"></a>    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;x is greater than y&quot;</span><span class="p">)</span>
+<a id="__codelineno-0-5" name="__codelineno-0-5"></a><span class="k">if</span> <span class="n">x</span> <span class="o">==</span> <span class="n">y</span><span class="p">:</span>
+<a id="__codelineno-0-6" name="__codelineno-0-6"></a>    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;x is equal to y&quot;</span><span class="p">)</span>
+</code></pre></div></td></tr></table></div>
 <ul>
-<li><code>mkdocs new [dir-name]</code> - Create a new project.</li>
-<li><code>mkdocs serve</code> - Start the live-reloading docs server.</li>
-<li><code>mkdocs build</code> - Build the documentation site.</li>
-<li><code>mkdocs -h</code> - Print help message and exit.</li>
+<li><code>:</code></li>
+<li><code>....</code> 四个缩进，表示只有当 <code>if</code> 为真，该语句才能被执行。有缩进是一个代码块</li>
 </ul>
-<h2 id="project-layout">Project layout<a class="headerlink" href="#project-layout" title="Anchor link to this section for reference">&para;</a></h2>
-<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
-<span class="normal">2</span>
-<span class="normal">3</span>
-<span class="normal">4</span></pre></div></td><td class="code"><div><pre><span></span><code>mkdocs.yml    # The configuration file.
-docs/
-    index.md  # The documentation homepage.
-    ...       # Other markdown pages, images and other files.
+<p>代码的逻辑：三个 <code>if</code> 都会被执行</p>
+<p><img alt="" src="https://img2024.cnblogs.com/blog/3451563/202407/3451563-20240710084306186-183767522.png" /></p>
+<h3 id="elif">elif<a class="headerlink" href="#elif" title="Anchor link to this section for reference">&para;</a></h3>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-1-1">1</a></span>
+<span class="normal"><a href="#__codelineno-1-2">2</a></span>
+<span class="normal"><a href="#__codelineno-1-3">3</a></span>
+<span class="normal"><a href="#__codelineno-1-4">4</a></span>
+<span class="normal"><a href="#__codelineno-1-5">5</a></span>
+<span class="normal"><a href="#__codelineno-1-6">6</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1"></a><span class="k">if</span> <span class="n">x</span> <span class="o">&lt;</span> <span class="n">y</span><span class="p">:</span>
+<a id="__codelineno-1-2" name="__codelineno-1-2"></a>    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;x is less than y&quot;</span><span class="p">)</span>
+<a id="__codelineno-1-3" name="__codelineno-1-3"></a><span class="k">elif</span> <span class="n">x</span> <span class="o">&gt;</span> <span class="n">y</span><span class="p">:</span>
+<a id="__codelineno-1-4" name="__codelineno-1-4"></a>    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;x is greater than y&quot;</span><span class="p">)</span>
+<a id="__codelineno-1-5" name="__codelineno-1-5"></a><span class="k">elif</span> <span class="n">x</span> <span class="o">==</span> <span class="n">y</span><span class="p">:</span>
+<a id="__codelineno-1-6" name="__codelineno-1-6"></a>    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;x is equal to y&quot;</span><span class="p">)</span>
+</code></pre></div></td></tr></table></div>
+<p><img src="https://img2024.cnblogs.com/blog/3451563/202407/3451563-20240710085103956-1186463056.png" style="zoom:50%;" /></p>
+<h3 id="else">else<a class="headerlink" href="#else" title="Anchor link to this section for reference">&para;</a></h3>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-2-1">1</a></span>
+<span class="normal"><a href="#__codelineno-2-2">2</a></span>
+<span class="normal"><a href="#__codelineno-2-3">3</a></span>
+<span class="normal"><a href="#__codelineno-2-4">4</a></span>
+<span class="normal"><a href="#__codelineno-2-5">5</a></span>
+<span class="normal"><a href="#__codelineno-2-6">6</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1"></a><span class="k">if</span> <span class="n">x</span> <span class="o">&lt;</span> <span class="n">y</span><span class="p">:</span>
+<a id="__codelineno-2-2" name="__codelineno-2-2"></a>    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;x is less than y&quot;</span><span class="p">)</span>
+<a id="__codelineno-2-3" name="__codelineno-2-3"></a><span class="k">elif</span> <span class="n">x</span> <span class="o">&gt;</span> <span class="n">y</span><span class="p">:</span>
+<a id="__codelineno-2-4" name="__codelineno-2-4"></a>    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;x is greater than y&quot;</span><span class="p">)</span>
+<a id="__codelineno-2-5" name="__codelineno-2-5"></a><span class="k">else</span><span class="p">:</span>
+<a id="__codelineno-2-6" name="__codelineno-2-6"></a>    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;x is equal to y&quot;</span><span class="p">)</span>
+</code></pre></div></td></tr></table></div>
+<p><img src="https://img2024.cnblogs.com/blog/3451563/202407/3451563-20240710085511582-1142048478.png" style="zoom:50%;" /></p>
+<h3 id="match">match<a class="headerlink" href="#match" title="Anchor link to this section for reference">&para;</a></h3>
+<p>类似 <code>switch</code></p>
+<p>原：</p>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-3-1">1</a></span>
+<span class="normal"><a href="#__codelineno-3-2">2</a></span>
+<span class="normal"><a href="#__codelineno-3-3">3</a></span>
+<span class="normal"><a href="#__codelineno-3-4">4</a></span>
+<span class="normal"><a href="#__codelineno-3-5">5</a></span>
+<span class="normal"><a href="#__codelineno-3-6">6</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-3-1" name="__codelineno-3-1"></a><span class="k">if</span> <span class="n">name</span> <span class="o">==</span> <span class="s2">&quot;Harry&quot;</span> <span class="ow">or</span> <span class="n">name</span> <span class="o">==</span> <span class="s2">&quot;Hermione&quot;</span> <span class="ow">or</span> <span class="n">name</span> <span class="o">==</span> <span class="s2">&quot;Ron&quot;</span><span class="p">:</span>      <span class="c1">#字符串 ==</span>
+<a id="__codelineno-3-2" name="__codelineno-3-2"></a>    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Gryffindor&quot;</span><span class="p">)</span>
+<a id="__codelineno-3-3" name="__codelineno-3-3"></a><span class="k">elif</span> <span class="n">name</span> <span class="o">==</span> <span class="s2">&quot;Draco&quot;</span><span class="p">:</span>
+<a id="__codelineno-3-4" name="__codelineno-3-4"></a>    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Slytherin&quot;</span><span class="p">)</span>
+<a id="__codelineno-3-5" name="__codelineno-3-5"></a><span class="k">else</span><span class="p">:</span>
+<a id="__codelineno-3-6" name="__codelineno-3-6"></a>    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Who?&quot;</span><span class="p">)</span>
+</code></pre></div></td></tr></table></div>
+<p>match：</p>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-4-1">1</a></span>
+<span class="normal"><a href="#__codelineno-4-2">2</a></span>
+<span class="normal"><a href="#__codelineno-4-3">3</a></span>
+<span class="normal"><a href="#__codelineno-4-4">4</a></span>
+<span class="normal"><a href="#__codelineno-4-5">5</a></span>
+<span class="normal"><a href="#__codelineno-4-6">6</a></span>
+<span class="normal"><a href="#__codelineno-4-7">7</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-4-1" name="__codelineno-4-1"></a><span class="k">match</span> <span class="n">name</span><span class="p">:</span>
+<a id="__codelineno-4-2" name="__codelineno-4-2"></a>    <span class="k">case</span> <span class="s2">&quot;Harry&quot;</span> <span class="o">|</span> <span class="s2">&quot;Hermione&quot;</span> <span class="o">|</span> <span class="s2">&quot;Ron&quot;</span><span class="p">:</span> 
+<a id="__codelineno-4-3" name="__codelineno-4-3"></a>        <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Gryffindor&quot;</span><span class="p">)</span>
+<a id="__codelineno-4-4" name="__codelineno-4-4"></a>    <span class="k">case</span> <span class="s2">&quot;Draco&quot;</span><span class="p">:</span>
+<a id="__codelineno-4-5" name="__codelineno-4-5"></a>        <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Slytherin&quot;</span><span class="p">)</span>
+<a id="__codelineno-4-6" name="__codelineno-4-6"></a>    <span class="k">case</span><span class="w"> </span><span class="k">_</span><span class="p">:</span>
+<a id="__codelineno-4-7" name="__codelineno-4-7"></a>        <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Who?&quot;</span><span class="p">)</span>
+</code></pre></div></td></tr></table></div>
+<ul>
+<li><code>case _:</code> 表示else</li>
+<li><code>|</code> 在case中表示或</li>
+</ul>
+<h2 id="pythonic-expressions">Pythonic Expressions<a class="headerlink" href="#pythonic-expressions" title="Anchor link to this section for reference">&para;</a></h2>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-5-1">1</a></span>
+<span class="normal"><a href="#__codelineno-5-2">2</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-5-1" name="__codelineno-5-1"></a><span class="k">def</span> <span class="nf">is_even</span><span class="p">(</span><span class="n">x</span><span class="p">):</span>
+<a id="__codelineno-5-2" name="__codelineno-5-2"></a>    <span class="k">return</span> <span class="kc">True</span> <span class="k">if</span> <span class="n">x</span> <span class="o">%</span> <span class="mi">2</span> <span class="o">==</span> <span class="mi">0</span> <span class="k">else</span> <span class="kc">False</span>
+</code></pre></div></td></tr></table></div>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-6-1">1</a></span>
+<span class="normal"><a href="#__codelineno-6-2">2</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-6-1" name="__codelineno-6-1"></a><span class="k">def</span> <span class="nf">is_even</span><span class="p">(</span><span class="n">x</span><span class="p">):</span>
+<a id="__codelineno-6-2" name="__codelineno-6-2"></a>    <span class="k">return</span> <span class="n">x</span> <span class="o">%</span> <span class="mi">2</span> <span class="o">==</span> <span class="mi">0</span>
 </code></pre></div></td></tr></table></div>
 
 
@@ -476,10 +633,10 @@ docs/
     </div>
     
     
-    <script id="__config" type="application/json">{"base": ".", "features": ["navigation.tabs", "navigation.indexes", "navigation.expand", "navigation.prune", "navigation.footer", "toc.follow", "search.suggest", "search.highlight", "content.tabs.link", "content.code.annotate", "content.code.copy"], "search": "assets/javascripts/workers/search.b8dbb3d2.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
+    <script id="__config" type="application/json">{"base": "../../../..", "features": ["navigation.tabs", "navigation.indexes", "navigation.expand", "navigation.prune", "navigation.footer", "toc.follow", "search.suggest", "search.highlight", "content.tabs.link", "content.code.annotate", "content.code.copy"], "search": "../../../../assets/javascripts/workers/search.b8dbb3d2.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
     
     
-      <script src="assets/javascripts/bundle.fe8b6f2b.min.js"></script>
+      <script src="../../../../assets/javascripts/bundle.fe8b6f2b.min.js"></script>
       
     
   </body>

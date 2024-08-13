@@ -11,19 +11,19 @@
       
       
       
-      <link rel="icon" href="assets/images/favicon.png">
+      <link rel="icon" href="../../../assets/images/favicon.png">
       <meta name="generator" content="mkdocs-1.6.0, mkdocs-material-9.5.31">
     
     
       
-        <title>Chase's Blog</title>
+        <title>数学建模｜04-Topsis优劣解距离法 - Chase's Blog</title>
       
     
     
-      <link rel="stylesheet" href="assets/stylesheets/main.3cba04c6.min.css">
+      <link rel="stylesheet" href="../../../assets/stylesheets/main.3cba04c6.min.css">
       
         
-        <link rel="stylesheet" href="assets/stylesheets/palette.06af60db.min.css">
+        <link rel="stylesheet" href="../../../assets/stylesheets/palette.06af60db.min.css">
       
       
 
@@ -42,7 +42,7 @@
       
     
     
-    <script>__md_scope=new URL(".",location),__md_hash=e=>[...e].reduce((e,_)=>(e<<5)-e+_.charCodeAt(0),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    <script>__md_scope=new URL("../../..",location),__md_hash=e=>[...e].reduce((e,_)=>(e<<5)-e+_.charCodeAt(0),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
     
       
 
@@ -68,7 +68,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#welcome-to-mkdocs" class="md-skip">
+        <a href="#04-topsis" class="md-skip">
           Skip to content
         </a>
       
@@ -82,7 +82,7 @@
 
 <header class="md-header" data-md-component="header">
   <nav class="md-header__inner md-grid" aria-label="Header">
-    <a href="." title="Chase&#39;s Blog" class="md-header__button md-logo" aria-label="Chase's Blog" data-md-component="logo">
+    <a href="../../.." title="Chase&#39;s Blog" class="md-header__button md-logo" aria-label="Chase's Blog" data-md-component="logo">
       
   
   <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54Z"/></svg>
@@ -102,7 +102,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Welcome to MkDocs
+              数学建模｜04-Topsis优劣解距离法
             
           </span>
         </div>
@@ -245,7 +245,7 @@
 
 <nav class="md-nav md-nav--primary md-nav--lifted" aria-label="Navigation" data-md-level="0">
   <label class="md-nav__title" for="__drawer">
-    <a href="." title="Chase&#39;s Blog" class="md-nav__button md-logo" aria-label="Chase's Blog" data-md-component="logo">
+    <a href="../../.." title="Chase&#39;s Blog" class="md-nav__button md-logo" aria-label="Chase's Blog" data-md-component="logo">
       
   
   <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54Z"/></svg>
@@ -346,20 +346,86 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#commands" class="md-nav__link">
+  <a href="#_1" class="md-nav__link">
     <span class="md-ellipsis">
-      Commands
+      用距离打分
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="用距离打分">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      原理
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_3" class="md-nav__link">
+    <span class="md-ellipsis">
+      步骤
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_4" class="md-nav__link">
+    <span class="md-ellipsis">
+      用优劣解打分
     </span>
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#project-layout" class="md-nav__link">
+  <a href="#_5" class="md-nav__link">
     <span class="md-ellipsis">
-      Project layout
+      评价类模型
     </span>
   </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#topsis" class="md-nav__link">
+    <span class="md-ellipsis">
+      Topsis
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Topsis">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_6" class="md-nav__link">
+    <span class="md-ellipsis">
+      思想
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_7" class="md-nav__link">
+    <span class="md-ellipsis">
+      方法
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
   
 </li>
       
@@ -378,24 +444,45 @@
                   
 
 
-<h1 id="welcome-to-mkdocs">Welcome to MkDocs<a class="headerlink" href="#welcome-to-mkdocs" title="Anchor link to this section for reference">&para;</a></h1>
-<p>For full documentation visit <a href="https://www.mkdocs.org">mkdocs.org</a>.</p>
-<h2 id="commands">Commands<a class="headerlink" href="#commands" title="Anchor link to this section for reference">&para;</a></h2>
+<h1 id="04-topsis">数学建模｜04-Topsis优劣解距离法<a class="headerlink" href="#04-topsis" title="Anchor link to this section for reference">&para;</a></h1>
+<p>Q：给学校评分，要求评分越大越好</p>
+<p><img src="https://img2024.cnblogs.com/blog/3451563/202408/3451563-20240813081102826-1776052715.png" style="zoom: 33%;" /></p>
+<h2 id="_1">用距离打分<a class="headerlink" href="#_1" title="Anchor link to this section for reference">&para;</a></h2>
+<h3 id="_2">原理<a class="headerlink" href="#_2" title="Anchor link to this section for reference">&para;</a></h3>
+<p>评分 <span class="arithmatex">\(=\frac{x-\min}{\max - \min}\)</span></p>
+<p><img src="https://img2024.cnblogs.com/blog/3451563/202408/3451563-20240813081425745-1437858641.png" style="zoom: 33%;" /></p>
+<h3 id="_3">步骤<a class="headerlink" href="#_3" title="Anchor link to this section for reference">&para;</a></h3>
+<ol>
+<li>
+<p>正向化处理</p>
+</li>
+<li>
+<p>标准化处理（消除量纲影响）</p>
+</li>
+</ol>
+<p>​   <img src="https://img2024.cnblogs.com/blog/3451563/202408/3451563-20240813081649944-1957878354.png" style="zoom: 50%;" /></p>
+<ol>
+<li>评分</li>
+</ol>
+<h2 id="_4">用优劣解打分<a class="headerlink" href="#_4" title="Anchor link to this section for reference">&para;</a></h2>
+<p><img src="https://img2024.cnblogs.com/blog/3451563/202408/3451563-20240813082033423-2082184649.png" style="zoom:50%;" /></p>
 <ul>
-<li><code>mkdocs new [dir-name]</code> - Create a new project.</li>
-<li><code>mkdocs serve</code> - Start the live-reloading docs server.</li>
-<li><code>mkdocs build</code> - Build the documentation site.</li>
-<li><code>mkdocs -h</code> - Print help message and exit.</li>
+<li>最后需要归一化：算比例，和为1</li>
+<li>各个指标有权重时的打分：</li>
 </ul>
-<h2 id="project-layout">Project layout<a class="headerlink" href="#project-layout" title="Anchor link to this section for reference">&para;</a></h2>
-<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
-<span class="normal">2</span>
-<span class="normal">3</span>
-<span class="normal">4</span></pre></div></td><td class="code"><div><pre><span></span><code>mkdocs.yml    # The configuration file.
-docs/
-    index.md  # The documentation homepage.
-    ...       # Other markdown pages, images and other files.
-</code></pre></div></td></tr></table></div>
+<p><img alt="" src="https://img2024.cnblogs.com/blog/3451563/202408/3451563-20240813083255422-2080129117.png" /></p>
+<ul>
+<li><strong>权重可以用层次分析法或熵权法计算</strong></li>
+</ul>
+<h2 id="_5">评价类模型<a class="headerlink" href="#_5" title="Anchor link to this section for reference">&para;</a></h2>
+<p><img src="https://img2024.cnblogs.com/blog/3451563/202408/3451563-20240813082610391-38030003.png" style="zoom:50%;" /></p>
+<h2 id="topsis">Topsis<a class="headerlink" href="#topsis" title="Anchor link to this section for reference">&para;</a></h2>
+<h3 id="_6">思想<a class="headerlink" href="#_6" title="Anchor link to this section for reference">&para;</a></h3>
+<p><img alt="" src="https://img2024.cnblogs.com/blog/3451563/202408/3451563-20240813082853454-1005809236.png" /></p>
+<h3 id="_7">方法<a class="headerlink" href="#_7" title="Anchor link to this section for reference">&para;</a></h3>
+<p>Step1. 指标正向化</p>
+<p>Step2. 标准化</p>
+<p>Step3. 优劣解距离法打分，分越高越好</p>
 
 
 
@@ -476,10 +563,10 @@ docs/
     </div>
     
     
-    <script id="__config" type="application/json">{"base": ".", "features": ["navigation.tabs", "navigation.indexes", "navigation.expand", "navigation.prune", "navigation.footer", "toc.follow", "search.suggest", "search.highlight", "content.tabs.link", "content.code.annotate", "content.code.copy"], "search": "assets/javascripts/workers/search.b8dbb3d2.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
+    <script id="__config" type="application/json">{"base": "../../..", "features": ["navigation.tabs", "navigation.indexes", "navigation.expand", "navigation.prune", "navigation.footer", "toc.follow", "search.suggest", "search.highlight", "content.tabs.link", "content.code.annotate", "content.code.copy"], "search": "../../../assets/javascripts/workers/search.b8dbb3d2.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
     
     
-      <script src="assets/javascripts/bundle.fe8b6f2b.min.js"></script>
+      <script src="../../../assets/javascripts/bundle.fe8b6f2b.min.js"></script>
       
     
   </body>

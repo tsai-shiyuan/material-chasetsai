@@ -11,19 +11,19 @@
       
       
       
-      <link rel="icon" href="assets/images/favicon.png">
+      <link rel="icon" href="../../../assets/images/favicon.png">
       <meta name="generator" content="mkdocs-1.6.0, mkdocs-material-9.5.31">
     
     
       
-        <title>Chase's Blog</title>
+        <title>03-熵权法 - Chase's Blog</title>
       
     
     
-      <link rel="stylesheet" href="assets/stylesheets/main.3cba04c6.min.css">
+      <link rel="stylesheet" href="../../../assets/stylesheets/main.3cba04c6.min.css">
       
         
-        <link rel="stylesheet" href="assets/stylesheets/palette.06af60db.min.css">
+        <link rel="stylesheet" href="../../../assets/stylesheets/palette.06af60db.min.css">
       
       
 
@@ -42,7 +42,7 @@
       
     
     
-    <script>__md_scope=new URL(".",location),__md_hash=e=>[...e].reduce((e,_)=>(e<<5)-e+_.charCodeAt(0),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    <script>__md_scope=new URL("../../..",location),__md_hash=e=>[...e].reduce((e,_)=>(e<<5)-e+_.charCodeAt(0),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
     
       
 
@@ -68,7 +68,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#welcome-to-mkdocs" class="md-skip">
+        <a href="#03-" class="md-skip">
           Skip to content
         </a>
       
@@ -82,7 +82,7 @@
 
 <header class="md-header" data-md-component="header">
   <nav class="md-header__inner md-grid" aria-label="Header">
-    <a href="." title="Chase&#39;s Blog" class="md-header__button md-logo" aria-label="Chase's Blog" data-md-component="logo">
+    <a href="../../.." title="Chase&#39;s Blog" class="md-header__button md-logo" aria-label="Chase's Blog" data-md-component="logo">
       
   
   <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54Z"/></svg>
@@ -102,7 +102,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Welcome to MkDocs
+              03-熵权法
             
           </span>
         </div>
@@ -245,7 +245,7 @@
 
 <nav class="md-nav md-nav--primary md-nav--lifted" aria-label="Navigation" data-md-level="0">
   <label class="md-nav__title" for="__drawer">
-    <a href="." title="Chase&#39;s Blog" class="md-nav__button md-logo" aria-label="Chase's Blog" data-md-component="logo">
+    <a href="../../.." title="Chase&#39;s Blog" class="md-nav__button md-logo" aria-label="Chase's Blog" data-md-component="logo">
       
   
   <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54Z"/></svg>
@@ -346,20 +346,104 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#commands" class="md-nav__link">
+  <a href="#_1" class="md-nav__link">
     <span class="md-ellipsis">
-      Commands
+      概率、信息量、信息熵
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="概率、信息量、信息熵">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      概率与信息量
     </span>
   </a>
   
 </li>
-      
-        <li class="md-nav__item">
-  <a href="#project-layout" class="md-nav__link">
+        
+          <li class="md-nav__item">
+  <a href="#_3" class="md-nav__link">
     <span class="md-ellipsis">
-      Project layout
+      信息熵与信息量
     </span>
   </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_4" class="md-nav__link">
+    <span class="md-ellipsis">
+      信息熵
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_5" class="md-nav__link">
+    <span class="md-ellipsis">
+      熵权法
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="熵权法">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#step1" class="md-nav__link">
+    <span class="md-ellipsis">
+      Step1. 正向化处理
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#step2" class="md-nav__link">
+    <span class="md-ellipsis">
+      Step2. 标准化处理
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#step3" class="md-nav__link">
+    <span class="md-ellipsis">
+      Step3. 计算比重矩阵
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#step4" class="md-nav__link">
+    <span class="md-ellipsis">
+      Step4. 计算信息熵和熵权
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_6" class="md-nav__link">
+    <span class="md-ellipsis">
+      原理
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
   
 </li>
       
@@ -378,24 +462,47 @@
                   
 
 
-<h1 id="welcome-to-mkdocs">Welcome to MkDocs<a class="headerlink" href="#welcome-to-mkdocs" title="Anchor link to this section for reference">&para;</a></h1>
-<p>For full documentation visit <a href="https://www.mkdocs.org">mkdocs.org</a>.</p>
-<h2 id="commands">Commands<a class="headerlink" href="#commands" title="Anchor link to this section for reference">&para;</a></h2>
+<h1 id="03-">03-熵权法<a class="headerlink" href="#03-" title="Anchor link to this section for reference">&para;</a></h1>
+<p>目的：已知指标下成员的数据，确定某个指标的权重</p>
+<h2 id="_1">概率、信息量、信息熵<a class="headerlink" href="#_1" title="Anchor link to this section for reference">&para;</a></h2>
+<h3 id="_2">概率与信息量<a class="headerlink" href="#_2" title="Anchor link to this section for reference">&para;</a></h3>
+<p><img alt="" src="https://img2024.cnblogs.com/blog/3451563/202408/3451563-20240812093042280-597081441.png" /></p>
 <ul>
-<li><code>mkdocs new [dir-name]</code> - Create a new project.</li>
-<li><code>mkdocs serve</code> - Start the live-reloading docs server.</li>
-<li><code>mkdocs build</code> - Build the documentation site.</li>
-<li><code>mkdocs -h</code> - Print help message and exit.</li>
+<li>当一个事件非常常见（即具有高概率），它发生时不会给我们带来太多的新信息，因为它是可预期的</li>
 </ul>
-<h2 id="project-layout">Project layout<a class="headerlink" href="#project-layout" title="Anchor link to this section for reference">&para;</a></h2>
-<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
-<span class="normal">2</span>
-<span class="normal">3</span>
-<span class="normal">4</span></pre></div></td><td class="code"><div><pre><span></span><code>mkdocs.yml    # The configuration file.
-docs/
-    index.md  # The documentation homepage.
-    ...       # Other markdown pages, images and other files.
-</code></pre></div></td></tr></table></div>
+<h3 id="_3">信息熵与信息量<a class="headerlink" href="#_3" title="Anchor link to this section for reference">&para;</a></h3>
+<p><img alt="" src="https://img2024.cnblogs.com/blog/3451563/202408/3451563-20240812093259610-842064158.png" /></p>
+<h3 id="_4">信息熵<a class="headerlink" href="#_4" title="Anchor link to this section for reference">&para;</a></h3>
+<p><img alt="" src="https://img2024.cnblogs.com/blog/3451563/202408/3451563-20240812093456891-2145018129.png" /></p>
+<p><img alt="" src="https://img2024.cnblogs.com/blog/3451563/202408/3451563-20240812214407333-1415214441.png" /></p>
+<ul>
+<li>当所有事情发生的概率均相等时，就不好判断发生哪个事情</li>
+</ul>
+<h2 id="_5">熵权法<a class="headerlink" href="#_5" title="Anchor link to this section for reference">&para;</a></h2>
+<p>Q：</p>
+<p><img alt="" src="https://img2024.cnblogs.com/blog/3451563/202408/3451563-20240812215115567-1772634351.png" /></p>
+<ul>
+<li>极大型/效益型指标：越大越好，如收入</li>
+<li>极小型/成本型指标：越小越好，如年龄</li>
+<li>中间型指标：越接近某个值越好，如身高</li>
+<li>区间型指标：落在某个区间内最好，如颜值</li>
+</ul>
+<h3 id="step1">Step1. 正向化处理<a class="headerlink" href="#step1" title="Anchor link to this section for reference">&para;</a></h3>
+<p>极小型 <span class="arithmatex">\(\Rightarrow\)</span> 极大型，用 <span class="arithmatex">\(max-x\)</span> </p>
+<p>中间型 <span class="arithmatex">\(\Rightarrow\)</span> 极大型：</p>
+<p><img src="https://img2024.cnblogs.com/blog/3451563/202408/3451563-20240812215530972-1985863616.png" style="zoom:50%;" /></p>
+<p>区间型 <span class="arithmatex">\(\Rightarrow\)</span> 极大型：</p>
+<p><img alt="" src="https://img2024.cnblogs.com/blog/3451563/202408/3451563-20240812215835856-164890031.png" /></p>
+<h3 id="step2">Step2. 标准化处理<a class="headerlink" href="#step2" title="Anchor link to this section for reference">&para;</a></h3>
+<p><img src="https://img2024.cnblogs.com/blog/3451563/202408/3451563-20240812220103738-156616098.png" style="zoom: 50%;" /></p>
+<p><img alt="" src="https://img2024.cnblogs.com/blog/3451563/202408/3451563-20240812220329742-1422641285.png" /></p>
+<h3 id="step3">Step3. 计算比重矩阵<a class="headerlink" href="#step3" title="Anchor link to this section for reference">&para;</a></h3>
+<p><img alt="" src="https://img2024.cnblogs.com/blog/3451563/202408/3451563-20240812220937425-1342125419.png" /></p>
+<h3 id="step4">Step4. 计算信息熵和熵权<a class="headerlink" href="#step4" title="Anchor link to this section for reference">&para;</a></h3>
+<p><img alt="" src="https://img2024.cnblogs.com/blog/3451563/202408/3451563-20240812221315759-996326232.png" /></p>
+<p><img alt="" src="https://img2024.cnblogs.com/blog/3451563/202408/3451563-20240812221449648-1926394115.png" /></p>
+<h3 id="_6">原理<a class="headerlink" href="#_6" title="Anchor link to this section for reference">&para;</a></h3>
+<p><img alt="" src="https://img2024.cnblogs.com/blog/3451563/202408/3451563-20240812221621765-1701123978.png" /></p>
 
 
 
@@ -476,10 +583,10 @@ docs/
     </div>
     
     
-    <script id="__config" type="application/json">{"base": ".", "features": ["navigation.tabs", "navigation.indexes", "navigation.expand", "navigation.prune", "navigation.footer", "toc.follow", "search.suggest", "search.highlight", "content.tabs.link", "content.code.annotate", "content.code.copy"], "search": "assets/javascripts/workers/search.b8dbb3d2.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
+    <script id="__config" type="application/json">{"base": "../../..", "features": ["navigation.tabs", "navigation.indexes", "navigation.expand", "navigation.prune", "navigation.footer", "toc.follow", "search.suggest", "search.highlight", "content.tabs.link", "content.code.annotate", "content.code.copy"], "search": "../../../assets/javascripts/workers/search.b8dbb3d2.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
     
     
-      <script src="assets/javascripts/bundle.fe8b6f2b.min.js"></script>
+      <script src="../../../assets/javascripts/bundle.fe8b6f2b.min.js"></script>
       
     
   </body>

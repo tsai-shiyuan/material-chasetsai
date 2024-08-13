@@ -3,34 +3,53 @@ theme:
   name: material
   features:
     - navigation.tabs
-    - navigation.sections
-    - toc.integrate
-    - navigation.top
+    - navigation.tabs.sticky
+    - navigation.indexes
+    - navigation.prune  #仅包含可见的导航
+    - navigation.footer
+    - toc.follow
+    # - navigation.sections
+    
     - search.suggest
     - search.highlight
+
     - content.tabs.link
     - content.code.annotation
     - content.code.copy
+    
+    - header.autohide
+
   language: en
   palette:
     - scheme: default
       toggle:
         icon: material/toggle-switch-off-outline
         name: Switch to dark mode
-      primary: teal
-      accent: purple
+      primary: indigo
+      accent: cyan
     - scheme: slate
       toggle:
         icon: material/toggle-switch
         name: Switch to light mode
-      primary: teal
-      accent: lime
-      
+      primary: indigo
+      accent: cyan
+
+plugins:
+  - search
+  - rss:
+      match_path: blog/posts/.* 
+      date_from_meta:
+        as_creation: date
+      categories:
+        - categories
+        - tags 
+
+
 extra:
   social:
-    - icon: fontawesome/brands/github-alt
+    - icon: fontawesome/brands/github
       link: https://github.com/tsai-shiyuan
-    - icon: fontawesome/brands/linkedin
+    - icon: fontawesome/brands/pied-piper-alt
       link: https://www.cnblogs.com/chasetsai
 
 markdown_extensions:

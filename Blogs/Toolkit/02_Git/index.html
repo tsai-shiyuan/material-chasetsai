@@ -1,0 +1,3943 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+      
+        <link rel="prev" href="../01_RSS%E5%AE%9A%E5%88%B6%E6%8E%A8%E9%80%81/">
+      
+      
+        <link rel="next" href="../../macOS/b-01-Mac%E5%B8%B8%E7%94%A8%E6%93%8D%E4%BD%9C%E5%8F%8A%E5%BF%AB%E6%8D%B7%E9%94%AE/">
+      
+      
+      <link rel="icon" href="../../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.0, mkdocs-material-9.5.31">
+    
+    
+      
+        <title>Git｜分布式版本控制 - Chase's Blog</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../../assets/stylesheets/main.3cba04c6.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.16.7/katex.min.css">
+    
+      <link rel="stylesheet" href="../../../mkdocs/css/no-footer.css">
+    
+      <link rel="stylesheet" href="../../../mkdocs/css/unordered-list-symbols.css">
+    
+    <script>__md_scope=new URL("../../..",location),__md_hash=e=>[...e].reduce((e,_)=>(e<<5)-e+_.charCodeAt(0),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+    
+   <link href="../../../assets/stylesheets/glightbox.min.css" rel="stylesheet"/><style>
+    html.glightbox-open { overflow: initial; height: 100%; }
+    .gslide-title { margin-top: 0px; user-select: text; }
+    .gslide-desc { color: #666; user-select: text; }
+    .gslide-image img { background: white; }
+    .gscrollbar-fixer { padding-right: 15px; }
+    .gdesc-inner { font-size: 0.75rem; }
+    body[data-md-color-scheme="slate"] .gdesc-inner { background: var(--md-default-bg-color);}
+    body[data-md-color-scheme="slate"] .gslide-title { color: var(--md-default-fg-color);}
+    body[data-md-color-scheme="slate"] .gslide-desc { color: var(--md-default-fg-color);}</style> <script src="../../../assets/javascripts/glightbox.min.js"></script></head>
+  
+  
+    <body dir="ltr">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#git" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+<header class="md-header" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="../../.." title="Chase&#39;s Blog" class="md-header__button md-logo" aria-label="Chase's Blog" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54Z"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2Z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Chase's Blog
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Git｜分布式版本控制
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+    
+      <script>var media,input,key,value,palette=__md_get("__palette");if(palette&&palette.color){"(prefers-color-scheme)"===palette.color.media&&(media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']"),palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent"));for([key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      <label class="md-header__button md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"/></svg>
+      </label>
+      <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41Z"/></svg>
+        </button>
+      </nav>
+      
+        <div class="md-search__suggest" data-md-component="search-suggest"></div>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+            
+<nav class="md-tabs" aria-label="Tabs" data-md-component="tabs">
+  <div class="md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../.." class="md-tabs__link">
+        
+  
+    
+  
+  About
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+    
+  
+  
+    
+    
+      <li class="md-tabs__item md-tabs__item--active">
+        <a href="../../" class="md-tabs__link">
+          
+  
+    
+  
+  Blogs
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../../Dev/" class="md-tabs__link">
+          
+  
+    
+  
+  Dev
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../../Essays/" class="md-tabs__link">
+          
+  
+    
+  
+  Essays
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../../Quotes/" class="md-tabs__link">
+          
+  
+    
+  
+  Quotes
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../../Relax/" class="md-tabs__link">
+          
+  
+    
+  
+  Relax
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../../Site/" class="md-tabs__link">
+          
+  
+    
+  
+  Site
+
+        </a>
+      </li>
+    
+  
+
+      
+    </ul>
+  </div>
+</nav>
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+  
+
+
+<nav class="md-nav md-nav--primary md-nav--lifted" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../../.." title="Chase&#39;s Blog" class="md-nav__button md-logo" aria-label="Chase's Blog" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54Z"/></svg>
+
+    </a>
+    Chase's Blog
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../.." class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    About
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+      
+        
+        
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" checked>
+        
+          
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../../" class="md-nav__link ">
+              
+  
+  <span class="md-ellipsis">
+    Blogs
+  </span>
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_2" id="__nav_2_label" tabindex="">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_2">
+            <span class="md-nav__icon md-icon"></span>
+            Blogs
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+      
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_2_2" >
+        
+          
+          <label class="md-nav__link" for="__nav_2_2" id="__nav_2_2_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Markdown
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2_2">
+            <span class="md-nav__icon md-icon"></span>
+            Markdown
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Markdown/Markdown%E8%AF%AD%E6%B3%95/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    markdown语法
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+      
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_2_3" >
+        
+          
+          <label class="md-nav__link" for="__nav_2_3" id="__nav_2_3_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Maths
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2_3">
+            <span class="md-nav__icon md-icon"></span>
+            Maths
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_2_3_1" >
+        
+          
+          <label class="md-nav__link" for="__nav_2_3_1" id="__nav_2_3_1_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    数学分析
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_2_3_1_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2_3_1">
+            <span class="md-nav__icon md-icon"></span>
+            数学分析
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Maths/%E6%95%B0%E5%AD%A6%E5%88%86%E6%9E%90/1%E5%B8%B8%E5%BE%AE%E5%88%86%E6%96%B9%E7%A8%8B/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    常微分方程
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Maths/%E6%95%B0%E5%AD%A6%E5%88%86%E6%9E%90/2%E4%BA%8C%E9%87%8D%E7%A7%AF%E5%88%86%E5%8F%98%E9%87%8F%E4%BB%A3%E6%8D%A2/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    二重积分变量代换
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+      
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_2_4" >
+        
+          
+          <label class="md-nav__link" for="__nav_2_4" id="__nav_2_4_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Matlab
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_4_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2_4">
+            <span class="md-nav__icon md-icon"></span>
+            Matlab
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Matlab/MATLAB%E5%9F%BA%E7%A1%80%E8%AF%AD%E6%B3%95/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    MATLAB基础语法
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_2_5" >
+        
+          
+          <label class="md-nav__link" for="__nav_2_5" id="__nav_2_5_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Physics
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_5_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2_5">
+            <span class="md-nav__icon md-icon"></span>
+            Physics
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Physics/%E5%8A%9B%E5%AD%A6%EF%BD%9C%E5%A4%8D%E4%B9%A0/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    力学｜复习
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Physics/%E7%94%B5%E7%A3%81%E5%AD%A6%EF%BD%9C%E5%A4%8D%E4%B9%A0/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    电磁学｜复习
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Physics/%E7%94%B5%E7%A3%81%E5%AD%A6%EF%BD%9C%E7%94%B5%E4%BB%8B%E8%B4%A8%E7%9A%84%E6%9E%81%E5%8C%96/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    电磁学｜电介质的极化
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Physics/%E8%BF%91%E4%BB%A3%E7%89%A9%E7%90%86%EF%BD%9C%E7%8B%AD%E4%B9%89%E7%9B%B8%E5%AF%B9%E8%AE%BA/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    近代物理｜狭义相对论
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_6" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_2_6" id="__nav_2_6_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Toolkit
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_6_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_2_6">
+            <span class="md-nav__icon md-icon"></span>
+            Toolkit
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../01_RSS%E5%AE%9A%E5%88%B6%E6%8E%A8%E9%80%81/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    RSS｜定制信息推送
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  <span class="md-ellipsis">
+    Git｜分布式版本控制
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  <span class="md-ellipsis">
+    Git｜分布式版本控制
+  </span>
+  
+
+      </a>
+      
+        
+
+  
+
+<nav class="md-nav md-nav--secondary" aria-label="On this page">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      On this page
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      安装与配置
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      版本库
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="版本库">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_3" class="md-nav__link">
+    <span class="md-ellipsis">
+      创建版本库
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_4" class="md-nav__link">
+    <span class="md-ellipsis">
+      把文件添加到版本库
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_5" class="md-nav__link">
+    <span class="md-ellipsis">
+      版本控制
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="版本控制">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_6" class="md-nav__link">
+    <span class="md-ellipsis">
+      修改文件内容
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_7" class="md-nav__link">
+    <span class="md-ellipsis">
+      查看提交记录
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_8" class="md-nav__link">
+    <span class="md-ellipsis">
+      版本回退
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_9" class="md-nav__link">
+    <span class="md-ellipsis">
+      版本穿梭
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_10" class="md-nav__link">
+    <span class="md-ellipsis">
+      工作区和暂存区
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_11" class="md-nav__link">
+    <span class="md-ellipsis">
+      撤销修改
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_12" class="md-nav__link">
+    <span class="md-ellipsis">
+      删除文件
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_13" class="md-nav__link">
+    <span class="md-ellipsis">
+      远程仓库
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="远程仓库">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_14" class="md-nav__link">
+    <span class="md-ellipsis">
+      添加远程库
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_15" class="md-nav__link">
+    <span class="md-ellipsis">
+      删除远程库
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_16" class="md-nav__link">
+    <span class="md-ellipsis">
+      从远程库克隆
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_17" class="md-nav__link">
+    <span class="md-ellipsis">
+      分支管理
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="分支管理">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_18" class="md-nav__link">
+    <span class="md-ellipsis">
+      创建与合并分支
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_19" class="md-nav__link">
+    <span class="md-ellipsis">
+      解决冲突
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_20" class="md-nav__link">
+    <span class="md-ellipsis">
+      分支管理策略
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#github" class="md-nav__link">
+    <span class="md-ellipsis">
+      使用GitHub
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="使用GitHub">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_21" class="md-nav__link">
+    <span class="md-ellipsis">
+      参与开源项目
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#gitee" class="md-nav__link">
+    <span class="md-ellipsis">
+      使用Gitee
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_2_7" >
+        
+          
+          <label class="md-nav__link" for="__nav_2_7" id="__nav_2_7_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    macOS
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_7_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2_7">
+            <span class="md-nav__icon md-icon"></span>
+            macOS
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../macOS/b-01-Mac%E5%B8%B8%E7%94%A8%E6%93%8D%E4%BD%9C%E5%8F%8A%E5%BF%AB%E6%8D%B7%E9%94%AE/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Mac常用操作及快捷键
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../macOS/b-02-Xcode%E7%94%9F%E6%88%90%E7%9A%84%E5%8F%AF%E6%89%A7%E8%A1%8C%E6%96%87%E4%BB%B6%E5%9C%A8%E5%93%AA%E9%87%8C/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Xcode生成的可执行文件在哪里
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../macOS/b-03-%E6%9B%B4%E6%94%B9Mac%E6%96%87%E4%BB%B6%E7%9A%84%E9%BB%98%E8%AE%A4%E6%89%93%E5%BC%80%E6%96%B9%E5%BC%8F/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    更改Mac文件的默认打开方式
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../macOS/f-01-Mac%E7%9A%84%E6%96%87%E4%BB%B6%E7%B3%BB%E7%BB%9F/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    教程｜Mac的文件系统
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../macOS/f-02-%E8%AE%A4%E8%AF%86%E7%A8%8B%E5%BA%8F/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    教程｜认识程序
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../macOS/f-03-%E8%AE%A4%E8%AF%86%E7%BB%88%E7%AB%AF%E5%92%8Cshell/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    教程｜认识终端和shell
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../macOS/f-04-%E5%BC%80%E5%90%AFVSCode%E7%9A%84%E5%A4%A7%E9%97%A8/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    教程｜开启VSCode的大门
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_2_8" >
+        
+          
+          <label class="md-nav__link" for="__nav_2_8" id="__nav_2_8_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    数学建模
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_8_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2_8">
+            <span class="md-nav__icon md-icon"></span>
+            数学建模
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../%E6%95%B0%E5%AD%A6%E5%BB%BA%E6%A8%A1/%E6%95%B0%E5%AD%A6%E5%BB%BA%E6%A8%A1%EF%BD%9C01-%E5%B1%82%E6%AC%A1%E5%88%86%E6%9E%90%E6%B3%95/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    01-层次分析法
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../%E6%95%B0%E5%AD%A6%E5%BB%BA%E6%A8%A1/%E6%95%B0%E5%AD%A6%E5%BB%BA%E6%A8%A1%EF%BD%9C02-%E6%A8%A1%E7%B3%8A%E7%BB%BC%E5%90%88%E8%AF%84%E4%BB%B7/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    02-模糊综合评价
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../%E6%95%B0%E5%AD%A6%E5%BB%BA%E6%A8%A1/%E6%95%B0%E5%AD%A6%E5%BB%BA%E6%A8%A1%EF%BD%9C03-%E7%86%B5%E6%9D%83%E6%B3%95/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    03-熵权法
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../%E6%95%B0%E5%AD%A6%E5%BB%BA%E6%A8%A1/%E6%95%B0%E5%AD%A6%E5%BB%BA%E6%A8%A1%EF%BD%9C04-Topsis%E4%BC%98%E5%8A%A3%E8%A7%A3%E8%B7%9D%E7%A6%BB%E6%B3%95/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    04-Topsis优劣解距离法
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../%E6%95%B0%E5%AD%A6%E5%BB%BA%E6%A8%A1/%E6%95%B0%E5%AD%A6%E5%BB%BA%E6%A8%A1%EF%BD%9C05-%E7%81%B0%E8%89%B2%E5%85%B3%E8%81%94%E5%88%86%E6%9E%90/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    05-灰色关联分析
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../%E6%95%B0%E5%AD%A6%E5%BB%BA%E6%A8%A1/%E6%95%B0%E5%AD%A6%E5%BB%BA%E6%A8%A1%EF%BD%9C06-%E7%BA%BF%E6%80%A7%E8%A7%84%E5%88%92/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    06-线性规划
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../%E6%95%B0%E5%AD%A6%E5%BB%BA%E6%A8%A1/%E6%95%B0%E5%AD%A6%E5%BB%BA%E6%A8%A1%EF%BD%9C07-%E6%95%B4%E6%95%B0%E8%A7%84%E5%88%92/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    07-整数规划
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../%E6%95%B0%E5%AD%A6%E5%BB%BA%E6%A8%A1/%E6%95%B0%E5%AD%A6%E5%BB%BA%E6%A8%A1%EF%BD%9C08-%E9%9D%9E%E7%BA%BF%E6%80%A7%E8%A7%84%E5%88%92/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    08-非线性规划
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../%E6%95%B0%E5%AD%A6%E5%BB%BA%E6%A8%A1/%E6%95%B0%E5%AD%A6%E5%BB%BA%E6%A8%A1%EF%BD%9C09-%E5%9B%BE%E8%AE%BA%E4%B8%8E%E6%9C%80%E7%9F%AD%E8%B7%AF/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    09-图论与最短路
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../%E6%95%B0%E5%AD%A6%E5%BB%BA%E6%A8%A1/%E6%95%B0%E5%AD%A6%E5%BB%BA%E6%A8%A1%EF%BD%9C10-%E7%BD%91%E7%BB%9C%E6%9C%80%E5%A4%A7%E6%B5%81%E9%97%AE%E9%A2%98/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    10-网络最大流问题
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../%E6%95%B0%E5%AD%A6%E5%BB%BA%E6%A8%A1/%E6%95%B0%E5%AD%A6%E5%BB%BA%E6%A8%A1%EF%BD%9C11-%E6%9C%80%E5%B0%8F%E8%B4%B9%E7%94%A8%E6%9C%80%E5%A4%A7%E6%B5%81/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    11-最小费用最大流
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../%E6%95%B0%E5%AD%A6%E5%BB%BA%E6%A8%A1/%E6%95%B0%E5%AD%A6%E5%BB%BA%E6%A8%A1%EF%BD%9C12-%E6%97%85%E8%A1%8C%E5%95%86%E9%97%AE%E9%A2%98/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    12-旅行商问题
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../%E6%95%B0%E5%AD%A6%E5%BB%BA%E6%A8%A1/%E6%95%B0%E5%AD%A6%E5%BB%BA%E6%A8%A1%EF%BD%9C13-%E6%8F%92%E5%80%BC%E7%AE%97%E6%B3%95/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    13-插值算法
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../%E6%95%B0%E5%AD%A6%E5%BB%BA%E6%A8%A1/%E6%95%B0%E5%AD%A6%E5%BB%BA%E6%A8%A1%EF%BD%9C14-%E6%8B%9F%E5%90%88%E7%AE%97%E6%B3%95/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    14-拟合算法
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../%E6%95%B0%E5%AD%A6%E5%BB%BA%E6%A8%A1/%E6%95%B0%E5%AD%A6%E5%BB%BA%E6%A8%A1%EF%BD%9C15-%E5%BE%AE%E5%88%86%E6%96%B9%E7%A8%8B/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    15-微分方程
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../%E6%95%B0%E5%AD%A6%E5%BB%BA%E6%A8%A1/%E6%95%B0%E5%AD%A6%E5%BB%BA%E6%A8%A1%EF%BD%9C16-%E6%97%B6%E9%97%B4%E5%BA%8F%E5%88%97/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    16-时间序列
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../%E6%95%B0%E5%AD%A6%E5%BB%BA%E6%A8%A1/%E6%95%B0%E5%AD%A6%E5%BB%BA%E6%A8%A1%EF%BD%9C17-%E8%81%9A%E7%B1%BB%E5%88%86%E6%9E%90/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    17-聚类分析
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../%E6%95%B0%E5%AD%A6%E5%BB%BA%E6%A8%A1/%E6%95%B0%E5%AD%A6%E5%BB%BA%E6%A8%A1%EF%BD%9C18-%E6%95%B0%E6%8D%AE%E5%8C%85%E7%BB%9C%E5%88%86%E6%9E%90/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    18-数据包络分析
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_3" >
+        
+          
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../../../Dev/" class="md-nav__link ">
+              
+  
+  <span class="md-ellipsis">
+    Dev
+  </span>
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_3" id="__nav_3_label" tabindex="0">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3">
+            <span class="md-nav__icon md-icon"></span>
+            Dev
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+      
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_3_2" >
+        
+          
+          <label class="md-nav__link" for="__nav_3_2" id="__nav_3_2_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    数据结构与算法
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_3_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3_2">
+            <span class="md-nav__icon md-icon"></span>
+            数据结构与算法
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../Dev/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E4%B8%8E%E7%AE%97%E6%B3%95/%E5%BF%AB%E9%80%9F%E6%8E%92%E5%BA%8F/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Sorting｜快速排序
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_3_3" >
+        
+          
+          <label class="md-nav__link" for="__nav_3_3" id="__nav_3_3_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    编程
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_3_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3_3">
+            <span class="md-nav__icon md-icon"></span>
+            编程
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+      
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_3_3_1" >
+        
+          
+          <label class="md-nav__link" for="__nav_3_3_1" id="__nav_3_3_1_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    C
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_3_3_1_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3_3_1">
+            <span class="md-nav__icon md-icon"></span>
+            C
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../Dev/%E7%BC%96%E7%A8%8B/C/1_C%E8%AF%AD%E8%A8%80%E5%A4%8D%E4%B9%A0%E7%AC%94%E8%AE%B0/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    C语言复习笔记
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+      
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_3_3_2" >
+        
+          
+          <label class="md-nav__link" for="__nav_3_3_2" id="__nav_3_3_2_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Java
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_3_3_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3_3_2">
+            <span class="md-nav__icon md-icon"></span>
+            Java
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../Dev/%E7%BC%96%E7%A8%8B/Java/Java%E7%AC%94%E8%AE%B0/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Java学习笔记
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_3_3_3" >
+        
+          
+          <label class="md-nav__link" for="__nav_3_3_3" id="__nav_3_3_3_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Python
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_3_3_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3_3_3">
+            <span class="md-nav__icon md-icon"></span>
+            Python
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../Dev/%E7%BC%96%E7%A8%8B/Python/CS50P%200.%20Functions%2C%20Variables/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    CS50P: 0. Functions, Variables
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../Dev/%E7%BC%96%E7%A8%8B/Python/CS50P%201.%20Conditionals/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    CS50P: 1. Conditionals
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../Dev/%E7%BC%96%E7%A8%8B/Python/CS50P%202.%20Loops/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    CS50P: 2. Loops
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../Dev/%E7%BC%96%E7%A8%8B/Python/CS50P%203.%20Exceptions/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    CS50P: 3. Exceptions
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../Dev/%E7%BC%96%E7%A8%8B/Python/CS50P%204.%20Libraries/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    CS50P: 4. Libraries
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../Dev/%E7%BC%96%E7%A8%8B/Python/CS50P%205.%20Unit%20Tests/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    CS50P: 5. Unit Tests
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../Dev/%E7%BC%96%E7%A8%8B/Python/CS50P%206.%20File%20IO/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    CS50P: 6. File I/O
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../Dev/%E7%BC%96%E7%A8%8B/Python/CS50P%207.%20Regular%20Expressions/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    CS50P: 7. Regular Expressions
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../Dev/%E7%BC%96%E7%A8%8B/Python/CS50P%208.%20Object-Oriented%20Programming/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    CS50P: 8. Object-Oriented Programming
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../Dev/%E7%BC%96%E7%A8%8B/Python/CS50P%209.%20Et%20Cetera/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    CS50P: 9. Et Cetera
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_4" >
+        
+          
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../../../Essays/" class="md-nav__link ">
+              
+  
+  <span class="md-ellipsis">
+    Essays
+  </span>
+  
+
+            </a>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4">
+            <span class="md-nav__icon md-icon"></span>
+            Essays
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_5" >
+        
+          
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../../../Quotes/" class="md-nav__link ">
+              
+  
+  <span class="md-ellipsis">
+    Quotes
+  </span>
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_5" id="__nav_5_label" tabindex="0">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_5_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_5">
+            <span class="md-nav__icon md-icon"></span>
+            Quotes
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+      
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_5_2" >
+        
+          
+          <label class="md-nav__link" for="__nav_5_2" id="__nav_5_2_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Book
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_5_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_5_2">
+            <span class="md-nav__icon md-icon"></span>
+            Book
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../Quotes/Book/1%E9%BB%91%E5%AE%A2%E4%B8%8E%E7%94%BB%E5%AE%B6/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    黑客与画家
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_5_3" >
+        
+          
+          <label class="md-nav__link" for="__nav_5_3" id="__nav_5_3_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Speech
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_5_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_5_3">
+            <span class="md-nav__icon md-icon"></span>
+            Speech
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../Quotes/Speech/David%20Brooks%20at%20Chicago%2C%202017/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    David Brooks at Chicago, 2017
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../Quotes/Speech/TED%E6%BC%94%E8%AE%B2/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    TED演讲
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_6" >
+        
+          
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../../../Relax/" class="md-nav__link ">
+              
+  
+  <span class="md-ellipsis">
+    Relax
+  </span>
+  
+
+            </a>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_6_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_6">
+            <span class="md-nav__icon md-icon"></span>
+            Relax
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_7" >
+        
+          
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../../../Site/" class="md-nav__link ">
+              
+  
+  <span class="md-ellipsis">
+    Site
+  </span>
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_7" id="__nav_7_label" tabindex="0">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_7_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_7">
+            <span class="md-nav__icon md-icon"></span>
+            Site
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../Site/1%E7%BD%91%E7%AB%99%E6%9E%84%E5%BB%BA/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    网站构建
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../Site/2%E5%9B%BE%E7%89%87%E6%8F%92%E5%85%A5/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    图片插入
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../Site/3%E6%96%87%E7%AB%A0%E7%BC%96%E5%86%99/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    文章编写
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../Site/4%E6%9B%B4%E5%A4%9A%E5%8A%9F%E8%83%BD/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    更多功能
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+  
+
+<nav class="md-nav md-nav--secondary" aria-label="On this page">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      On this page
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      安装与配置
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      版本库
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="版本库">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_3" class="md-nav__link">
+    <span class="md-ellipsis">
+      创建版本库
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_4" class="md-nav__link">
+    <span class="md-ellipsis">
+      把文件添加到版本库
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_5" class="md-nav__link">
+    <span class="md-ellipsis">
+      版本控制
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="版本控制">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_6" class="md-nav__link">
+    <span class="md-ellipsis">
+      修改文件内容
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_7" class="md-nav__link">
+    <span class="md-ellipsis">
+      查看提交记录
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_8" class="md-nav__link">
+    <span class="md-ellipsis">
+      版本回退
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_9" class="md-nav__link">
+    <span class="md-ellipsis">
+      版本穿梭
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_10" class="md-nav__link">
+    <span class="md-ellipsis">
+      工作区和暂存区
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_11" class="md-nav__link">
+    <span class="md-ellipsis">
+      撤销修改
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_12" class="md-nav__link">
+    <span class="md-ellipsis">
+      删除文件
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_13" class="md-nav__link">
+    <span class="md-ellipsis">
+      远程仓库
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="远程仓库">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_14" class="md-nav__link">
+    <span class="md-ellipsis">
+      添加远程库
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_15" class="md-nav__link">
+    <span class="md-ellipsis">
+      删除远程库
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_16" class="md-nav__link">
+    <span class="md-ellipsis">
+      从远程库克隆
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_17" class="md-nav__link">
+    <span class="md-ellipsis">
+      分支管理
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="分支管理">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_18" class="md-nav__link">
+    <span class="md-ellipsis">
+      创建与合并分支
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_19" class="md-nav__link">
+    <span class="md-ellipsis">
+      解决冲突
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_20" class="md-nav__link">
+    <span class="md-ellipsis">
+      分支管理策略
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#github" class="md-nav__link">
+    <span class="md-ellipsis">
+      使用GitHub
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="使用GitHub">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_21" class="md-nav__link">
+    <span class="md-ellipsis">
+      参与开源项目
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#gitee" class="md-nav__link">
+    <span class="md-ellipsis">
+      使用Gitee
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+<h1 id="git">Git｜分布式版本控制<a class="headerlink" href="#git" title="Anchor link to this section for reference">&para;</a></h1>
+<p>主要的学习途径: <a href="https://www.liaoxuefeng.com/wiki/896043488029600">Git教程by廖雪峰</a></p>
+<p><a href="https://juejin.cn/post/6844904191203213326">掘金｜多年Git使用心得&amp;常见问题整理</a></p>
+<p><a href="https://learngitbranching.js.org/">可视化理解Git(基础)</a></p>
+<p><a href="https://dev.to/lydiahallie/cs-visualized-useful-git-commands-37p1">可视化理解Git(进阶)</a></p>
+<blockquote>
+<p>持续施工中……👷</p>
+</blockquote>
+<h2 id="_1">安装与配置<a class="headerlink" href="#_1" title="Anchor link to this section for reference">&para;</a></h2>
+<p>查看Git的配置信息</p>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-0-1">1</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1"></a>git<span class="w"> </span>config<span class="w"> </span>--list
+</code></pre></div></td></tr></table></div>
+<p>返回</p>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-1-1">1</a></span>
+<span class="normal"><a href="#__codelineno-1-2">2</a></span>
+<span class="normal"><a href="#__codelineno-1-3">3</a></span>
+<span class="normal"><a href="#__codelineno-1-4">4</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1"></a>credential.helper<span class="o">=</span>osxkeychain
+<a id="__codelineno-1-2" name="__codelineno-1-2"></a>init.defaultbranch<span class="o">=</span>main
+<a id="__codelineno-1-3" name="__codelineno-1-3"></a>user.name<span class="o">=</span>tsai-shiyuan
+<a id="__codelineno-1-4" name="__codelineno-1-4"></a>user.email<span class="o">=</span>Chase_Tsai@163.com
+</code></pre></div></td></tr></table></div>
+<h2 id="_2">版本库<a class="headerlink" href="#_2" title="Anchor link to this section for reference">&para;</a></h2>
+<p>版本库又名仓库（Repository），可以简单理解成一个目录，这个目录里面的所有文件都可以被Git管理起来，每个文件的修改、删除，Git都能跟踪</p>
+<p>如何跟踪？</p>
+<p>⌘⇧. 查看隐藏文件夹，发现有 <code>.git</code></p>
+<p><a class="glightbox" href="./0img/%E6%88%AA%E5%B1%8F2024-09-09%2013.47.22.png" data-type="image" data-width="100%" data-height="auto" data-desc-position="bottom"><img alt="截屏2024-09-09 13.47.22" src="./0img/%E6%88%AA%E5%B1%8F2024-09-09%2013.47.22.png" /></a></p>
+<h3 id="_3">创建版本库<a class="headerlink" href="#_3" title="Anchor link to this section for reference">&para;</a></h3>
+<p>Step 1. 首先创建一个文件夹并进入</p>
+<p>Step 2. 通过 <code>git init</code> 命令把这个目录变成Git可以管理的仓库</p>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-2-1">1</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1"></a>git<span class="w"> </span>init
+</code></pre></div></td></tr></table></div>
+<p>返回</p>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-3-1">1</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-3-1" name="__codelineno-3-1"></a>Initialized<span class="w"> </span>empty<span class="w"> </span>Git<span class="w"> </span>repository<span class="w"> </span><span class="k">in</span><span class="w"> </span>/Users/chasetsai/Desktop/Java/oopre_self/.git/
+</code></pre></div></td></tr></table></div>
+<p><code>.git</code> 目录是Git来跟踪管理版本库的，不要手动修改这个目录里面的文件</p>
+<h3 id="_4">把文件添加到版本库<a class="headerlink" href="#_4" title="Anchor link to this section for reference">&para;</a></h3>
+<p>版本控制系统其实只能跟踪文本文件的改动</p>
+<ul>
+<li>
+<p>在 <code>oopre_self</code> 文件夹内写 <code>readme.txt</code> 文件</p>
+</li>
+<li>
+<p><code>git add</code> 把文件添加到仓库：</p>
+</li>
+</ul>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-4-1">1</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-4-1" name="__codelineno-4-1"></a>git<span class="w"> </span>add<span class="w"> </span>readme.txt
+</code></pre></div></td></tr></table></div>
+<ul>
+<li><code>git commit</code> 把文件提交到仓库：</li>
+</ul>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-5-1">1</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-5-1" name="__codelineno-5-1"></a>git<span class="w"> </span>commit<span class="w"> </span>-m<span class="w"> </span><span class="s2">&quot;wrote a readme file&quot;</span>
+</code></pre></div></td></tr></table></div>
+<p><code>-m</code> 后面输入的是本次提交的说明</p>
+<p>返回：</p>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-6-1">1</a></span>
+<span class="normal"><a href="#__codelineno-6-2">2</a></span>
+<span class="normal"><a href="#__codelineno-6-3">3</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-6-1" name="__codelineno-6-1"></a><span class="o">[</span>main<span class="w"> </span><span class="o">(</span>root-commit<span class="o">)</span><span class="w"> </span>2178f6d<span class="o">]</span><span class="w"> </span>wrote<span class="w"> </span>a<span class="w"> </span>readme<span class="w"> </span>file
+<a id="__codelineno-6-2" name="__codelineno-6-2"></a><span class="w"> </span><span class="m">1</span><span class="w"> </span>file<span class="w"> </span>changed,<span class="w"> </span><span class="m">2</span><span class="w"> </span>insertions<span class="o">(</span>+<span class="o">)</span><span class="w">    </span><span class="c1">#readme.txt有两行内容</span>
+<a id="__codelineno-6-3" name="__codelineno-6-3"></a><span class="w"> </span>create<span class="w"> </span>mode<span class="w"> </span><span class="m">100644</span><span class="w"> </span>readme.txt
+</code></pre></div></td></tr></table></div>
+<h2 id="_5">版本控制<a class="headerlink" href="#_5" title="Anchor link to this section for reference">&para;</a></h2>
+<h3 id="_6">修改文件内容<a class="headerlink" href="#_6" title="Anchor link to this section for reference">&para;</a></h3>
+<p>修改 <code>readme.txt</code> 的内容</p>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-7-1">1</a></span>
+<span class="normal"><a href="#__codelineno-7-2">2</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-7-1" name="__codelineno-7-1"></a>Git<span class="w"> </span>is<span class="w"> </span>a<span class="w"> </span>distributed<span class="w"> </span>version<span class="w"> </span>control<span class="w"> </span>system.
+<a id="__codelineno-7-2" name="__codelineno-7-2"></a>Git<span class="w"> </span>is<span class="w"> </span>free<span class="w"> </span>software.
+</code></pre></div></td></tr></table></div>
+<p>运行 <code>git status</code> 命令:</p>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-8-1">1</a></span>
+<span class="normal"><a href="#__codelineno-8-2">2</a></span>
+<span class="normal"><a href="#__codelineno-8-3">3</a></span>
+<span class="normal"><a href="#__codelineno-8-4">4</a></span>
+<span class="normal"><a href="#__codelineno-8-5">5</a></span>
+<span class="normal"><a href="#__codelineno-8-6">6</a></span>
+<span class="normal"><a href="#__codelineno-8-7">7</a></span>
+<span class="normal"><a href="#__codelineno-8-8">8</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-8-1" name="__codelineno-8-1"></a>$<span class="w"> </span>git<span class="w"> </span>status
+<a id="__codelineno-8-2" name="__codelineno-8-2"></a>On<span class="w"> </span>branch<span class="w"> </span>main
+<a id="__codelineno-8-3" name="__codelineno-8-3"></a>Changes<span class="w"> </span>not<span class="w"> </span>staged<span class="w"> </span><span class="k">for</span><span class="w"> </span>commit:
+<a id="__codelineno-8-4" name="__codelineno-8-4"></a><span class="w">  </span><span class="o">(</span>use<span class="w"> </span><span class="s2">&quot;git add &lt;file&gt;...&quot;</span><span class="w"> </span>to<span class="w"> </span>update<span class="w"> </span>what<span class="w"> </span>will<span class="w"> </span>be<span class="w"> </span>committed<span class="o">)</span>
+<a id="__codelineno-8-5" name="__codelineno-8-5"></a><span class="w">  </span><span class="o">(</span>use<span class="w"> </span><span class="s2">&quot;git restore &lt;file&gt;...&quot;</span><span class="w"> </span>to<span class="w"> </span>discard<span class="w"> </span>changes<span class="w"> </span><span class="k">in</span><span class="w"> </span>working<span class="w"> </span>directory<span class="o">)</span>
+<a id="__codelineno-8-6" name="__codelineno-8-6"></a><span class="w">    </span>modified:<span class="w">   </span>readme.txt
+<a id="__codelineno-8-7" name="__codelineno-8-7"></a>
+<a id="__codelineno-8-8" name="__codelineno-8-8"></a>no<span class="w"> </span>changes<span class="w"> </span>added<span class="w"> </span>to<span class="w"> </span>commit<span class="w"> </span><span class="o">(</span>use<span class="w"> </span><span class="s2">&quot;git add&quot;</span><span class="w"> </span>and/or<span class="w"> </span><span class="s2">&quot;git commit -a&quot;</span><span class="o">)</span>
+</code></pre></div></td></tr></table></div>
+<p><code>git diff</code> 查看修改内容:</p>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-9-1"> 1</a></span>
+<span class="normal"><a href="#__codelineno-9-2"> 2</a></span>
+<span class="normal"><a href="#__codelineno-9-3"> 3</a></span>
+<span class="normal"><a href="#__codelineno-9-4"> 4</a></span>
+<span class="normal"><a href="#__codelineno-9-5"> 5</a></span>
+<span class="normal"><a href="#__codelineno-9-6"> 6</a></span>
+<span class="normal"><a href="#__codelineno-9-7"> 7</a></span>
+<span class="normal"><a href="#__codelineno-9-8"> 8</a></span>
+<span class="normal"><a href="#__codelineno-9-9"> 9</a></span>
+<span class="normal"><a href="#__codelineno-9-10">10</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-9-1" name="__codelineno-9-1"></a>$<span class="w"> </span>git<span class="w"> </span>diff<span class="w"> </span>readme.txt<span class="w"> </span>
+<a id="__codelineno-9-2" name="__codelineno-9-2"></a>diff<span class="w"> </span>--git<span class="w"> </span>a/readme.txt<span class="w"> </span>b/readme.txt
+<a id="__codelineno-9-3" name="__codelineno-9-3"></a>index<span class="w"> </span>d8036c1..013b5bc<span class="w"> </span><span class="m">100644</span>
+<a id="__codelineno-9-4" name="__codelineno-9-4"></a>---<span class="w"> </span>a/readme.txt
+<a id="__codelineno-9-5" name="__codelineno-9-5"></a>+++<span class="w"> </span>b/readme.txt
+<a id="__codelineno-9-6" name="__codelineno-9-6"></a>@@<span class="w"> </span>-1,2<span class="w"> </span>+1,2<span class="w"> </span>@@
+<a id="__codelineno-9-7" name="__codelineno-9-7"></a>-Git<span class="w"> </span>is<span class="w"> </span>a<span class="w"> </span>version<span class="w"> </span>control<span class="w"> </span>system.
+<a id="__codelineno-9-8" name="__codelineno-9-8"></a>+Git<span class="w"> </span>is<span class="w"> </span>a<span class="w"> </span>distributed<span class="w"> </span>version<span class="w"> </span>control<span class="w"> </span>system.
+<a id="__codelineno-9-9" name="__codelineno-9-9"></a><span class="w"> </span>Git<span class="w"> </span>is<span class="w"> </span>free<span class="w"> </span>software.
+<a id="__codelineno-9-10" name="__codelineno-9-10"></a><span class="se">\ </span>No<span class="w"> </span>newline<span class="w"> </span>at<span class="w"> </span>end<span class="w"> </span>of<span class="w"> </span>file
+</code></pre></div></td></tr></table></div>
+<h3 id="_7">查看提交记录<a class="headerlink" href="#_7" title="Anchor link to this section for reference">&para;</a></h3>
+<p>再改一次并提交:</p>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-10-1">1</a></span>
+<span class="normal"><a href="#__codelineno-10-2">2</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-10-1" name="__codelineno-10-1"></a>Git<span class="w"> </span>is<span class="w"> </span>a<span class="w"> </span>distributed<span class="w"> </span>version<span class="w"> </span>control<span class="w"> </span>system.
+<a id="__codelineno-10-2" name="__codelineno-10-2"></a>Git<span class="w"> </span>is<span class="w"> </span>free<span class="w"> </span>software<span class="w"> </span>distributed<span class="w"> </span>under<span class="w"> </span>the<span class="w"> </span>GPL.
+</code></pre></div></td></tr></table></div>
+<p>查看以上三次历史记录:</p>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-11-1"> 1</a></span>
+<span class="normal"><a href="#__codelineno-11-2"> 2</a></span>
+<span class="normal"><a href="#__codelineno-11-3"> 3</a></span>
+<span class="normal"><a href="#__codelineno-11-4"> 4</a></span>
+<span class="normal"><a href="#__codelineno-11-5"> 5</a></span>
+<span class="normal"><a href="#__codelineno-11-6"> 6</a></span>
+<span class="normal"><a href="#__codelineno-11-7"> 7</a></span>
+<span class="normal"><a href="#__codelineno-11-8"> 8</a></span>
+<span class="normal"><a href="#__codelineno-11-9"> 9</a></span>
+<span class="normal"><a href="#__codelineno-11-10">10</a></span>
+<span class="normal"><a href="#__codelineno-11-11">11</a></span>
+<span class="normal"><a href="#__codelineno-11-12">12</a></span>
+<span class="normal"><a href="#__codelineno-11-13">13</a></span>
+<span class="normal"><a href="#__codelineno-11-14">14</a></span>
+<span class="normal"><a href="#__codelineno-11-15">15</a></span>
+<span class="normal"><a href="#__codelineno-11-16">16</a></span>
+<span class="normal"><a href="#__codelineno-11-17">17</a></span>
+<span class="normal"><a href="#__codelineno-11-18">18</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-11-1" name="__codelineno-11-1"></a>$<span class="w"> </span>git<span class="w"> </span>log
+<a id="__codelineno-11-2" name="__codelineno-11-2"></a>commit<span class="w"> </span>d1fc845fd70d0136e5776f3d841c2e5a57096378<span class="w"> </span><span class="o">(</span>HEAD<span class="w"> </span>-&gt;<span class="w"> </span>main<span class="o">)</span>
+<a id="__codelineno-11-3" name="__codelineno-11-3"></a>Author:<span class="w"> </span>tsai-shiyuan<span class="w"> </span>&lt;Chase_Tsai@163.com&gt;
+<a id="__codelineno-11-4" name="__codelineno-11-4"></a>Date:<span class="w">   </span>Thu<span class="w"> </span>Sep<span class="w"> </span><span class="m">5</span><span class="w"> </span><span class="m">17</span>:02:59<span class="w"> </span><span class="m">2024</span><span class="w"> </span>+0800
+<a id="__codelineno-11-5" name="__codelineno-11-5"></a>
+<a id="__codelineno-11-6" name="__codelineno-11-6"></a><span class="w">    </span>append<span class="w"> </span>GPL
+<a id="__codelineno-11-7" name="__codelineno-11-7"></a>
+<a id="__codelineno-11-8" name="__codelineno-11-8"></a>commit<span class="w"> </span>d830c503a915a9f6de1b9c93b6988a1637bda218
+<a id="__codelineno-11-9" name="__codelineno-11-9"></a>Author:<span class="w"> </span>tsai-shiyuan<span class="w"> </span>&lt;Chase_Tsai@163.com&gt;
+<a id="__codelineno-11-10" name="__codelineno-11-10"></a>Date:<span class="w">   </span>Thu<span class="w"> </span>Sep<span class="w"> </span><span class="m">5</span><span class="w"> </span><span class="m">17</span>:00:44<span class="w"> </span><span class="m">2024</span><span class="w"> </span>+0800
+<a id="__codelineno-11-11" name="__codelineno-11-11"></a>
+<a id="__codelineno-11-12" name="__codelineno-11-12"></a><span class="w">    </span>add<span class="w"> </span>distributed
+<a id="__codelineno-11-13" name="__codelineno-11-13"></a>
+<a id="__codelineno-11-14" name="__codelineno-11-14"></a>commit<span class="w"> </span>2178f6d545dfa36d9fcde4507b974dff72be0212
+<a id="__codelineno-11-15" name="__codelineno-11-15"></a>Author:<span class="w"> </span>tsai-shiyuan<span class="w"> </span>&lt;Chase_Tsai@163.com&gt;
+<a id="__codelineno-11-16" name="__codelineno-11-16"></a>Date:<span class="w">   </span>Thu<span class="w"> </span>Sep<span class="w"> </span><span class="m">5</span><span class="w"> </span><span class="m">16</span>:51:15<span class="w"> </span><span class="m">2024</span><span class="w"> </span>+0800
+<a id="__codelineno-11-17" name="__codelineno-11-17"></a>
+<a id="__codelineno-11-18" name="__codelineno-11-18"></a><span class="w">    </span>wrote<span class="w"> </span>a<span class="w"> </span>readme<span class="w"> </span>file
+</code></pre></div></td></tr></table></div>
+<p>显示从最近到最远的提交日志</p>
+<p>添加 <code>--pretty=oneline</code> 参数可以不显示作者和日期等信息</p>
+<p>进而查看内容:</p>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-12-1">1</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-12-1" name="__codelineno-12-1"></a>$<span class="w"> </span>git<span class="w"> </span>checkout<span class="w"> </span><span class="o">[</span>commit_id<span class="w"> </span>or<span class="w"> </span>branch_name<span class="o">]</span>
+</code></pre></div></td></tr></table></div>
+<p>看完后需要回到当前分支，再进行其他修改:</p>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-13-1">1</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-13-1" name="__codelineno-13-1"></a>$<span class="w"> </span>git<span class="w"> </span>checkout<span class="w"> </span>main
+</code></pre></div></td></tr></table></div>
+<h3 id="_8">版本回退<a class="headerlink" href="#_8" title="Anchor link to this section for reference">&para;</a></h3>
+<p>用 <code>HEAD</code> 表示当前版本，也就是最新的提交 <code>d1fc8...</code>，上一个版本就是 <code>HEAD^</code>，上上一个版本就是 <code>HEAD^^</code>，当然往上100个版本写100个 <code>^</code> 比较容易数不过来，所以写成 <code>HEAD~100</code></p>
+<p>现在，我们要把当前版本 <code>append GPL</code> 回退到上一个版本 <code>add distributed</code> ，就可以使用 <code>git reset</code> 命令：</p>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-14-1">1</a></span>
+<span class="normal"><a href="#__codelineno-14-2">2</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-14-1" name="__codelineno-14-1"></a>$<span class="w"> </span>git<span class="w"> </span>reset<span class="w"> </span>--hard<span class="w"> </span>HEAD^
+<a id="__codelineno-14-2" name="__codelineno-14-2"></a>HEAD<span class="w"> </span>is<span class="w"> </span>now<span class="w"> </span>at<span class="w"> </span>d830c50<span class="w"> </span>add<span class="w"> </span>distributed
+</code></pre></div></td></tr></table></div>
+<ul>
+<li><code>--hard</code> 会回退到上个版本的已提交状态</li>
+<li><code>--soft</code> 会回退到上个版本的未提交状态</li>
+<li><code>--mixed</code> 会回退到上个版本已添加但未提交的状态</li>
+</ul>
+<p>回退其实是改变指向:</p>
+<p><a class="glightbox" href="./0img/%E6%88%AA%E5%B1%8F2024-09-05%2017.18.20.png" data-type="image" data-width="100%" data-height="auto" data-desc-position="bottom"><img alt="截屏2024-09-05 17.18.20" src="./0img/%E6%88%AA%E5%B1%8F2024-09-05%2017.18.20.png" /></a></p>
+<p>此时 <code>git log</code>:</p>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-15-1"> 1</a></span>
+<span class="normal"><a href="#__codelineno-15-2"> 2</a></span>
+<span class="normal"><a href="#__codelineno-15-3"> 3</a></span>
+<span class="normal"><a href="#__codelineno-15-4"> 4</a></span>
+<span class="normal"><a href="#__codelineno-15-5"> 5</a></span>
+<span class="normal"><a href="#__codelineno-15-6"> 6</a></span>
+<span class="normal"><a href="#__codelineno-15-7"> 7</a></span>
+<span class="normal"><a href="#__codelineno-15-8"> 8</a></span>
+<span class="normal"><a href="#__codelineno-15-9"> 9</a></span>
+<span class="normal"><a href="#__codelineno-15-10">10</a></span>
+<span class="normal"><a href="#__codelineno-15-11">11</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-15-1" name="__codelineno-15-1"></a>commit<span class="w"> </span>d830c503a915a9f6de1b9c93b6988a1637bda218<span class="w"> </span><span class="o">(</span>HEAD<span class="w"> </span>-&gt;<span class="w"> </span>main<span class="o">)</span>
+<a id="__codelineno-15-2" name="__codelineno-15-2"></a>Author:<span class="w"> </span>tsai-shiyuan<span class="w"> </span>&lt;Chase_Tsai@163.com&gt;
+<a id="__codelineno-15-3" name="__codelineno-15-3"></a>Date:<span class="w">   </span>Thu<span class="w"> </span>Sep<span class="w"> </span><span class="m">5</span><span class="w"> </span><span class="m">17</span>:00:44<span class="w"> </span><span class="m">2024</span><span class="w"> </span>+0800
+<a id="__codelineno-15-4" name="__codelineno-15-4"></a>
+<a id="__codelineno-15-5" name="__codelineno-15-5"></a><span class="w">    </span>add<span class="w"> </span>distributed
+<a id="__codelineno-15-6" name="__codelineno-15-6"></a>
+<a id="__codelineno-15-7" name="__codelineno-15-7"></a>commit<span class="w"> </span>2178f6d545dfa36d9fcde4507b974dff72be0212
+<a id="__codelineno-15-8" name="__codelineno-15-8"></a>Author:<span class="w"> </span>tsai-shiyuan<span class="w"> </span>&lt;Chase_Tsai@163.com&gt;
+<a id="__codelineno-15-9" name="__codelineno-15-9"></a>Date:<span class="w">   </span>Thu<span class="w"> </span>Sep<span class="w"> </span><span class="m">5</span><span class="w"> </span><span class="m">16</span>:51:15<span class="w"> </span><span class="m">2024</span><span class="w"> </span>+0800
+<a id="__codelineno-15-10" name="__codelineno-15-10"></a>
+<a id="__codelineno-15-11" name="__codelineno-15-11"></a><span class="w">    </span>wrote<span class="w"> </span>a<span class="w"> </span>readme<span class="w"> </span>file
+</code></pre></div></td></tr></table></div>
+<p>发现没有第三个版本了</p>
+<h3 id="_9">版本穿梭<a class="headerlink" href="#_9" title="Anchor link to this section for reference">&para;</a></h3>
+<p>指定回到未来的某个版本:</p>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-16-1">1</a></span>
+<span class="normal"><a href="#__codelineno-16-2">2</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-16-1" name="__codelineno-16-1"></a>$<span class="w"> </span>git<span class="w"> </span>reset<span class="w"> </span>--hard<span class="w"> </span>d1fc8<span class="w">    </span><span class="c1">#未来的那个&quot;地址&quot;，不用写全</span>
+<a id="__codelineno-16-2" name="__codelineno-16-2"></a>HEAD<span class="w"> </span>is<span class="w"> </span>now<span class="w"> </span>at<span class="w"> </span>d1fc845<span class="w"> </span>append<span class="w"> </span>GPL
+</code></pre></div></td></tr></table></div>
+<p>可以用 <code>git reflog</code> 查看输过的命令，就能得到地址</p>
+<h3 id="_10">工作区和暂存区<a class="headerlink" href="#_10" title="Anchor link to this section for reference">&para;</a></h3>
+<p>电脑里能看到的目录，比如 <code>oopre_self</code> 文件夹就是一个<strong>工作区 (Working Directory)</strong></p>
+<p>工作区有一个隐藏目录 <code>.git</code>，这个不算工作区，而是Git的<strong>版本库 (Repository)</strong></p>
+<p><a class="glightbox" href="./0img/%E6%88%AA%E5%B1%8F2024-09-05%2017.24.48.png" data-type="image" data-width="100%" data-height="auto" data-desc-position="bottom"><img alt="截屏2024-09-05 17.24.48" src="./0img/%E6%88%AA%E5%B1%8F2024-09-05%2017.24.48.png" /></a></p>
+<h3 id="_11">撤销修改<a class="headerlink" href="#_11" title="Anchor link to this section for reference">&para;</a></h3>
+<p>不小心加了一句但没 <code>git add</code>：</p>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-17-1">1</a></span>
+<span class="normal"><a href="#__codelineno-17-2">2</a></span>
+<span class="normal"><a href="#__codelineno-17-3">3</a></span>
+<span class="normal"><a href="#__codelineno-17-4">4</a></span>
+<span class="normal"><a href="#__codelineno-17-5">5</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-17-1" name="__codelineno-17-1"></a>Git<span class="w"> </span>is<span class="w"> </span>a<span class="w"> </span>distributed<span class="w"> </span>version<span class="w"> </span>control<span class="w"> </span>system.
+<a id="__codelineno-17-2" name="__codelineno-17-2"></a>Git<span class="w"> </span>is<span class="w"> </span>free<span class="w"> </span>software<span class="w"> </span>distributed<span class="w"> </span>under<span class="w"> </span>the<span class="w"> </span>GPL.
+<a id="__codelineno-17-3" name="__codelineno-17-3"></a>Git<span class="w"> </span>has<span class="w"> </span>a<span class="w"> </span>mutable<span class="w"> </span>index<span class="w"> </span>called<span class="w"> </span>stage.
+<a id="__codelineno-17-4" name="__codelineno-17-4"></a>Git<span class="w"> </span>tracks<span class="w"> </span>changes.
+<a id="__codelineno-17-5" name="__codelineno-17-5"></a>My<span class="w"> </span>stupid<span class="w"> </span>boss<span class="w"> </span>still<span class="w"> </span>prefers<span class="w"> </span>SVN.
+</code></pre></div></td></tr></table></div>
+<p>用以下命令把在工作区的修改全部撤销:</p>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-18-1">1</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-18-1" name="__codelineno-18-1"></a>$<span class="w"> </span>git<span class="w"> </span>checkout<span class="w"> </span>--<span class="w"> </span>readme.txt
+</code></pre></div></td></tr></table></div>
+<p>如果已经 <code>git add</code>:</p>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-19-1">1</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-19-1" name="__codelineno-19-1"></a>$<span class="w"> </span>git<span class="w"> </span>reset<span class="w"> </span>HEAD<span class="w"> </span>&lt;file&gt;<span class="w">     </span><span class="c1"># 但我的电脑显示 use &quot;git restore --staged &lt;file&gt;&quot; to unstage</span>
+</code></pre></div></td></tr></table></div>
+<p>可以把暂存区的修改撤销掉 (工作区不会变)，<code>HEAD</code> 表示最新的版本</p>
+<h3 id="_12">删除文件<a class="headerlink" href="#_12" title="Anchor link to this section for reference">&para;</a></h3>
+<p>删除也是一个修改操作</p>
+<p>假设 <code>test.txt</code> 已经通过了 <code>git commit -m "add..."</code> ，现使用命令 <code>rm test.txt</code> 删除了工作区的文件，工作区和版本库就不一致</p>
+<ul>
+<li>从版本库中删除文件：<code>git rm test.txt</code> &gt; <code>git commit -m "remove test.txt"</code></li>
+</ul>
+<p>很多时候，输入 <code>git status</code> ，<code>git</code> 会给出提示</p>
+<p>从来没有被添加到版本库就被删除的文件，是无法恢复的！</p>
+<h2 id="_13">远程仓库<a class="headerlink" href="#_13" title="Anchor link to this section for reference">&para;</a></h2>
+<p>GitHub：提供Git仓库托管服务</p>
+<p>本地Git仓库和GitHub仓库之间的传输是通过SSH加密</p>
+<p>在用户主目录已找到 <code>.ssh</code> 目录，内含 <code>id_rsa</code> 和 <code>id_rsa.pub</code> 两个文件</p>
+<ul>
+<li><code>id_rsa</code> 是私钥，不能泄露出去，</li>
+<li><code>id_rsa.pub</code>是公钥</li>
+</ul>
+<p>SSH key的作用：GitHub需要识别出我们推送的提交确实是自己推送的，而Git支持SSH协议，所以，GitHub只要知道了你的公钥，就可以确认只有我们自己才能推送</p>
+<p>GitHub允许添加多个Key，把每台电脑的Key都添加到GitHub，就可以在每台电脑上往GitHub推送</p>
+<ul>
+<li>但是我并没有看到 <code>Add SSH key</code> 的界面</li>
+</ul>
+<h3 id="_14">添加远程库<a class="headerlink" href="#_14" title="Anchor link to this section for reference">&para;</a></h3>
+<p>Now: 已经在本地创建了一个Git仓库后，又想在GitHub创建一个Git仓库，并且让这两个仓库进行远程同步</p>
+<p><code>create a new repo</code></p>
+<p><a class="glightbox" href="./0img/%E6%88%AA%E5%B1%8F2024-09-09%2009.42.58.png" data-type="image" data-width="100%" data-height="auto" data-desc-position="bottom"><img alt="截屏2024-09-09 09.42.58" src="./0img/%E6%88%AA%E5%B1%8F2024-09-09%2009.42.58.png" /></a></p>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-20-1">1</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-20-1" name="__codelineno-20-1"></a>$<span class="w"> </span>git<span class="w"> </span>remote<span class="w"> </span>add<span class="w"> </span>origin<span class="w"> </span>git@github.com:tsai-shiyuan/oopre_self.git
+</code></pre></div></td></tr></table></div>
+<p>远程库的名字就是 <code>origin</code> (默认)</p>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-21-1">1</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-21-1" name="__codelineno-21-1"></a>$<span class="w"> </span>git<span class="w"> </span>push<span class="w"> </span>-u<span class="w"> </span>origin<span class="w"> </span>main
+</code></pre></div></td></tr></table></div>
+<p>把本地库的内容推送到远程，教程上写的是 <code>master</code> 分支</p>
+<p><code>-u</code> 参数会把本地的 <code>main</code> 分支和远程的 <code>main</code> 分支关联起来，今后再使用就只需 <code>git push origin main</code> 把本地的最新修改推送至GitHub</p>
+<p><a class="glightbox" href="./0img/%E6%88%AA%E5%B1%8F2024-09-09%2009.49.39.png" data-type="image" data-width="100%" data-height="auto" data-desc-position="bottom"><img alt="截屏2024-09-09 09.49.39" src="./0img/%E6%88%AA%E5%B1%8F2024-09-09%2009.49.39.png" /></a></p>
+<h3 id="_15">删除远程库<a class="headerlink" href="#_15" title="Anchor link to this section for reference">&para;</a></h3>
+<p>先查看远程库信息:</p>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-22-1">1</a></span>
+<span class="normal"><a href="#__codelineno-22-2">2</a></span>
+<span class="normal"><a href="#__codelineno-22-3">3</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-22-1" name="__codelineno-22-1"></a>$<span class="w"> </span>git<span class="w"> </span>remote<span class="w"> </span>-v
+<a id="__codelineno-22-2" name="__codelineno-22-2"></a>origin<span class="w">  </span>git@github.com:tsai-shiyuan/oopre_self.git<span class="w"> </span><span class="o">(</span>fetch<span class="o">)</span>
+<a id="__codelineno-22-3" name="__codelineno-22-3"></a>origin<span class="w">  </span>git@github.com:tsai-shiyuan/oopre_self.git<span class="w"> </span><span class="o">(</span>push<span class="o">)</span>
+</code></pre></div></td></tr></table></div>
+<p>再根据名字删除，比如 <code>origin</code> :</p>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-23-1">1</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-23-1" name="__codelineno-23-1"></a>$<span class="w"> </span>git<span class="w"> </span>remote<span class="w"> </span>rm<span class="w"> </span>origin
+</code></pre></div></td></tr></table></div>
+<p>此处的"删除"是解除了本地和远程的绑定关系，并不是物理上删除了远程库。远程库本身并没有任何改动。</p>
+<h3 id="_16">从远程库克隆<a class="headerlink" href="#_16" title="Anchor link to this section for reference">&para;</a></h3>
+<p>登陆GitHub，创建一个 repo</p>
+<p>用 <code>git clone &lt;...&gt;</code> 克隆一个本地库:</p>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-24-1">1</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-24-1" name="__codelineno-24-1"></a>$<span class="w"> </span>git<span class="w"> </span>clone<span class="w"> </span>git@github.com:tsai-shiyuan/gitskills.git
+</code></pre></div></td></tr></table></div>
+<p><code>oopre_self</code> 里就多了 <code>gitskills</code> 文件夹</p>
+<h2 id="_17">分支管理<a class="headerlink" href="#_17" title="Anchor link to this section for reference">&para;</a></h2>
+<h3 id="_18">创建与合并分支<a class="headerlink" href="#_18" title="Anchor link to this section for reference">&para;</a></h3>
+<p>每次提交，Git都把它们串成一条时间线，这条时间线就是一个分支</p>
+<p><code>HEAD</code> 指向 <code>master</code> ，<code>master</code> 指向提交</p>
+<p>一开始，<code>master</code> 分支是一条线，Git用 <code>master</code> 指向最新的提交，再用 <code>HEAD</code> 指向 <code>master</code>，就能确定当前分支，以及当前分支的提交点</p>
+<p><a class="glightbox" href="./0img/%E6%88%AA%E5%B1%8F2024-09-09%2016.20.34.png" data-type="image" data-width="100%" data-height="auto" data-desc-position="bottom"><img alt="截屏2024-09-09 16.20.34" src="./0img/%E6%88%AA%E5%B1%8F2024-09-09%2016.20.34.png" /></a></p>
+<p>当我们创建新的分支，例如 <code>dev</code> 时，Git新建了一个指针叫 <code>dev</code>，指向 <code>master</code> 相同的提交，再把 <code>HEAD</code> 指向 <code>dev</code>，就表示当前分支在 <code>dev</code> 上</p>
+<p><a class="glightbox" href="./0img/%E6%88%AA%E5%B1%8F2024-09-09%2016.24.30.png" data-type="image" data-width="100%" data-height="auto" data-desc-position="bottom"><img alt="截屏2024-09-09 16.24.30" src="./0img/%E6%88%AA%E5%B1%8F2024-09-09%2016.24.30.png" /></a></p>
+<p>从现在开始，对工作区的修改和提交就是针对 <code>dev</code> 分支了，比如新提交一次后，<code>dev</code> 指针往前移动一步，而 <code>master</code> 指针不变</p>
+<p><a class="glightbox" href="./0img/%E6%88%AA%E5%B1%8F2024-09-09%2016.25.29.png" data-type="image" data-width="100%" data-height="auto" data-desc-position="bottom"><img alt="截屏2024-09-09 16.25.29" src="./0img/%E6%88%AA%E5%B1%8F2024-09-09%2016.25.29.png" /></a></p>
+<p>假如我们在 <code>dev</code> 上的工作完成了，就可以把 <code>dev</code> 合并到 <code>master</code> 上，方法：直接把 <code>master</code> 指向 <code>dev</code> 的当前提交</p>
+<p><a class="glightbox" href="./0img/%E6%88%AA%E5%B1%8F2024-09-09%2016.26.34.png" data-type="image" data-width="100%" data-height="auto" data-desc-position="bottom"><img alt="截屏2024-09-09 16.26.34" src="./0img/%E6%88%AA%E5%B1%8F2024-09-09%2016.26.34.png" /></a></p>
+<p>命令:</p>
+<p>创建 <code>dev</code> 分支并切换到 <code>dev</code>:</p>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-25-1">1</a></span>
+<span class="normal"><a href="#__codelineno-25-2">2</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-25-1" name="__codelineno-25-1"></a>$<span class="w"> </span>git<span class="w"> </span>checkout<span class="w"> </span>-b<span class="w"> </span>dev
+<a id="__codelineno-25-2" name="__codelineno-25-2"></a>Switched<span class="w"> </span>to<span class="w"> </span>a<span class="w"> </span>new<span class="w"> </span>branch<span class="w"> </span><span class="s1">&#39;dev&#39;</span>
+</code></pre></div></td></tr></table></div>
+<p><code>-b</code> 参数表示创建并切换，相当于 <code>git branch dev</code> &gt; <code>git checkout dev</code></p>
+<p>查看当前分支:</p>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-26-1">1</a></span>
+<span class="normal"><a href="#__codelineno-26-2">2</a></span>
+<span class="normal"><a href="#__codelineno-26-3">3</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-26-1" name="__codelineno-26-1"></a>$<span class="w"> </span>git<span class="w"> </span>branch
+<a id="__codelineno-26-2" name="__codelineno-26-2"></a>*<span class="w"> </span>dev
+<a id="__codelineno-26-3" name="__codelineno-26-3"></a><span class="w">  </span>master
+</code></pre></div></td></tr></table></div>
+<p>提交:</p>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-27-1">1</a></span>
+<span class="normal"><a href="#__codelineno-27-2">2</a></span>
+<span class="normal"><a href="#__codelineno-27-3">3</a></span>
+<span class="normal"><a href="#__codelineno-27-4">4</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-27-1" name="__codelineno-27-1"></a>$<span class="w"> </span>git<span class="w"> </span>add<span class="w"> </span>readme.txt<span class="w"> </span>
+<a id="__codelineno-27-2" name="__codelineno-27-2"></a>$<span class="w"> </span>git<span class="w"> </span>commit<span class="w"> </span>-m<span class="w"> </span><span class="s2">&quot;branch test&quot;</span>
+<a id="__codelineno-27-3" name="__codelineno-27-3"></a><span class="o">[</span>dev<span class="w"> </span>7edc459<span class="o">]</span><span class="w"> </span>branch<span class="w"> </span><span class="nb">test</span>
+<a id="__codelineno-27-4" name="__codelineno-27-4"></a><span class="w"> </span><span class="m">1</span><span class="w"> </span>file<span class="w"> </span>changed,<span class="w"> </span><span class="m">2</span><span class="w"> </span>insertions<span class="o">(</span>+<span class="o">)</span>,<span class="w"> </span><span class="m">1</span><span class="w"> </span>deletion<span class="o">(</span>-<span class="o">)</span>
+</code></pre></div></td></tr></table></div>
+<p>切换回 <code>master</code> 分支:</p>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-28-1">1</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-28-1" name="__codelineno-28-1"></a>git<span class="w"> </span>checkout<span class="w"> </span>master
+</code></pre></div></td></tr></table></div>
+<p>切换回 <code>master</code> 分支后，再查看 <code>readme.txt</code>文件，不会显示刚才添加的内容。因为那个提交是在 <code>dev</code> 分支上，而 <code>master</code> 分支此刻的提交点并没有变</p>
+<p><a class="glightbox" href="./0img/%E6%88%AA%E5%B1%8F2024-09-09%2016.37.36.png" data-type="image" data-width="100%" data-height="auto" data-desc-position="bottom"><img alt="截屏2024-09-09 16.37.36" src="./0img/%E6%88%AA%E5%B1%8F2024-09-09%2016.37.36.png" /></a></p>
+<p>现在，把 <code>dev</code> 分支的工作成果合并到 <code>master</code> 分支上:</p>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-29-1">1</a></span>
+<span class="normal"><a href="#__codelineno-29-2">2</a></span>
+<span class="normal"><a href="#__codelineno-29-3">3</a></span>
+<span class="normal"><a href="#__codelineno-29-4">4</a></span>
+<span class="normal"><a href="#__codelineno-29-5">5</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-29-1" name="__codelineno-29-1"></a>$<span class="w"> </span>git<span class="w"> </span>merge<span class="w"> </span>dev
+<a id="__codelineno-29-2" name="__codelineno-29-2"></a>Updating<span class="w"> </span>90c965a..7edc459
+<a id="__codelineno-29-3" name="__codelineno-29-3"></a>Fast-forward
+<a id="__codelineno-29-4" name="__codelineno-29-4"></a><span class="w"> </span>readme.txt<span class="w"> </span><span class="p">|</span><span class="w"> </span><span class="m">3</span><span class="w"> </span>++-
+<a id="__codelineno-29-5" name="__codelineno-29-5"></a><span class="w"> </span><span class="m">1</span><span class="w"> </span>file<span class="w"> </span>changed,<span class="w"> </span><span class="m">2</span><span class="w"> </span>insertions<span class="o">(</span>+<span class="o">)</span>,<span class="w"> </span><span class="m">1</span><span class="w"> </span>deletion<span class="o">(</span>-<span class="o">)</span>
+</code></pre></div></td></tr></table></div>
+<p>合并完成后，可以删除 <code>dev</code>:</p>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-30-1">1</a></span>
+<span class="normal"><a href="#__codelineno-30-2">2</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-30-1" name="__codelineno-30-1"></a>$<span class="w"> </span>git<span class="w"> </span>branch<span class="w"> </span>-d<span class="w"> </span>dev
+<a id="__codelineno-30-2" name="__codelineno-30-2"></a>Deleted<span class="w"> </span>branch<span class="w"> </span>dev<span class="w"> </span><span class="o">(</span>was<span class="w"> </span>7edc459<span class="o">)</span>.
+</code></pre></div></td></tr></table></div>
+<p>用途: 使用分支完成某个任务，合并后再删掉分支</p>
+<p>switch切换分支 (更加科学) :</p>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-31-1">1</a></span>
+<span class="normal"><a href="#__codelineno-31-2">2</a></span>
+<span class="normal"><a href="#__codelineno-31-3">3</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-31-1" name="__codelineno-31-1"></a>$<span class="w"> </span>git<span class="w"> </span>switch<span class="w"> </span>-c<span class="w"> </span>dev<span class="w">     </span><span class="c1"># 创建并切换到新的分支</span>
+<a id="__codelineno-31-2" name="__codelineno-31-2"></a>Switched<span class="w"> </span>to<span class="w"> </span>a<span class="w"> </span>new<span class="w"> </span>branch<span class="w"> </span><span class="s1">&#39;dev&#39;</span>
+<a id="__codelineno-31-3" name="__codelineno-31-3"></a>$<span class="w"> </span>git<span class="w"> </span>switch<span class="w"> </span>main<span class="w">       </span><span class="c1"># 切换回已有分支</span>
+</code></pre></div></td></tr></table></div>
+<h3 id="_19">解决冲突<a class="headerlink" href="#_19" title="Anchor link to this section for reference">&para;</a></h3>
+<p>移动到新的分支:</p>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-32-1">1</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-32-1" name="__codelineno-32-1"></a>$<span class="w"> </span>git<span class="w"> </span>switch<span class="w"> </span>-c<span class="w"> </span>feature1
+</code></pre></div></td></tr></table></div>
+<p>修改 <code>readme.txt</code> 的最后一行:</p>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-33-1">1</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-33-1" name="__codelineno-33-1"></a>Creating<span class="w"> </span>a<span class="w"> </span>new<span class="w"> </span>branch<span class="w"> </span>is<span class="w"> </span>quick<span class="w"> </span>AND<span class="w"> </span>simple.
+</code></pre></div></td></tr></table></div>
+<p>在 <code>feature1</code> 上提交分支:</p>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-34-1">1</a></span>
+<span class="normal"><a href="#__codelineno-34-2">2</a></span>
+<span class="normal"><a href="#__codelineno-34-3">3</a></span>
+<span class="normal"><a href="#__codelineno-34-4">4</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-34-1" name="__codelineno-34-1"></a>$<span class="w"> </span>git<span class="w"> </span>add<span class="w"> </span>readme.txt<span class="w"> </span>
+<a id="__codelineno-34-2" name="__codelineno-34-2"></a>$<span class="w"> </span>git<span class="w"> </span>commit<span class="w"> </span>-m<span class="w"> </span><span class="s2">&quot;AND simple&quot;</span>
+<a id="__codelineno-34-3" name="__codelineno-34-3"></a><span class="o">[</span>feature1<span class="w"> </span>ea9b4dc<span class="o">]</span><span class="w"> </span>AND<span class="w"> </span>simple
+<a id="__codelineno-34-4" name="__codelineno-34-4"></a><span class="w"> </span><span class="m">1</span><span class="w"> </span>file<span class="w"> </span>changed,<span class="w"> </span><span class="m">1</span><span class="w"> </span>insertion<span class="o">(</span>+<span class="o">)</span>,<span class="w"> </span><span class="m">1</span><span class="w"> </span>deletion<span class="o">(</span>-<span class="o">)</span>
+</code></pre></div></td></tr></table></div>
+<p>切换回 <code>main</code> 分支:</p>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-35-1">1</a></span>
+<span class="normal"><a href="#__codelineno-35-2">2</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-35-1" name="__codelineno-35-1"></a>$<span class="w"> </span>git<span class="w"> </span>switch<span class="w"> </span>main
+<a id="__codelineno-35-2" name="__codelineno-35-2"></a>Switched<span class="w"> </span>to<span class="w"> </span>branch<span class="w"> </span><span class="s1">&#39;main&#39;</span>
+</code></pre></div></td></tr></table></div>
+<p>修改 <code>readme.txt</code> 的最后一行:</p>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-36-1">1</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-36-1" name="__codelineno-36-1"></a>Creating<span class="w"> </span>a<span class="w"> </span>new<span class="w"> </span>branch<span class="w"> </span>is<span class="w"> </span>quick<span class="w"> </span><span class="p">&amp;</span><span class="w"> </span>simple.
+</code></pre></div></td></tr></table></div>
+<p>在 <code>main</code> 上提交分支:</p>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-37-1">1</a></span>
+<span class="normal"><a href="#__codelineno-37-2">2</a></span>
+<span class="normal"><a href="#__codelineno-37-3">3</a></span>
+<span class="normal"><a href="#__codelineno-37-4">4</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-37-1" name="__codelineno-37-1"></a>$<span class="w"> </span>git<span class="w"> </span>add<span class="w"> </span>readme.txt<span class="w"> </span>
+<a id="__codelineno-37-2" name="__codelineno-37-2"></a>$<span class="w"> </span>git<span class="w"> </span>commit<span class="w"> </span>-m<span class="w"> </span><span class="s2">&quot;&amp; simple&quot;</span>
+<a id="__codelineno-37-3" name="__codelineno-37-3"></a><span class="o">[</span>main<span class="w"> </span>f0fd8a8<span class="o">]</span><span class="w"> </span><span class="p">&amp;</span><span class="w"> </span>simple
+<a id="__codelineno-37-4" name="__codelineno-37-4"></a><span class="w"> </span><span class="m">1</span><span class="w"> </span>file<span class="w"> </span>changed,<span class="w"> </span><span class="m">1</span><span class="w"> </span>insertion<span class="o">(</span>+<span class="o">)</span>,<span class="w"> </span><span class="m">1</span><span class="w"> </span>deletion<span class="o">(</span>-<span class="o">)</span>
+</code></pre></div></td></tr></table></div>
+<p>现在，<code>master</code> 分支和 <code>feature1</code> 分支各自都分别有新的提交:</p>
+<p><a class="glightbox" href="./0img/%E6%88%AA%E5%B1%8F2024-09-10%2014.08.14.png" data-type="image" data-width="100%" data-height="auto" data-desc-position="bottom"><img alt="截屏2024-09-10 14.08.14" src="./0img/%E6%88%AA%E5%B1%8F2024-09-10%2014.08.14.png" /></a></p>
+<p>这种情况下，Git无法执行“快速合并”，只能试图把各自的修改合并起来，但这种合并就可能会有冲突:</p>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-38-1">1</a></span>
+<span class="normal"><a href="#__codelineno-38-2">2</a></span>
+<span class="normal"><a href="#__codelineno-38-3">3</a></span>
+<span class="normal"><a href="#__codelineno-38-4">4</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-38-1" name="__codelineno-38-1"></a>$<span class="w"> </span>git<span class="w"> </span>merge<span class="w"> </span>feature1
+<a id="__codelineno-38-2" name="__codelineno-38-2"></a>Auto-merging<span class="w"> </span>readme.txt
+<a id="__codelineno-38-3" name="__codelineno-38-3"></a>CONFLICT<span class="w"> </span><span class="o">(</span>content<span class="o">)</span>:<span class="w"> </span>Merge<span class="w"> </span>conflict<span class="w"> </span><span class="k">in</span><span class="w"> </span>readme.txt
+<a id="__codelineno-38-4" name="__codelineno-38-4"></a>Automatic<span class="w"> </span>merge<span class="w"> </span>failed<span class="p">;</span><span class="w"> </span>fix<span class="w"> </span>conflicts<span class="w"> </span>and<span class="w"> </span><span class="k">then</span><span class="w"> </span>commit<span class="w"> </span>the<span class="w"> </span>result.
+</code></pre></div></td></tr></table></div>
+<p>查看 <code>readme.txt</code>:</p>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-39-1">1</a></span>
+<span class="normal"><a href="#__codelineno-39-2">2</a></span>
+<span class="normal"><a href="#__codelineno-39-3">3</a></span>
+<span class="normal"><a href="#__codelineno-39-4">4</a></span>
+<span class="normal"><a href="#__codelineno-39-5">5</a></span>
+<span class="normal"><a href="#__codelineno-39-6">6</a></span>
+<span class="normal"><a href="#__codelineno-39-7">7</a></span>
+<span class="normal"><a href="#__codelineno-39-8">8</a></span>
+<span class="normal"><a href="#__codelineno-39-9">9</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-39-1" name="__codelineno-39-1"></a>$<span class="w"> </span>cat<span class="w"> </span>readme.txt<span class="w">          </span>
+<a id="__codelineno-39-2" name="__codelineno-39-2"></a>
+<a id="__codelineno-39-3" name="__codelineno-39-3"></a>balabala
+<a id="__codelineno-39-4" name="__codelineno-39-4"></a>
+<a id="__codelineno-39-5" name="__codelineno-39-5"></a><span class="o">&lt;&lt;&lt;&lt;&lt;&lt;</span>&lt;<span class="w"> </span>HEAD
+<a id="__codelineno-39-6" name="__codelineno-39-6"></a>Creating<span class="w"> </span>a<span class="w"> </span>new<span class="w"> </span>branch<span class="w"> </span>is<span class="w"> </span>quick<span class="w"> </span><span class="p">&amp;</span><span class="w"> </span>simple.
+<a id="__codelineno-39-7" name="__codelineno-39-7"></a><span class="o">=======</span>
+<a id="__codelineno-39-8" name="__codelineno-39-8"></a>Creating<span class="w"> </span>a<span class="w"> </span>new<span class="w"> </span>branch<span class="w"> </span>is<span class="w"> </span>quick<span class="w"> </span>AND<span class="w"> </span>simple.
+<a id="__codelineno-39-9" name="__codelineno-39-9"></a>&gt;&gt;&gt;&gt;&gt;&gt;&gt;<span class="w"> </span>feature1
+</code></pre></div></td></tr></table></div>
+<p>我们删掉 <code>&amp; simple</code> 有关句子，再保存并提交:</p>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-40-1">1</a></span>
+<span class="normal"><a href="#__codelineno-40-2">2</a></span>
+<span class="normal"><a href="#__codelineno-40-3">3</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-40-1" name="__codelineno-40-1"></a>$<span class="w"> </span>git<span class="w"> </span>add<span class="w"> </span>readme.txt<span class="w"> </span>
+<a id="__codelineno-40-2" name="__codelineno-40-2"></a>$<span class="w"> </span>git<span class="w"> </span>commit<span class="w"> </span>-m<span class="w"> </span><span class="s2">&quot;conflict fixed&quot;</span>
+<a id="__codelineno-40-3" name="__codelineno-40-3"></a><span class="o">[</span>main<span class="w"> </span>5bcb92b<span class="o">]</span><span class="w"> </span>conflict<span class="w"> </span>fixed
+</code></pre></div></td></tr></table></div>
+<p><a class="glightbox" href="./0img/%E6%88%AA%E5%B1%8F2024-09-10%2014.14.04.png" data-type="image" data-width="100%" data-height="auto" data-desc-position="bottom"><img alt="截屏2024-09-10 14.14.04" src="./0img/%E6%88%AA%E5%B1%8F2024-09-10%2014.14.04.png" /></a></p>
+<p>也可以用 <code>git log</code> 查看分支情况:</p>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-41-1"> 1</a></span>
+<span class="normal"><a href="#__codelineno-41-2"> 2</a></span>
+<span class="normal"><a href="#__codelineno-41-3"> 3</a></span>
+<span class="normal"><a href="#__codelineno-41-4"> 4</a></span>
+<span class="normal"><a href="#__codelineno-41-5"> 5</a></span>
+<span class="normal"><a href="#__codelineno-41-6"> 6</a></span>
+<span class="normal"><a href="#__codelineno-41-7"> 7</a></span>
+<span class="normal"><a href="#__codelineno-41-8"> 8</a></span>
+<span class="normal"><a href="#__codelineno-41-9"> 9</a></span>
+<span class="normal"><a href="#__codelineno-41-10">10</a></span>
+<span class="normal"><a href="#__codelineno-41-11">11</a></span>
+<span class="normal"><a href="#__codelineno-41-12">12</a></span>
+<span class="normal"><a href="#__codelineno-41-13">13</a></span>
+<span class="normal"><a href="#__codelineno-41-14">14</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-41-1" name="__codelineno-41-1"></a>$<span class="w"> </span>git<span class="w"> </span>log<span class="w"> </span>--graph<span class="w"> </span>--pretty<span class="o">=</span>oneline<span class="w"> </span>--abbrev-commit<span class="w">      </span><span class="c1"># --graph 参数用于看图</span>
+<a id="__codelineno-41-2" name="__codelineno-41-2"></a>*<span class="w">   </span>5bcb92b<span class="w"> </span><span class="o">(</span>HEAD<span class="w"> </span>-&gt;<span class="w"> </span>main<span class="o">)</span><span class="w"> </span>conflict<span class="w"> </span>fixed
+<a id="__codelineno-41-3" name="__codelineno-41-3"></a><span class="p">|</span><span class="se">\ </span><span class="w"> </span>
+<a id="__codelineno-41-4" name="__codelineno-41-4"></a><span class="p">|</span><span class="w"> </span>*<span class="w"> </span>ea9b4dc<span class="w"> </span><span class="o">(</span>feature1<span class="o">)</span><span class="w"> </span>AND<span class="w"> </span>simple
+<a id="__codelineno-41-5" name="__codelineno-41-5"></a>*<span class="w"> </span><span class="p">|</span><span class="w"> </span>f0fd8a8<span class="w"> </span><span class="p">&amp;</span><span class="w"> </span>simple
+<a id="__codelineno-41-6" name="__codelineno-41-6"></a><span class="p">|</span>/<span class="w">  </span>
+<a id="__codelineno-41-7" name="__codelineno-41-7"></a>*<span class="w"> </span>7edc459<span class="w"> </span><span class="o">(</span>dev<span class="o">)</span><span class="w"> </span>branch<span class="w"> </span><span class="nb">test</span>
+<a id="__codelineno-41-8" name="__codelineno-41-8"></a>*<span class="w"> </span>90c965a<span class="w"> </span>remove<span class="w"> </span>test.txt
+<a id="__codelineno-41-9" name="__codelineno-41-9"></a>*<span class="w"> </span>047c9bb<span class="w"> </span>add<span class="w"> </span>test.txt
+<a id="__codelineno-41-10" name="__codelineno-41-10"></a>*<span class="w"> </span>edabc19<span class="w"> </span>git<span class="w"> </span>tracks<span class="w"> </span>changes
+<a id="__codelineno-41-11" name="__codelineno-41-11"></a>*<span class="w"> </span>69401a9<span class="w"> </span>understand<span class="w"> </span>how<span class="w"> </span>stage<span class="w"> </span>works
+<a id="__codelineno-41-12" name="__codelineno-41-12"></a>*<span class="w"> </span>d1fc845<span class="w"> </span>append<span class="w"> </span>GPL
+<a id="__codelineno-41-13" name="__codelineno-41-13"></a>*<span class="w"> </span>d830c50<span class="w"> </span>add<span class="w"> </span>distributed
+<a id="__codelineno-41-14" name="__codelineno-41-14"></a>*<span class="w"> </span>2178f6d<span class="w"> </span>wrote<span class="w"> </span>a<span class="w"> </span>readme<span class="w"> </span>file
+</code></pre></div></td></tr></table></div>
+<p>删除 <code>feature1</code> 分支:</p>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-42-1">1</a></span>
+<span class="normal"><a href="#__codelineno-42-2">2</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-42-1" name="__codelineno-42-1"></a>$<span class="w"> </span>git<span class="w"> </span>branch<span class="w"> </span>-d<span class="w"> </span>feature1
+<a id="__codelineno-42-2" name="__codelineno-42-2"></a>Deleted<span class="w"> </span>branch<span class="w"> </span>feature1<span class="w"> </span><span class="o">(</span>was<span class="w"> </span>ea9b4dc<span class="o">)</span>.
+</code></pre></div></td></tr></table></div>
+<h3 id="_20">分支管理策略<a class="headerlink" href="#_20" title="Anchor link to this section for reference">&para;</a></h3>
+<h2 id="github">使用GitHub<a class="headerlink" href="#github" title="Anchor link to this section for reference">&para;</a></h2>
+<p>GitHub作为免费的远程仓库</p>
+<h3 id="_21">参与开源项目<a class="headerlink" href="#_21" title="Anchor link to this section for reference">&para;</a></h3>
+<p><a href="https://github.com/twbs/bootstrap">bootstrap项目</a></p>
+<p>点击 <code>Fork</code> 就在自己的账号下克隆了一个bootstrap仓库，然后，从自己的账号下clone，这样就能推送修改</p>
+<p><a class="glightbox" href="./0img/%E6%88%AA%E5%B1%8F2024-09-10%2014.21.36.png" data-type="image" data-width="100%" data-height="auto" data-desc-position="bottom"><img alt="截屏2024-09-10 14.21.36" src="./0img/%E6%88%AA%E5%B1%8F2024-09-10%2014.21.36.png" /></a></p>
+<ul>
+<li>Bootstrap的官方仓库 <code>twbs/bootstrap</code></li>
+<li>在GitHub上克隆的仓库 <code>my/bootstrap</code></li>
+<li>自己克隆到本地电脑的仓库</li>
+</ul>
+<p>想让bootstrap的官方库接受我的修改，就可以在GitHub上发起一个pull request</p>
+<h2 id="gitee">使用Gitee<a class="headerlink" href="#gitee" title="Anchor link to this section for reference">&para;</a></h2>
+<p>国内的Git托管服务——<a href="https://gitee.com/?utm_source=blog_lxf">Gitee</a></p>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+  <script>var tabs=__md_get("__tabs");if(Array.isArray(tabs))e:for(var set of document.querySelectorAll(".tabbed-set")){var tab,labels=set.querySelector(".tabbed-labels");for(tab of tabs)for(var label of labels.getElementsByTagName("label"))if(label.innerText.trim()===tab){var input=document.getElementById(label.htmlFor);input.checked=!0;continue e}}</script>
+
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+          <button type="button" class="md-top md-icon" data-md-component="top" hidden>
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8v12Z"/></svg>
+  Back to top
+</button>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+    
+      
+      <nav class="md-footer__inner md-grid" aria-label="Footer" >
+        
+          
+          <a href="../01_RSS%E5%AE%9A%E5%88%B6%E6%8E%A8%E9%80%81/" class="md-footer__link md-footer__link--prev" aria-label="Previous: RSS｜定制信息推送">
+            <div class="md-footer__button md-icon">
+              
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"/></svg>
+            </div>
+            <div class="md-footer__title">
+              <span class="md-footer__direction">
+                Previous
+              </span>
+              <div class="md-ellipsis">
+                RSS｜定制信息推送
+              </div>
+            </div>
+          </a>
+        
+        
+          
+          <a href="../../macOS/b-01-Mac%E5%B8%B8%E7%94%A8%E6%93%8D%E4%BD%9C%E5%8F%8A%E5%BF%AB%E6%8D%B7%E9%94%AE/" class="md-footer__link md-footer__link--next" aria-label="Next: Mac常用操作及快捷键">
+            <div class="md-footer__title">
+              <span class="md-footer__direction">
+                Next
+              </span>
+              <div class="md-ellipsis">
+                Mac常用操作及快捷键
+              </div>
+            </div>
+            <div class="md-footer__button md-icon">
+              
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11H4Z"/></svg>
+            </div>
+          </a>
+        
+      </nav>
+    
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+    <div class="md-copyright__highlight">
+      Copyright &copy; 2024 Chase Tsai
+    </div>
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+        <div class="md-social">
+  
+    
+    
+    
+    
+      
+      
+    
+    <a href="https://github.com/tsai-shiyuan" target="_blank" rel="noopener" title="github.com" class="md-social__link">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 496 512"><!--! Font Awesome Free 6.6.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2024 Fonticons, Inc.--><path d="M165.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6zm-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3zm44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9zM244.8 8C106.1 8 0 113.3 0 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C428.2 457.8 496 362.9 496 252 496 113.3 383.5 8 244.8 8zM97.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1zm-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7zm32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1zm-11.4-14.7c-1.6 1-1.6 3.6 0 5.9 1.6 2.3 4.3 3.3 5.6 2.3 1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2z"/></svg>
+    </a>
+  
+    
+    
+    
+    
+      
+      
+    
+    <a href="https://www.cnblogs.com/chasetsai" target="_blank" rel="noopener" title="www.cnblogs.com" class="md-social__link">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 512"><!--! Font Awesome Free 6.6.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2024 Fonticons, Inc.--><path d="M244 246c-3.2-2-6.3-2.9-10.1-2.9-6.6 0-12.6 3.2-19.3 3.7l1.7 4.9zm135.9 197.9c-19 0-64.1 9.5-79.9 19.8l6.9 45.1c35.7 6.1 70.1 3.6 106-9.8-4.8-10-23.5-55.1-33-55.1zM340.8 177c6.6 2.8 11.5 9.2 22.7 22.1 2-1.4 7.5-5.2 7.5-8.6 0-4.9-11.8-13.2-13.2-23 11.2-5.7 25.2-6 37.6-8.9 68.1-16.4 116.3-52.9 146.8-116.7C548.3 29.3 554 16.1 554.6 2l-2 2.6c-28.4 50-33 63.2-81.3 100-31.9 24.4-69.2 40.2-106.6 54.6l-6.3-.3v-21.8c-19.6 1.6-19.7-14.6-31.6-23-18.7 20.6-31.6 40.8-58.9 51.1-12.7 4.8-19.6 10-25.9 21.8 34.9-16.4 91.2-13.5 98.8-10zM555.5 0l-.6 1.1-.3.9.6-.6zm-59.2 382.1c-33.9-56.9-75.3-118.4-150-115.5l-.3-6c-1.1-13.5 32.8 3.2 35.1-31l-14.4 7.2c-19.8-45.7-8.6-54.3-65.5-54.3-14.7 0-26.7 1.7-41.4 4.6 2.9 18.6 2.2 36.7-10.9 50.3l19.5 5.5c-1.7 3.2-2.9 6.3-2.9 9.8 0 21 42.8 2.9 42.8 33.6 0 18.4-36.8 60.1-54.9 60.1-8 0-53.7-50-53.4-60.1l.3-4.6 52.3-11.5c13-2.6 12.3-22.7-2.9-22.7-3.7 0-43.1 9.2-49.4 10.6-2-5.2-7.5-14.1-13.8-14.1-3.2 0-6.3 3.2-9.5 4-9.2 2.6-31 2.9-21.5 20.1L15.9 298.5c-5.5 1.1-8.9 6.3-8.9 11.8 0 6 5.5 10.9 11.5 10.9 8 0 131.3-28.4 147.4-32.2 2.6 3.2 4.6 6.3 7.8 8.6 20.1 14.4 59.8 85.9 76.4 85.9 24.1 0 58-22.4 71.3-41.9 3.2-4.3 6.9-7.5 12.4-6.9.6 13.8-31.6 34.2-33 43.7-1.4 10.2-1 35.2-.3 41.1 26.7 8.1 52-3.6 77.9-2.9 4.3-21 10.6-41.9 9.8-63.5l-.3-9.5c-1.4-34.2-10.9-38.5-34.8-58.6-1.1-1.1-2.6-2.6-3.7-4 2.2-1.4 1.1-1 4.6-1.7 88.5 0 56.3 183.6 111.5 229.9 33.1-15 72.5-27.9 103.5-47.2-29-25.6-52.6-45.7-72.7-79.9zm-196.2 46.1v27.2l11.8-3.4-2.9-23.8zm-68.7-150.4 24.1 61.2 21-13.8-31.3-50.9zm84.4 154.9 2 12.4c9-1.5 58.4-6.6 58.4-14.1 0-1.4-.6-3.2-.9-4.6-26.8 0-36.9 3.8-59.5 6.3z"/></svg>
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    <script id="__config" type="application/json">{"base": "../../..", "features": ["navigation.tabs", "navigation.top", "navigation.indexes", "navigation.expand", "navigation.footer", "toc.follow", "search.suggest", "search.highlight", "content.tabs.link", "content.code.annotate", "content.code.copy"], "search": "../../../assets/javascripts/workers/search.b8dbb3d2.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
+    
+    
+      <script src="../../../assets/javascripts/bundle.fe8b6f2b.min.js"></script>
+      
+        <script src="../../../javascripts/mathjax.js"></script>
+      
+        <script src="https://unpkg.com/mathjax@3/es5/tex-mml-chtml.js"></script>
+      
+    
+  <script id="init-glightbox">const lightbox = GLightbox({"touchNavigation": true, "loop": false, "zoomable": true, "draggable": true, "openEffect": "zoom", "closeEffect": "zoom", "slideEffect": "slide"});
+document$.subscribe(() => { lightbox.reload() });
+</script></body>
+</html>

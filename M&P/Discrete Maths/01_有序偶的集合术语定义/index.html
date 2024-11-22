@@ -9,10 +9,10 @@
       
       
       
-        <link rel="prev" href="../../Analysis/02_%E4%BA%8C%E9%87%8D%E7%A7%AF%E5%88%86%E5%8F%98%E9%87%8F%E4%BB%A3%E6%8D%A2/">
+        <link rel="prev" href="../00_%E9%9B%86%E5%90%88%E7%9A%84%E5%BD%92%E7%BA%B3%E5%AE%9A%E4%B9%89%E6%B3%95/">
       
       
-        <link rel="next" href="../01%E6%9C%89%E5%BA%8F%E5%81%B6%E7%9A%84%E9%9B%86%E5%90%88%E6%9C%AF%E8%AF%AD%E5%AE%9A%E4%B9%89/">
+        <link rel="next" href="../03_%E9%9B%86%E7%B1%BB/">
       
       
       <link rel="icon" href="../../../images/adl6i-63hs3-001.ico">
@@ -20,7 +20,7 @@
     
     
       
-        <title>集合的归纳定义法 - Chase's Blog</title>
+        <title>有序偶的集合术语定义 - Chase's Blog</title>
       
     
     
@@ -121,7 +121,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              集合的归纳定义法
+              有序偶的集合术语定义
             
           </span>
         </div>
@@ -1801,6 +1801,8 @@
       
         
       
+        
+      
     
     
       
@@ -1836,6 +1838,27 @@
                 
   
   
+  
+  
+    <li class="md-nav__item">
+      <a href="../00_%E9%9B%86%E5%90%88%E7%9A%84%E5%BD%92%E7%BA%B3%E5%AE%9A%E4%B9%89%E6%B3%95/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    集合的归纳定义法
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
     
   
   
@@ -1852,7 +1875,7 @@
           
   
   <span class="md-ellipsis">
-    集合的归纳定义法
+    有序偶的集合术语定义
   </span>
   
 
@@ -1863,7 +1886,7 @@
         
   
   <span class="md-ellipsis">
-    集合的归纳定义法
+    有序偶的集合术语定义
   </span>
   
 
@@ -1889,7 +1912,7 @@
         <li class="md-nav__item">
   <a href="#_2" class="md-nav__link">
     <span class="md-ellipsis">
-      归纳定义法
+      转载
     </span>
   </a>
   
@@ -1898,16 +1921,7 @@
         <li class="md-nav__item">
   <a href="#_3" class="md-nav__link">
     <span class="md-ellipsis">
-      一个例子
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#_4" class="md-nav__link">
-    <span class="md-ellipsis">
-      联立归纳定义法
+      小结
     </span>
   </a>
   
@@ -1929,11 +1943,11 @@
   
   
     <li class="md-nav__item">
-      <a href="../01%E6%9C%89%E5%BA%8F%E5%81%B6%E7%9A%84%E9%9B%86%E5%90%88%E6%9C%AF%E8%AF%AD%E5%AE%9A%E4%B9%89/" class="md-nav__link">
+      <a href="../03_%E9%9B%86%E7%B1%BB/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
-    有序偶的集合术语定义
+    集类和广义交/并
   </span>
   
 
@@ -2662,7 +2676,7 @@
         <li class="md-nav__item">
   <a href="#_2" class="md-nav__link">
     <span class="md-ellipsis">
-      归纳定义法
+      转载
     </span>
   </a>
   
@@ -2671,16 +2685,7 @@
         <li class="md-nav__item">
   <a href="#_3" class="md-nav__link">
     <span class="md-ellipsis">
-      一个例子
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#_4" class="md-nav__link">
-    <span class="md-ellipsis">
-      联立归纳定义法
+      小结
     </span>
   </a>
   
@@ -2701,42 +2706,31 @@
                   
 
 
-<h1 id="_1">集合的归纳定义法<a class="headerlink" href="#_1" title="Anchor link to this section for reference">&para;</a></h1>
-<p>2024/09/20</p>
-<p>常见的集合表示方法有枚举法和抽象法（也即描述法，描述出集合元素具有的特征）。但抽象法有一定的局限性，比如无法表示C语言程序集合。这引出了集合的归纳定义法。</p>
-<h2 id="_2">归纳定义法<a class="headerlink" href="#_2" title="Anchor link to this section for reference">&para;</a></h2>
-<p><strong>1 基本项</strong></p>
-<p>规定 <span class="arithmatex">\(A\)</span> 的一些生成元: <span class="arithmatex">\(S_0 \subseteq A\)</span></p>
-<p><strong>2 归纳项</strong></p>
-<p>一组规则，从 <span class="arithmatex">\(A\)</span> 中元素出发，依据这些规则所获得的元素仍然是 <span class="arithmatex">\(A\)</span> 中的元素</p>
-<p><strong>3 极小化</strong></p>
-<p>(a) <span class="arithmatex">\(A\)</span> 中的每个元素都是通过有限次使用 (1) 或 (2) 获得的</p>
-<p>(b) 如果集合 <span class="arithmatex">\(S \subseteq A\)</span>  也满足 (1) 和 (2)，则 <span class="arithmatex">\(S = A\)</span></p>
-<div class="admonition abstract">
-<p class="admonition-title">Note</p>
-<p>基本项和归纳项指明了哪些元素在集合内，但并没有排除不在集合内的元素。极小化保证 <span class="arithmatex">\(A\)</span> 是同时满足 (1) 和 (2) 的最小集合</p>
-</div>
-<h2 id="_3">一个例子<a class="headerlink" href="#_3" title="Anchor link to this section for reference">&para;</a></h2>
-<p>用归纳定义法给出下列集合: 不允许有前 <span class="arithmatex">\(0\)</span> 的十进制无符号整数的集合</p>
-<p>(1) 令 <span class="arithmatex">\(S_0 = \{0,1,2,3,4,5,6,7,8,9\} \subseteq A\)</span></p>
-<p>(2) 若 <span class="arithmatex">\(a \in S_0 - \{ 0\}\)</span> 且 <span class="arithmatex">\(\alpha \in A\)</span> ，则 <span class="arithmatex">\(a\alpha \in A\)</span> ( <span class="arithmatex">\(a\alpha\)</span> 表示拼接字符串)</p>
-<p>(3) 极小化</p>
-<p>解法合理与否？发现这样归纳会漏掉像 <span class="arithmatex">\(100005\)</span> 这样中间段有 <span class="arithmatex">\(0\)</span>​ 的数字</p>
-<p>我们应该将归纳项改为:</p>
-<p>(2) 若 <span class="arithmatex">\(\alpha, \beta \in A\)</span> 且 <span class="arithmatex">\(\alpha \neq 0\)</span> ，则 <span class="arithmatex">\(\alpha\beta \in A\)</span></p>
-<p>即不断往前段添加已在 <span class="arithmatex">\(A\)</span> 内的数，而不是仅仅添加一位</p>
-<h2 id="_4">联立归纳定义法<a class="headerlink" href="#_4" title="Anchor link to this section for reference">&para;</a></h2>
-<p>再看一个神奇的例子</p>
-<p>定义集合: 不允许有前 <span class="arithmatex">\(0\)</span> 的被 <span class="arithmatex">\(3\)</span> 整除的二进制无符号整数的集合</p>
-<p>我们先考虑几个集合: 除 <span class="arithmatex">\(3\)</span> 余 <span class="arithmatex">\(0\)</span> 的集合 <span class="arithmatex">\(B_0\)</span> ，除 <span class="arithmatex">\(3\)</span> 余 <span class="arithmatex">\(1\)</span> 的集合 <span class="arithmatex">\(B_1\)</span> ，除 <span class="arithmatex">\(3\)</span> 余 <span class="arithmatex">\(2\)</span> 的集合 <span class="arithmatex">\(B_2\)</span></p>
-<p>设二进制数 <span class="arithmatex">\(X\)</span> 对应的十进制数为 <span class="arithmatex">\(x\)</span> ，除 <span class="arithmatex">\(3\)</span> 后商为 <span class="arithmatex">\(k\)</span> ，余数为 <span class="arithmatex">\(b\)</span> ，则 <span class="arithmatex">\(x=3k + b\)</span> ，往 <span class="arithmatex">\(X\)</span> 的末尾添加 <span class="arithmatex">\(y\)</span> (<span class="arithmatex">\(y \in \{0,1\}\)</span>) ，得到新数 <span class="arithmatex">\(x' = 2x+y = 2(3k+b) + y = 6k + 2b + y\)</span> ，此时 <span class="arithmatex">\(x'\equiv 2b + y \pmod 3\)</span> </p>
-<p>据此我们可以归纳定义:</p>
-<p>(1) 基本项: <span class="arithmatex">\(\{ 0 \} \subseteq B_0, \{1\} \subseteq B_1\)</span></p>
-<p>(2) 归纳项: </p>
-<p>若 <span class="arithmatex">\(\alpha \in B_0\)</span> 且 <span class="arithmatex">\(\alpha \neq 0\)</span> ，则 <span class="arithmatex">\(\alpha0 \in B_0, \alpha1 \in B1\)</span></p>
-<p>若 <span class="arithmatex">\(\alpha \in B_1\)</span> ，则 <span class="arithmatex">\(\alpha0 \in B_2, \alpha1 \in B_0\)</span></p>
-<p>若 <span class="arithmatex">\(\alpha \in B_2\)</span> ，则 <span class="arithmatex">\(\alpha0 \in B_1, \alpha1 \in B_2\)</span></p>
-<p>(3) 极小化: <span class="arithmatex">\(B_0\)</span> 就是我们想要的集合</p>
+<h1 id="_1">有序偶的集合术语定义<a class="headerlink" href="#_1" title="Anchor link to this section for reference">&para;</a></h1>
+<p>2024/09/25</p>
+<h2 id="_2">转载<a class="headerlink" href="#_2" title="Anchor link to this section for reference">&para;</a></h2>
+<p>From </p>
+<ul>
+<li>
+<p><a href="https://blog.sina.com.cn/s/blog_4a38d5fd0101pe7c.html">新浪｜集合论中关于序偶(a,b)可以写作{{a},{a,b}}的解释</a></p>
+</li>
+<li>
+<p><a href="https://www.zhihu.com/question/38702938">知乎｜如何解释点集拓扑中对有序偶的定义？</a></p>
+</li>
+</ul>
+<p>命题：有序偶 <span class="arithmatex">\((a,b)\)</span> 可以使用集合术语定义为 <span class="arithmatex">\(\{\{a\},\{a,b\}\}\)</span></p>
+<p>此命题为真。对于如何理解这种定义，我认为没办法从“有序”这个概念的本意出发。因为对于集合而言，其元素都是无序的。我们只能等效一个条件，然后证明该条件被满足。</p>
+<p>由此，该条件一般称为：只有在两个序偶每一对对应元素都相等时，它们才相等——或者写作：(a,b)=(c,d) iff (a=c) and (b=d)。即对于元命题，须证：{{a},{a,b}}={{c},{c,d}}成立的充分必要条件为a=c且b=d。（证明过程略）</p>
+<p>或者：</p>
+<p>断言如下：</p>
+<p>序偶与集合的唯一区别在于：使用序偶封装的两个元素(a,b)≠(b,a)，而集合{a,b}={b,a}。若断言为真：</p>
+<p>α.则当使用某种复杂集合表示法（例如嵌套集合）封装的两个元素会因为元素顺序不同而不等时，则认为此“复合集合表示”是有序的。即为等价于序偶(a,b)的。</p>
+<p>我们可以看到，虽然{{a},{a,b}}和{{b},{b,a}}中的元素{a,b}={b,a}，但由于{a}≠{b}，所以使用{{a},{a,b}}这种复合序列表示法封装的两个不同顺序的元素是不相等的，即满足了上面的推论α。</p>
+<hr />
+<p>用 {{a},{a,b}} 和 {{b},{b,a}} 的不同来对应 <a,b> 和 <b,a> 这两个有序对的不同</p>
+<p>{a,b} 是告诉说要考虑哪两个元素，{a} 是说哪个元素放在第一个位置，这种表示方法只是为了区分集合中元素的“位置”</p>
+<h2 id="_3">小结<a class="headerlink" href="#_3" title="Anchor link to this section for reference">&para;</a></h2>
+<p>这样的定义有序偶是合理的，(a,b)={{a},{a,b}}，(b,a)={{b},{b,a}}，(a,b) <span class="arithmatex">\(\neq\)</span> (b,a) ，就用我们已知的集合语言定义了 ordered pair</p>
 
 
 
@@ -2774,7 +2768,7 @@
       <nav class="md-footer__inner md-grid" aria-label="Footer" >
         
           
-          <a href="../../Analysis/02_%E4%BA%8C%E9%87%8D%E7%A7%AF%E5%88%86%E5%8F%98%E9%87%8F%E4%BB%A3%E6%8D%A2/" class="md-footer__link md-footer__link--prev" aria-label="Previous: 二重积分变量代换">
+          <a href="../00_%E9%9B%86%E5%90%88%E7%9A%84%E5%BD%92%E7%BA%B3%E5%AE%9A%E4%B9%89%E6%B3%95/" class="md-footer__link md-footer__link--prev" aria-label="Previous: 集合的归纳定义法">
             <div class="md-footer__button md-icon">
               
               <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"/></svg>
@@ -2784,20 +2778,20 @@
                 Previous
               </span>
               <div class="md-ellipsis">
-                二重积分变量代换
+                集合的归纳定义法
               </div>
             </div>
           </a>
         
         
           
-          <a href="../01%E6%9C%89%E5%BA%8F%E5%81%B6%E7%9A%84%E9%9B%86%E5%90%88%E6%9C%AF%E8%AF%AD%E5%AE%9A%E4%B9%89/" class="md-footer__link md-footer__link--next" aria-label="Next: 有序偶的集合术语定义">
+          <a href="../03_%E9%9B%86%E7%B1%BB/" class="md-footer__link md-footer__link--next" aria-label="Next: 集类和广义交/并">
             <div class="md-footer__title">
               <span class="md-footer__direction">
                 Next
               </span>
               <div class="md-ellipsis">
-                有序偶的集合术语定义
+                集类和广义交/并
               </div>
             </div>
             <div class="md-footer__button md-icon">

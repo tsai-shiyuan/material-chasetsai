@@ -9,23 +9,25 @@
       
       
       
+        <link rel="prev" href="../../Analysis/02_%E4%BA%8C%E9%87%8D%E7%A7%AF%E5%88%86%E5%8F%98%E9%87%8F%E4%BB%A3%E6%8D%A2/">
       
-        <link rel="next" href="Blogs/">
+      
+        <link rel="next" href="../01_%E6%9C%89%E5%BA%8F%E5%81%B6%E7%9A%84%E9%9B%86%E5%90%88%E6%9C%AF%E8%AF%AD%E5%AE%9A%E4%B9%89/">
       
       
-      <link rel="icon" href="images/adl6i-63hs3-001.ico">
+      <link rel="icon" href="../../../images/adl6i-63hs3-001.ico">
       <meta name="generator" content="mkdocs-1.6.0, mkdocs-material-9.5.31">
     
     
       
-        <title>Chase's Blog</title>
+        <title>集合的归纳定义法 - Chase's Blog</title>
       
     
     
-      <link rel="stylesheet" href="assets/stylesheets/main.3cba04c6.min.css">
+      <link rel="stylesheet" href="../../../assets/stylesheets/main.3cba04c6.min.css">
       
         
-        <link rel="stylesheet" href="assets/stylesheets/palette.06af60db.min.css">
+        <link rel="stylesheet" href="../../../assets/stylesheets/palette.06af60db.min.css">
       
       
 
@@ -46,18 +48,18 @@
     
       <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.16.7/katex.min.css">
     
-      <link rel="stylesheet" href="mkdocs/css/no-footer.css">
+      <link rel="stylesheet" href="../../../mkdocs/css/no-footer.css">
     
-      <link rel="stylesheet" href="mkdocs/css/unordered-list-symbols.css">
+      <link rel="stylesheet" href="../../../mkdocs/css/unordered-list-symbols.css">
     
-    <script>__md_scope=new URL(".",location),__md_hash=e=>[...e].reduce((e,_)=>(e<<5)-e+_.charCodeAt(0),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    <script>__md_scope=new URL("../../..",location),__md_hash=e=>[...e].reduce((e,_)=>(e<<5)-e+_.charCodeAt(0),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
     
       
 
     
     
     
-   <link href="assets/stylesheets/glightbox.min.css" rel="stylesheet"/><style>
+   <link href="../../../assets/stylesheets/glightbox.min.css" rel="stylesheet"/><style>
     html.glightbox-open { overflow: initial; height: 100%; }
     .gslide-title { margin-top: 0px; user-select: text; }
     .gslide-desc { color: #666; user-select: text; }
@@ -66,7 +68,7 @@
     .gdesc-inner { font-size: 0.75rem; }
     body[data-md-color-scheme="slate"] .gdesc-inner { background: var(--md-default-bg-color);}
     body[data-md-color-scheme="slate"] .gslide-title { color: var(--md-default-fg-color);}
-    body[data-md-color-scheme="slate"] .gslide-desc { color: var(--md-default-fg-color);}</style> <script src="assets/javascripts/glightbox.min.js"></script></head>
+    body[data-md-color-scheme="slate"] .gslide-desc { color: var(--md-default-fg-color);}</style> <script src="../../../assets/javascripts/glightbox.min.js"></script></head>
   
   
     
@@ -85,7 +87,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#about" class="md-skip">
+        <a href="#_1" class="md-skip">
           Skip to content
         </a>
       
@@ -99,7 +101,7 @@
 
 <header class="md-header" data-md-component="header">
   <nav class="md-header__inner md-grid" aria-label="Header">
-    <a href="." title="Chase&#39;s Blog" class="md-header__button md-logo" aria-label="Chase's Blog" data-md-component="logo">
+    <a href="../../.." title="Chase&#39;s Blog" class="md-header__button md-logo" aria-label="Chase's Blog" data-md-component="logo">
       
   
   <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M8.35 3c1.18-.17 2.43 1.12 2.79 2.9.36 1.77-.29 3.35-1.47 3.53-1.17.18-2.43-1.11-2.8-2.89-.37-1.77.3-3.35 1.48-3.54m7.15 0c1.19.19 1.85 1.77 1.5 3.54-.38 1.78-1.63 3.07-2.81 2.89-1.19-.18-1.84-1.76-1.47-3.53.36-1.78 1.61-3.07 2.78-2.9M3 7.6c1.14-.49 2.69.4 3.5 1.95.76 1.58.5 3.24-.63 3.73-1.13.49-2.67-.39-3.46-1.96C1.62 9.75 1.9 8.08 3 7.6m18 0c1.1.48 1.38 2.15.59 3.72-.79 1.57-2.33 2.45-3.46 1.96-1.13-.49-1.39-2.15-.63-3.73C18.31 8 19.86 7.11 21 7.6m-1.67 10.78c.04.94-.68 1.98-1.54 2.37-1.79.82-3.91-.88-5.9-.88-1.99 0-4.13 1.77-5.89.88-1-.49-1.69-1.79-1.56-2.87.18-1.49 1.97-2.29 3.03-3.38 1.41-1.41 2.41-4.06 4.42-4.06 2 0 3.06 2.61 4.41 4.06 1.11 1.22 2.96 2.25 3.03 3.88Z"/></svg>
@@ -119,7 +121,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              About
+              集合的归纳定义法
             
           </span>
         </div>
@@ -214,11 +216,9 @@
         
   
   
-    
   
-  
-    <li class="md-tabs__item md-tabs__item--active">
-      <a href="." class="md-tabs__link">
+    <li class="md-tabs__item">
+      <a href="../../.." class="md-tabs__link">
         
   
     
@@ -237,7 +237,7 @@
     
     
       <li class="md-tabs__item">
-        <a href="Blogs/" class="md-tabs__link">
+        <a href="../../../Blogs/" class="md-tabs__link">
           
   
     
@@ -257,7 +257,7 @@
     
     
       <li class="md-tabs__item">
-        <a href="Dev/" class="md-tabs__link">
+        <a href="../../../Dev/" class="md-tabs__link">
           
   
     
@@ -273,11 +273,13 @@
         
   
   
+    
+  
   
     
     
-      <li class="md-tabs__item">
-        <a href="M%26P/" class="md-tabs__link">
+      <li class="md-tabs__item md-tabs__item--active">
+        <a href="../../" class="md-tabs__link">
           
   
     
@@ -297,7 +299,7 @@
     
     
       <li class="md-tabs__item">
-        <a href="Quotes/" class="md-tabs__link">
+        <a href="../../../Quotes/" class="md-tabs__link">
           
   
     
@@ -317,7 +319,7 @@
     
     
       <li class="md-tabs__item">
-        <a href="Relax/" class="md-tabs__link">
+        <a href="../../../Relax/" class="md-tabs__link">
           
   
     
@@ -337,7 +339,7 @@
     
     
       <li class="md-tabs__item">
-        <a href="Site/" class="md-tabs__link">
+        <a href="../../../Site/" class="md-tabs__link">
           
   
     
@@ -361,9 +363,7 @@
           
             
               
-                
-              
-              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" hidden>
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
                 <div class="md-sidebar__scrollwrap">
                   <div class="md-sidebar__inner">
                     
@@ -374,7 +374,7 @@
 
 <nav class="md-nav md-nav--primary md-nav--lifted" aria-label="Navigation" data-md-level="0">
   <label class="md-nav__title" for="__drawer">
-    <a href="." title="Chase&#39;s Blog" class="md-nav__button md-logo" aria-label="Chase's Blog" data-md-component="logo">
+    <a href="../../.." title="Chase&#39;s Blog" class="md-nav__button md-logo" aria-label="Chase's Blog" data-md-component="logo">
       
   
   <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M8.35 3c1.18-.17 2.43 1.12 2.79 2.9.36 1.77-.29 3.35-1.47 3.53-1.17.18-2.43-1.11-2.8-2.89-.37-1.77.3-3.35 1.48-3.54m7.15 0c1.19.19 1.85 1.77 1.5 3.54-.38 1.78-1.63 3.07-2.81 2.89-1.19-.18-1.84-1.76-1.47-3.53.36-1.78 1.61-3.07 2.78-2.9M3 7.6c1.14-.49 2.69.4 3.5 1.95.76 1.58.5 3.24-.63 3.73-1.13.49-2.67-.39-3.46-1.96C1.62 9.75 1.9 8.08 3 7.6m18 0c1.1.48 1.38 2.15.59 3.72-.79 1.57-2.33 2.45-3.46 1.96-1.13-.49-1.39-2.15-.63-3.73C18.31 8 19.86 7.11 21 7.6m-1.67 10.78c.04.94-.68 1.98-1.54 2.37-1.79.82-3.91-.88-5.9-.88-1.99 0-4.13 1.77-5.89.88-1-.49-1.69-1.79-1.56-2.87.18-1.49 1.97-2.29 3.03-3.38 1.41-1.41 2.41-4.06 4.42-4.06 2 0 3.06 2.61 4.41 4.06 1.11 1.22 2.96 2.25 3.03 3.88Z"/></svg>
@@ -389,30 +389,10 @@
       
   
   
-    
   
   
-  
-    <li class="md-nav__item md-nav__item--active">
-      
-      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
-      
-      
-        
-      
-      
-        <label class="md-nav__link md-nav__link--active" for="__toc">
-          
-  
-  <span class="md-ellipsis">
-    About
-  </span>
-  
-
-          <span class="md-nav__icon md-icon"></span>
-        </label>
-      
-      <a href="." class="md-nav__link md-nav__link--active">
+    <li class="md-nav__item">
+      <a href="../../.." class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -421,55 +401,6 @@
   
 
       </a>
-      
-        
-
-  
-
-<nav class="md-nav md-nav--secondary" aria-label="On this page">
-  
-  
-  
-    
-  
-  
-    <label class="md-nav__title" for="__toc">
-      <span class="md-nav__icon md-icon"></span>
-      On this page
-    </label>
-    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#_1" class="md-nav__link">
-    <span class="md-ellipsis">
-      关于本站
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#_2" class="md-nav__link">
-    <span class="md-ellipsis">
-      个人简介
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#_3" class="md-nav__link">
-    <span class="md-ellipsis">
-      联系方式
-    </span>
-  </a>
-  
-</li>
-      
-    </ul>
-  
-</nav>
-      
     </li>
   
 
@@ -512,7 +443,7 @@
           
           
           <div class="md-nav__link md-nav__container">
-            <a href="Blogs/" class="md-nav__link ">
+            <a href="../../../Blogs/" class="md-nav__link ">
               
   
   <span class="md-ellipsis">
@@ -589,7 +520,7 @@
   
   
     <li class="md-nav__item">
-      <a href="Blogs/Git/Git/" class="md-nav__link">
+      <a href="../../../Blogs/Git/Git/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -610,7 +541,7 @@
   
   
     <li class="md-nav__item">
-      <a href="Blogs/Git/%E4%BD%BF%E7%94%A8Git%E5%AE%9E%E7%8E%B0Windows%E4%B8%8EMac%E6%96%87%E4%BB%B6%E5%90%8C%E6%AD%A5/" class="md-nav__link">
+      <a href="../../../Blogs/Git/%E4%BD%BF%E7%94%A8Git%E5%AE%9E%E7%8E%B0Windows%E4%B8%8EMac%E6%96%87%E4%BB%B6%E5%90%8C%E6%AD%A5/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -681,7 +612,7 @@
   
   
     <li class="md-nav__item">
-      <a href="Blogs/Markdown/Markdown%E8%AF%AD%E6%B3%95/" class="md-nav__link">
+      <a href="../../../Blogs/Markdown/Markdown%E8%AF%AD%E6%B3%95/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -752,7 +683,7 @@
   
   
     <li class="md-nav__item">
-      <a href="Blogs/Matlab/MATLAB%E5%9F%BA%E7%A1%80%E8%AF%AD%E6%B3%95/" class="md-nav__link">
+      <a href="../../../Blogs/Matlab/MATLAB%E5%9F%BA%E7%A1%80%E8%AF%AD%E6%B3%95/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -823,7 +754,7 @@
   
   
     <li class="md-nav__item">
-      <a href="Blogs/Toolkit/01_RSS%E5%AE%9A%E5%88%B6%E6%8E%A8%E9%80%81/" class="md-nav__link">
+      <a href="../../../Blogs/Toolkit/01_RSS%E5%AE%9A%E5%88%B6%E6%8E%A8%E9%80%81/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -906,7 +837,7 @@
   
   
     <li class="md-nav__item">
-      <a href="Blogs/macOS/b-01-Mac%E5%B8%B8%E7%94%A8%E6%93%8D%E4%BD%9C%E5%8F%8A%E5%BF%AB%E6%8D%B7%E9%94%AE/" class="md-nav__link">
+      <a href="../../../Blogs/macOS/b-01-Mac%E5%B8%B8%E7%94%A8%E6%93%8D%E4%BD%9C%E5%8F%8A%E5%BF%AB%E6%8D%B7%E9%94%AE/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -927,7 +858,7 @@
   
   
     <li class="md-nav__item">
-      <a href="Blogs/macOS/b-02-Xcode%E7%94%9F%E6%88%90%E7%9A%84%E5%8F%AF%E6%89%A7%E8%A1%8C%E6%96%87%E4%BB%B6%E5%9C%A8%E5%93%AA%E9%87%8C/" class="md-nav__link">
+      <a href="../../../Blogs/macOS/b-02-Xcode%E7%94%9F%E6%88%90%E7%9A%84%E5%8F%AF%E6%89%A7%E8%A1%8C%E6%96%87%E4%BB%B6%E5%9C%A8%E5%93%AA%E9%87%8C/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -948,7 +879,7 @@
   
   
     <li class="md-nav__item">
-      <a href="Blogs/macOS/b-03-%E6%9B%B4%E6%94%B9Mac%E6%96%87%E4%BB%B6%E7%9A%84%E9%BB%98%E8%AE%A4%E6%89%93%E5%BC%80%E6%96%B9%E5%BC%8F/" class="md-nav__link">
+      <a href="../../../Blogs/macOS/b-03-%E6%9B%B4%E6%94%B9Mac%E6%96%87%E4%BB%B6%E7%9A%84%E9%BB%98%E8%AE%A4%E6%89%93%E5%BC%80%E6%96%B9%E5%BC%8F/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -969,7 +900,7 @@
   
   
     <li class="md-nav__item">
-      <a href="Blogs/macOS/f-01-Mac%E7%9A%84%E6%96%87%E4%BB%B6%E7%B3%BB%E7%BB%9F/" class="md-nav__link">
+      <a href="../../../Blogs/macOS/f-01-Mac%E7%9A%84%E6%96%87%E4%BB%B6%E7%B3%BB%E7%BB%9F/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -990,7 +921,7 @@
   
   
     <li class="md-nav__item">
-      <a href="Blogs/macOS/f-02-%E8%AE%A4%E8%AF%86%E7%A8%8B%E5%BA%8F/" class="md-nav__link">
+      <a href="../../../Blogs/macOS/f-02-%E8%AE%A4%E8%AF%86%E7%A8%8B%E5%BA%8F/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1011,7 +942,7 @@
   
   
     <li class="md-nav__item">
-      <a href="Blogs/macOS/f-03-%E8%AE%A4%E8%AF%86%E7%BB%88%E7%AB%AF%E5%92%8Cshell/" class="md-nav__link">
+      <a href="../../../Blogs/macOS/f-03-%E8%AE%A4%E8%AF%86%E7%BB%88%E7%AB%AF%E5%92%8Cshell/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1032,7 +963,7 @@
   
   
     <li class="md-nav__item">
-      <a href="Blogs/macOS/f-04-%E5%BC%80%E5%90%AFVSCode%E7%9A%84%E5%A4%A7%E9%97%A8/" class="md-nav__link">
+      <a href="../../../Blogs/macOS/f-04-%E5%BC%80%E5%90%AFVSCode%E7%9A%84%E5%A4%A7%E9%97%A8/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1093,7 +1024,7 @@
           
           
           <div class="md-nav__link md-nav__container">
-            <a href="Dev/" class="md-nav__link ">
+            <a href="../../../Dev/" class="md-nav__link ">
               
   
   <span class="md-ellipsis">
@@ -1214,7 +1145,7 @@
   
   
     <li class="md-nav__item">
-      <a href="Dev/Coding/C/1_C%E8%AF%AD%E8%A8%80%E5%A4%8D%E4%B9%A0%E7%AC%94%E8%AE%B0/" class="md-nav__link">
+      <a href="../../../Dev/Coding/C/1_C%E8%AF%AD%E8%A8%80%E5%A4%8D%E4%B9%A0%E7%AC%94%E8%AE%B0/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1285,7 +1216,7 @@
   
   
     <li class="md-nav__item">
-      <a href="Dev/Coding/Java/Java%E7%AC%94%E8%AE%B0/" class="md-nav__link">
+      <a href="../../../Dev/Coding/Java/Java%E7%AC%94%E8%AE%B0/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1374,7 +1305,7 @@
   
   
     <li class="md-nav__item">
-      <a href="Dev/Coding/Python/CS50P%200.%20Functions%2C%20Variables/" class="md-nav__link">
+      <a href="../../../Dev/Coding/Python/CS50P%200.%20Functions%2C%20Variables/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1395,7 +1326,7 @@
   
   
     <li class="md-nav__item">
-      <a href="Dev/Coding/Python/CS50P%201.%20Conditionals/" class="md-nav__link">
+      <a href="../../../Dev/Coding/Python/CS50P%201.%20Conditionals/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1416,7 +1347,7 @@
   
   
     <li class="md-nav__item">
-      <a href="Dev/Coding/Python/CS50P%202.%20Loops/" class="md-nav__link">
+      <a href="../../../Dev/Coding/Python/CS50P%202.%20Loops/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1437,7 +1368,7 @@
   
   
     <li class="md-nav__item">
-      <a href="Dev/Coding/Python/CS50P%203.%20Exceptions/" class="md-nav__link">
+      <a href="../../../Dev/Coding/Python/CS50P%203.%20Exceptions/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1458,7 +1389,7 @@
   
   
     <li class="md-nav__item">
-      <a href="Dev/Coding/Python/CS50P%204.%20Libraries/" class="md-nav__link">
+      <a href="../../../Dev/Coding/Python/CS50P%204.%20Libraries/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1479,7 +1410,7 @@
   
   
     <li class="md-nav__item">
-      <a href="Dev/Coding/Python/CS50P%205.%20Unit%20Tests/" class="md-nav__link">
+      <a href="../../../Dev/Coding/Python/CS50P%205.%20Unit%20Tests/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1500,7 +1431,7 @@
   
   
     <li class="md-nav__item">
-      <a href="Dev/Coding/Python/CS50P%206.%20File%20IO/" class="md-nav__link">
+      <a href="../../../Dev/Coding/Python/CS50P%206.%20File%20IO/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1521,7 +1452,7 @@
   
   
     <li class="md-nav__item">
-      <a href="Dev/Coding/Python/CS50P%207.%20Regular%20Expressions/" class="md-nav__link">
+      <a href="../../../Dev/Coding/Python/CS50P%207.%20Regular%20Expressions/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1542,7 +1473,7 @@
   
   
     <li class="md-nav__item">
-      <a href="Dev/Coding/Python/CS50P%208.%20Object-Oriented%20Programming/" class="md-nav__link">
+      <a href="../../../Dev/Coding/Python/CS50P%208.%20Object-Oriented%20Programming/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1563,7 +1494,7 @@
   
   
     <li class="md-nav__item">
-      <a href="Dev/Coding/Python/CS50P%209.%20Et%20Cetera/" class="md-nav__link">
+      <a href="../../../Dev/Coding/Python/CS50P%209.%20Et%20Cetera/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1644,7 +1575,7 @@
   
   
     <li class="md-nav__item">
-      <a href="Dev/Data%20Structure/G01_%E9%93%BE%E5%BC%8F%E5%89%8D%E5%90%91%E6%98%9F/" class="md-nav__link">
+      <a href="../../../Dev/Data%20Structure/G01_%E9%93%BE%E5%BC%8F%E5%89%8D%E5%90%91%E6%98%9F/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1665,7 +1596,7 @@
   
   
     <li class="md-nav__item">
-      <a href="Dev/Data%20Structure/S01_%E5%BF%AB%E9%80%9F%E6%8E%92%E5%BA%8F/" class="md-nav__link">
+      <a href="../../../Dev/Data%20Structure/S01_%E5%BF%AB%E9%80%9F%E6%8E%92%E5%BA%8F/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1698,6 +1629,8 @@
       
   
   
+    
+  
   
   
     
@@ -1718,19 +1651,22 @@
     
     
       
+        
+        
+      
       
     
     
-    <li class="md-nav__item md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4" >
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4" checked>
         
           
           
           <div class="md-nav__link md-nav__container">
-            <a href="M%26P/" class="md-nav__link ">
+            <a href="../../" class="md-nav__link ">
               
   
   <span class="md-ellipsis">
@@ -1741,13 +1677,13 @@
             </a>
             
               
-              <label class="md-nav__link " for="__nav_4" id="__nav_4_label" tabindex="0">
+              <label class="md-nav__link " for="__nav_4" id="__nav_4_label" tabindex="">
                 <span class="md-nav__icon md-icon"></span>
               </label>
             
           </div>
         
-        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="false">
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="true">
           <label class="md-nav__title" for="__nav_4">
             <span class="md-nav__icon md-icon"></span>
             M&P
@@ -1807,7 +1743,7 @@
   
   
     <li class="md-nav__item">
-      <a href="M%26P/Analysis/01_%E5%B8%B8%E5%BE%AE%E5%88%86%E6%96%B9%E7%A8%8B/" class="md-nav__link">
+      <a href="../../Analysis/01_%E5%B8%B8%E5%BE%AE%E5%88%86%E6%96%B9%E7%A8%8B/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1828,7 +1764,7 @@
   
   
     <li class="md-nav__item">
-      <a href="M%26P/Analysis/02_%E4%BA%8C%E9%87%8D%E7%A7%AF%E5%88%86%E5%8F%98%E9%87%8F%E4%BB%A3%E6%8D%A2/" class="md-nav__link">
+      <a href="../../Analysis/02_%E4%BA%8C%E9%87%8D%E7%A7%AF%E5%88%86%E5%8F%98%E9%87%8F%E4%BB%A3%E6%8D%A2/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1854,8 +1790,10 @@
                 
   
   
+    
   
   
+  
     
     
       
@@ -1871,11 +1809,11 @@
       
     
     
-    <li class="md-nav__item md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4_3" >
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4_3" checked>
         
           
           <label class="md-nav__link" for="__nav_4_3" id="__nav_4_3_label" tabindex="0">
@@ -1889,7 +1827,7 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_4_3_label" aria-expanded="false">
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_4_3_label" aria-expanded="true">
           <label class="md-nav__title" for="__nav_4_3">
             <span class="md-nav__icon md-icon"></span>
             Discrete Maths
@@ -1900,10 +1838,30 @@
                 
   
   
+    
   
   
-    <li class="md-nav__item">
-      <a href="M%26P/Discrete%20Maths/00_%E9%9B%86%E5%90%88%E7%9A%84%E5%BD%92%E7%BA%B3%E5%AE%9A%E4%B9%89%E6%B3%95/" class="md-nav__link">
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  <span class="md-ellipsis">
+    集合的归纳定义法
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
         
   
   <span class="md-ellipsis">
@@ -1912,6 +1870,55 @@
   
 
       </a>
+      
+        
+
+  
+
+<nav class="md-nav md-nav--secondary" aria-label="On this page">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      On this page
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      归纳定义法
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_3" class="md-nav__link">
+    <span class="md-ellipsis">
+      一个例子
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_4" class="md-nav__link">
+    <span class="md-ellipsis">
+      联立归纳定义法
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
     </li>
   
 
@@ -1924,7 +1931,7 @@
   
   
     <li class="md-nav__item">
-      <a href="M%26P/Discrete%20Maths/01_%E6%9C%89%E5%BA%8F%E5%81%B6%E7%9A%84%E9%9B%86%E5%90%88%E6%9C%AF%E8%AF%AD%E5%AE%9A%E4%B9%89/" class="md-nav__link">
+      <a href="../01_%E6%9C%89%E5%BA%8F%E5%81%B6%E7%9A%84%E9%9B%86%E5%90%88%E6%9C%AF%E8%AF%AD%E5%AE%9A%E4%B9%89/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1945,7 +1952,7 @@
   
   
     <li class="md-nav__item">
-      <a href="M%26P/Discrete%20Maths/03_%E9%9B%86%E7%B1%BB/" class="md-nav__link">
+      <a href="../03_%E9%9B%86%E7%B1%BB/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -2022,7 +2029,7 @@
   
   
     <li class="md-nav__item">
-      <a href="M%26P/Physics/%E5%8A%9B%E5%AD%A6%EF%BD%9C%E5%A4%8D%E4%B9%A0/" class="md-nav__link">
+      <a href="../../Physics/%E5%8A%9B%E5%AD%A6%EF%BD%9C%E5%A4%8D%E4%B9%A0/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -2043,7 +2050,7 @@
   
   
     <li class="md-nav__item">
-      <a href="M%26P/Physics/%E7%94%B5%E7%A3%81%E5%AD%A6%EF%BD%9C%E5%A4%8D%E4%B9%A0/" class="md-nav__link">
+      <a href="../../Physics/%E7%94%B5%E7%A3%81%E5%AD%A6%EF%BD%9C%E5%A4%8D%E4%B9%A0/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -2064,7 +2071,7 @@
   
   
     <li class="md-nav__item">
-      <a href="M%26P/Physics/%E7%94%B5%E7%A3%81%E5%AD%A6%EF%BD%9C%E7%94%B5%E4%BB%8B%E8%B4%A8%E7%9A%84%E6%9E%81%E5%8C%96/" class="md-nav__link">
+      <a href="../../Physics/%E7%94%B5%E7%A3%81%E5%AD%A6%EF%BD%9C%E7%94%B5%E4%BB%8B%E8%B4%A8%E7%9A%84%E6%9E%81%E5%8C%96/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -2085,7 +2092,7 @@
   
   
     <li class="md-nav__item">
-      <a href="M%26P/Physics/%E8%BF%91%E4%BB%A3%E7%89%A9%E7%90%86%EF%BD%9C%E7%8B%AD%E4%B9%89%E7%9B%B8%E5%AF%B9%E8%AE%BA/" class="md-nav__link">
+      <a href="../../Physics/%E8%BF%91%E4%BB%A3%E7%89%A9%E7%90%86%EF%BD%9C%E7%8B%AD%E4%B9%89%E7%9B%B8%E5%AF%B9%E8%AE%BA/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -2158,7 +2165,7 @@
   
   
     <li class="md-nav__item">
-      <a href="M%26P/Probability/01_%E6%96%B9%E5%B7%AE%E4%B8%8E%E5%8D%8F%E6%96%B9%E5%B7%AE/" class="md-nav__link">
+      <a href="../../Probability/01_%E6%96%B9%E5%B7%AE%E4%B8%8E%E5%8D%8F%E6%96%B9%E5%B7%AE/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -2179,7 +2186,7 @@
   
   
     <li class="md-nav__item">
-      <a href="M%26P/Probability/02_%E5%A4%A7%E6%95%B0%E5%AE%9A%E5%BE%8B%2B%E4%B8%AD%E5%BF%83%E6%9E%81%E9%99%90%E5%AE%9A%E7%90%86/" class="md-nav__link">
+      <a href="../../Probability/02_%E5%A4%A7%E6%95%B0%E5%AE%9A%E5%BE%8B%2B%E4%B8%AD%E5%BF%83%E6%9E%81%E9%99%90%E5%AE%9A%E7%90%86/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -2240,7 +2247,7 @@
           
           
           <div class="md-nav__link md-nav__container">
-            <a href="Quotes/" class="md-nav__link ">
+            <a href="../../../Quotes/" class="md-nav__link ">
               
   
   <span class="md-ellipsis">
@@ -2315,7 +2322,7 @@
   
   
     <li class="md-nav__item">
-      <a href="Quotes/Book/1%E9%BB%91%E5%AE%A2%E4%B8%8E%E7%94%BB%E5%AE%B6/" class="md-nav__link">
+      <a href="../../../Quotes/Book/1%E9%BB%91%E5%AE%A2%E4%B8%8E%E7%94%BB%E5%AE%B6/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -2388,7 +2395,7 @@
   
   
     <li class="md-nav__item">
-      <a href="Quotes/Speech/David%20Brooks%20at%20Chicago%2C%202017/" class="md-nav__link">
+      <a href="../../../Quotes/Speech/David%20Brooks%20at%20Chicago%2C%202017/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -2409,7 +2416,7 @@
   
   
     <li class="md-nav__item">
-      <a href="Quotes/Speech/TED%E6%BC%94%E8%AE%B2/" class="md-nav__link">
+      <a href="../../../Quotes/Speech/TED%E6%BC%94%E8%AE%B2/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -2466,7 +2473,7 @@
           
           
           <div class="md-nav__link md-nav__container">
-            <a href="Relax/" class="md-nav__link ">
+            <a href="../../../Relax/" class="md-nav__link ">
               
   
   <span class="md-ellipsis">
@@ -2530,7 +2537,7 @@
           
           
           <div class="md-nav__link md-nav__container">
-            <a href="Site/" class="md-nav__link ">
+            <a href="../../../Site/" class="md-nav__link ">
               
   
   <span class="md-ellipsis">
@@ -2563,7 +2570,7 @@
   
   
     <li class="md-nav__item">
-      <a href="Site/1%E7%BD%91%E7%AB%99%E6%9E%84%E5%BB%BA/" class="md-nav__link">
+      <a href="../../../Site/1%E7%BD%91%E7%AB%99%E6%9E%84%E5%BB%BA/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -2584,7 +2591,7 @@
   
   
     <li class="md-nav__item">
-      <a href="Site/2%E5%9B%BE%E7%89%87%E6%8F%92%E5%85%A5/" class="md-nav__link">
+      <a href="../../../Site/2%E5%9B%BE%E7%89%87%E6%8F%92%E5%85%A5/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -2605,7 +2612,7 @@
   
   
     <li class="md-nav__item">
-      <a href="Site/3%E6%96%87%E7%AB%A0%E7%BC%96%E5%86%99/" class="md-nav__link">
+      <a href="../../../Site/3%E6%96%87%E7%AB%A0%E7%BC%96%E5%86%99/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -2626,7 +2633,7 @@
   
   
     <li class="md-nav__item">
-      <a href="Site/4%E6%9B%B4%E5%A4%9A%E5%8A%9F%E8%83%BD/" class="md-nav__link">
+      <a href="../../../Site/4%E6%9B%B4%E5%A4%9A%E5%8A%9F%E8%83%BD/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -2655,8 +2662,6 @@
             
             
               
-                
-              
               <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
                 <div class="md-sidebar__scrollwrap">
                   <div class="md-sidebar__inner">
@@ -2678,18 +2683,9 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#_1" class="md-nav__link">
-    <span class="md-ellipsis">
-      关于本站
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
   <a href="#_2" class="md-nav__link">
     <span class="md-ellipsis">
-      个人简介
+      归纳定义法
     </span>
   </a>
   
@@ -2698,7 +2694,16 @@
         <li class="md-nav__item">
   <a href="#_3" class="md-nav__link">
     <span class="md-ellipsis">
-      联系方式
+      一个例子
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_4" class="md-nav__link">
+    <span class="md-ellipsis">
+      联立归纳定义法
     </span>
   </a>
   
@@ -2719,36 +2724,42 @@
                   
 
 
-<h1 id="about">About<a class="headerlink" href="#about" title="Anchor link to this section for reference">&para;</a></h1>
-<p><font face="微软雅黑" color=purple size=5>你好</font></p>
-<p>这里是 Chase 的个人网站，又名狼堡 🐾🧡💛</p>
-<p><a class="glightbox" href="./IMG_5460.jpg" data-type="image" data-width="100%" data-height="auto" data-desc-position="bottom"><img src="./IMG_5460.jpg" alt="IMG_5460" style="zoom:33%;" /></a></p>
-<h2 id="_1">关于本站<a class="headerlink" href="#_1" title="Anchor link to this section for reference">&para;</a></h2>
-<p>写点学习，写点生活</p>
-<p>我把这个网站当作收获本🧪，笔记本✏️♾️🔤⚛️🧬，作文素材积累本📝</p>
-<h2 id="_2">个人简介<a class="headerlink" href="#_2" title="Anchor link to this section for reference">&para;</a></h2>
-<ul>
-<li>
-<p>2020.09-2023.06 成都树德中学</p>
-</li>
-<li>
-<p>2023.09至今 北航计算机系</p>
-</li>
-</ul>
-<p>喜灰fans｜喜欢学新知识｜很少熬夜｜爱听歌｜有点完美主义｜学习ing</p>
-<h2 id="_3">联系方式<a class="headerlink" href="#_3" title="Anchor link to this section for reference">&para;</a></h2>
-<div class="grid cards">
-<ul>
-<li><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="m20 8-8 5-8-5V6l8 5 8-5m0-2H4c-1.11 0-2 .89-2 2v12a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2V6a2 2 0 0 0-2-2Z"/></svg></span> <strong><a href="mailto:Chase_Tsai@163.com">Chase_Tsai@163.com</a></strong></li>
-</ul>
+<h1 id="_1">集合的归纳定义法<a class="headerlink" href="#_1" title="Anchor link to this section for reference">&para;</a></h1>
+<p>2024/09/20</p>
+<p>常见的集合表示方法有枚举法和抽象法（也即描述法，描述出集合元素具有的特征）。但抽象法有一定的局限性，比如无法表示C语言程序集合。这引出了集合的归纳定义法。</p>
+<h2 id="_2">归纳定义法<a class="headerlink" href="#_2" title="Anchor link to this section for reference">&para;</a></h2>
+<p><strong>1 基本项</strong></p>
+<p>规定 <span class="arithmatex">\(A\)</span> 的一些生成元: <span class="arithmatex">\(S_0 \subseteq A\)</span></p>
+<p><strong>2 归纳项</strong></p>
+<p>一组规则，从 <span class="arithmatex">\(A\)</span> 中元素出发，依据这些规则所获得的元素仍然是 <span class="arithmatex">\(A\)</span> 中的元素</p>
+<p><strong>3 极小化</strong></p>
+<p>(a) <span class="arithmatex">\(A\)</span> 中的每个元素都是通过有限次使用 (1) 或 (2) 获得的</p>
+<p>(b) 如果集合 <span class="arithmatex">\(S \subseteq A\)</span>  也满足 (1) 和 (2)，则 <span class="arithmatex">\(S = A\)</span></p>
+<div class="admonition abstract">
+<p class="admonition-title">Note</p>
+<p>基本项和归纳项指明了哪些元素在集合内，但并没有排除不在集合内的元素。极小化保证 <span class="arithmatex">\(A\)</span> 是同时满足 (1) 和 (2) 的最小集合</p>
 </div>
-<hr />
-<p><font face="微软雅黑" color=black size=4>To be continued...</font></p>
-<p><font face="微软雅黑" color=black size=4>做好选择</font></p>
-<p><font face="微软雅黑" color=black size=4>奋力迈步</font></p>
-<p><font face="微软雅黑" color=black size=4>用心感受</font></p>
-<p><font face="微软雅黑" color=black size=4>珍惜美好</font></p>
-<p><font face="微软雅黑" color=black size=4>最后，欢迎来到我的博客💜🩷，感谢每一场相遇！🩵</font></p>
+<h2 id="_3">一个例子<a class="headerlink" href="#_3" title="Anchor link to this section for reference">&para;</a></h2>
+<p>用归纳定义法给出下列集合: 不允许有前 <span class="arithmatex">\(0\)</span> 的十进制无符号整数的集合</p>
+<p>(1) 令 <span class="arithmatex">\(S_0 = \{0,1,2,3,4,5,6,7,8,9\} \subseteq A\)</span></p>
+<p>(2) 若 <span class="arithmatex">\(a \in S_0 - \{ 0\}\)</span> 且 <span class="arithmatex">\(\alpha \in A\)</span> ，则 <span class="arithmatex">\(a\alpha \in A\)</span> ( <span class="arithmatex">\(a\alpha\)</span> 表示拼接字符串)</p>
+<p>(3) 极小化</p>
+<p>解法合理与否？发现这样归纳会漏掉像 <span class="arithmatex">\(100005\)</span> 这样中间段有 <span class="arithmatex">\(0\)</span>​ 的数字</p>
+<p>我们应该将归纳项改为:</p>
+<p>(2) 若 <span class="arithmatex">\(\alpha, \beta \in A\)</span> 且 <span class="arithmatex">\(\alpha \neq 0\)</span> ，则 <span class="arithmatex">\(\alpha\beta \in A\)</span></p>
+<p>即不断往前段添加已在 <span class="arithmatex">\(A\)</span> 内的数，而不是仅仅添加一位</p>
+<h2 id="_4">联立归纳定义法<a class="headerlink" href="#_4" title="Anchor link to this section for reference">&para;</a></h2>
+<p>再看一个神奇的例子</p>
+<p>定义集合: 不允许有前 <span class="arithmatex">\(0\)</span> 的被 <span class="arithmatex">\(3\)</span> 整除的二进制无符号整数的集合</p>
+<p>我们先考虑几个集合: 除 <span class="arithmatex">\(3\)</span> 余 <span class="arithmatex">\(0\)</span> 的集合 <span class="arithmatex">\(B_0\)</span> ，除 <span class="arithmatex">\(3\)</span> 余 <span class="arithmatex">\(1\)</span> 的集合 <span class="arithmatex">\(B_1\)</span> ，除 <span class="arithmatex">\(3\)</span> 余 <span class="arithmatex">\(2\)</span> 的集合 <span class="arithmatex">\(B_2\)</span></p>
+<p>设二进制数 <span class="arithmatex">\(X\)</span> 对应的十进制数为 <span class="arithmatex">\(x\)</span> ，除 <span class="arithmatex">\(3\)</span> 后商为 <span class="arithmatex">\(k\)</span> ，余数为 <span class="arithmatex">\(b\)</span> ，则 <span class="arithmatex">\(x=3k + b\)</span> ，往 <span class="arithmatex">\(X\)</span> 的末尾添加 <span class="arithmatex">\(y\)</span> (<span class="arithmatex">\(y \in \{0,1\}\)</span>) ，得到新数 <span class="arithmatex">\(x' = 2x+y = 2(3k+b) + y = 6k + 2b + y\)</span> ，此时 <span class="arithmatex">\(x'\equiv 2b + y \pmod 3\)</span> </p>
+<p>据此我们可以归纳定义:</p>
+<p>(1) 基本项: <span class="arithmatex">\(\{ 0 \} \subseteq B_0, \{1\} \subseteq B_1\)</span></p>
+<p>(2) 归纳项: </p>
+<p>若 <span class="arithmatex">\(\alpha \in B_0\)</span> 且 <span class="arithmatex">\(\alpha \neq 0\)</span> ，则 <span class="arithmatex">\(\alpha0 \in B_0, \alpha1 \in B1\)</span></p>
+<p>若 <span class="arithmatex">\(\alpha \in B_1\)</span> ，则 <span class="arithmatex">\(\alpha0 \in B_2, \alpha1 \in B_0\)</span></p>
+<p>若 <span class="arithmatex">\(\alpha \in B_2\)</span> ，则 <span class="arithmatex">\(\alpha0 \in B_1, \alpha1 \in B_2\)</span></p>
+<p>(3) 极小化: <span class="arithmatex">\(B_0\)</span> 就是我们想要的集合</p>
 
 
 
@@ -2756,68 +2767,10 @@
 
 
 
-  
-  
 
 
 
 
-  
-
-
-
-  <h2 id="__comments">Comments</h2>
-  <!-- Insert generated snippet here -->
-  <script src="https://giscus.app/client.js"
-    data-repo="tsai-shiyuan/material-chasetsai"
-    data-repo-id="R_kgDOMWyBNw"
-    data-category="Announcements"
-    data-category-id="DIC_kwDOMWyBN84CkgNu"
-    data-mapping="pathname"
-    data-strict="0"
-    data-reactions-enabled="1"
-    data-emit-metadata="0"
-    data-input-position="bottom"
-    data-theme="preferred_color_scheme"
-    data-lang="zh-CN"
-    crossorigin="anonymous"
-    async>
-  </script>
-  <!-- Synchronize Giscus theme with palette -->
-  <script>
-    var giscus = document.querySelector("script[src*=giscus]")
-
-    // Set palette on initial load
-    var palette = __md_get("__palette")
-    if (palette && typeof palette.color === "object") {
-      var theme = palette.color.scheme === "slate"
-        ? "transparent_dark"
-        : "light"
-
-      // Instruct Giscus to set theme
-      giscus.setAttribute("data-theme", theme) 
-    }
-
-    // Register event handlers after documented loaded
-    document.addEventListener("DOMContentLoaded", function() {
-      var ref = document.querySelector("[data-md-component=palette]")
-      ref.addEventListener("change", function() {
-        var palette = __md_get("__palette")
-        if (palette && typeof palette.color === "object") {
-          var theme = palette.color.scheme === "slate"
-            ? "transparent_dark"
-            : "light"
-
-          // Instruct Giscus to change theme
-          var frame = document.querySelector(".giscus-frame")
-          frame.contentWindow.postMessage(
-            { giscus: { setConfig: { theme } } },
-            "https://giscus.app"
-          )
-        }
-      })
-    })
-  </script>
 
                 
               </article>
@@ -2841,19 +2794,33 @@
   
     
       
-        
-      
       <nav class="md-footer__inner md-grid" aria-label="Footer" >
+        
+          
+          <a href="../../Analysis/02_%E4%BA%8C%E9%87%8D%E7%A7%AF%E5%88%86%E5%8F%98%E9%87%8F%E4%BB%A3%E6%8D%A2/" class="md-footer__link md-footer__link--prev" aria-label="Previous: 二重积分变量代换">
+            <div class="md-footer__button md-icon">
+              
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"/></svg>
+            </div>
+            <div class="md-footer__title">
+              <span class="md-footer__direction">
+                Previous
+              </span>
+              <div class="md-ellipsis">
+                二重积分变量代换
+              </div>
+            </div>
+          </a>
         
         
           
-          <a href="Blogs/" class="md-footer__link md-footer__link--next" aria-label="Next: Blogs">
+          <a href="../01_%E6%9C%89%E5%BA%8F%E5%81%B6%E7%9A%84%E9%9B%86%E5%90%88%E6%9C%AF%E8%AF%AD%E5%AE%9A%E4%B9%89/" class="md-footer__link md-footer__link--next" aria-label="Next: 有序偶的集合术语定义">
             <div class="md-footer__title">
               <span class="md-footer__direction">
                 Next
               </span>
               <div class="md-ellipsis">
-                Blogs
+                有序偶的集合术语定义
               </div>
             </div>
             <div class="md-footer__button md-icon">
@@ -2919,12 +2886,12 @@
     </div>
     
     
-    <script id="__config" type="application/json">{"base": ".", "features": ["navigation.tabs", "navigation.top", "navigation.indexes", "navigation.footer", "toc.follow", "search.suggest", "search.highlight", "content.tabs.link", "content.code.annotate", "content.code.copy"], "search": "assets/javascripts/workers/search.b8dbb3d2.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
+    <script id="__config" type="application/json">{"base": "../../..", "features": ["navigation.tabs", "navigation.top", "navigation.indexes", "navigation.footer", "toc.follow", "search.suggest", "search.highlight", "content.tabs.link", "content.code.annotate", "content.code.copy"], "search": "../../../assets/javascripts/workers/search.b8dbb3d2.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
     
     
-      <script src="assets/javascripts/bundle.fe8b6f2b.min.js"></script>
+      <script src="../../../assets/javascripts/bundle.fe8b6f2b.min.js"></script>
       
-        <script src="javascripts/mathjax.js"></script>
+        <script src="../../../javascripts/mathjax.js"></script>
       
         <script src="https://unpkg.com/mathjax@3/es5/tex-mml-chtml.js"></script>
       

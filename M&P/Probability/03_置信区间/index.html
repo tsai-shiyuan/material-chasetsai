@@ -9,25 +9,25 @@
       
       
       
-        <link rel="prev" href="../CS50P%200.%20Functions%2C%20Variables/">
+        <link rel="prev" href="../02_%E5%A4%A7%E6%95%B0%E5%AE%9A%E5%BE%8B%2B%E4%B8%AD%E5%BF%83%E6%9E%81%E9%99%90%E5%AE%9A%E7%90%86/">
       
       
-        <link rel="next" href="../CS50P%202.%20Loops/">
+        <link rel="next" href="../../../Quotes/">
       
       
-      <link rel="icon" href="../../../../images/adl6i-63hs3-001.ico">
+      <link rel="icon" href="../../../images/adl6i-63hs3-001.ico">
       <meta name="generator" content="mkdocs-1.6.0, mkdocs-material-9.5.31">
     
     
       
-        <title>CS50P: 1. Conditionals - Chase's Blog</title>
+        <title>置信区间 - Chase's Blog</title>
       
     
     
-      <link rel="stylesheet" href="../../../../assets/stylesheets/main.3cba04c6.min.css">
+      <link rel="stylesheet" href="../../../assets/stylesheets/main.3cba04c6.min.css">
       
         
-        <link rel="stylesheet" href="../../../../assets/stylesheets/palette.06af60db.min.css">
+        <link rel="stylesheet" href="../../../assets/stylesheets/palette.06af60db.min.css">
       
       
 
@@ -48,18 +48,18 @@
     
       <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.16.7/katex.min.css">
     
-      <link rel="stylesheet" href="../../../../mkdocs/css/no-footer.css">
+      <link rel="stylesheet" href="../../../mkdocs/css/no-footer.css">
     
-      <link rel="stylesheet" href="../../../../mkdocs/css/unordered-list-symbols.css">
+      <link rel="stylesheet" href="../../../mkdocs/css/unordered-list-symbols.css">
     
-    <script>__md_scope=new URL("../../../..",location),__md_hash=e=>[...e].reduce((e,_)=>(e<<5)-e+_.charCodeAt(0),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    <script>__md_scope=new URL("../../..",location),__md_hash=e=>[...e].reduce((e,_)=>(e<<5)-e+_.charCodeAt(0),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
     
       
 
     
     
     
-   <link href="../../../../assets/stylesheets/glightbox.min.css" rel="stylesheet"/><style>
+   <link href="../../../assets/stylesheets/glightbox.min.css" rel="stylesheet"/><style>
     html.glightbox-open { overflow: initial; height: 100%; }
     .gslide-title { margin-top: 0px; user-select: text; }
     .gslide-desc { color: #666; user-select: text; }
@@ -68,7 +68,7 @@
     .gdesc-inner { font-size: 0.75rem; }
     body[data-md-color-scheme="slate"] .gdesc-inner { background: var(--md-default-bg-color);}
     body[data-md-color-scheme="slate"] .gslide-title { color: var(--md-default-fg-color);}
-    body[data-md-color-scheme="slate"] .gslide-desc { color: var(--md-default-fg-color);}</style> <script src="../../../../assets/javascripts/glightbox.min.js"></script></head>
+    body[data-md-color-scheme="slate"] .gslide-desc { color: var(--md-default-fg-color);}</style> <script src="../../../assets/javascripts/glightbox.min.js"></script></head>
   
   
     
@@ -87,7 +87,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#cs50p-1-conditionals" class="md-skip">
+        <a href="#_1" class="md-skip">
           Skip to content
         </a>
       
@@ -101,7 +101,7 @@
 
 <header class="md-header" data-md-component="header">
   <nav class="md-header__inner md-grid" aria-label="Header">
-    <a href="../../../.." title="Chase&#39;s Blog" class="md-header__button md-logo" aria-label="Chase's Blog" data-md-component="logo">
+    <a href="../../.." title="Chase&#39;s Blog" class="md-header__button md-logo" aria-label="Chase's Blog" data-md-component="logo">
       
   
   <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M8.35 3c1.18-.17 2.43 1.12 2.79 2.9.36 1.77-.29 3.35-1.47 3.53-1.17.18-2.43-1.11-2.8-2.89-.37-1.77.3-3.35 1.48-3.54m7.15 0c1.19.19 1.85 1.77 1.5 3.54-.38 1.78-1.63 3.07-2.81 2.89-1.19-.18-1.84-1.76-1.47-3.53.36-1.78 1.61-3.07 2.78-2.9M3 7.6c1.14-.49 2.69.4 3.5 1.95.76 1.58.5 3.24-.63 3.73-1.13.49-2.67-.39-3.46-1.96C1.62 9.75 1.9 8.08 3 7.6m18 0c1.1.48 1.38 2.15.59 3.72-.79 1.57-2.33 2.45-3.46 1.96-1.13-.49-1.39-2.15-.63-3.73C18.31 8 19.86 7.11 21 7.6m-1.67 10.78c.04.94-.68 1.98-1.54 2.37-1.79.82-3.91-.88-5.9-.88-1.99 0-4.13 1.77-5.89.88-1-.49-1.69-1.79-1.56-2.87.18-1.49 1.97-2.29 3.03-3.38 1.41-1.41 2.41-4.06 4.42-4.06 2 0 3.06 2.61 4.41 4.06 1.11 1.22 2.96 2.25 3.03 3.88Z"/></svg>
@@ -121,7 +121,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              CS50P: 1. Conditionals
+              置信区间
             
           </span>
         </div>
@@ -218,7 +218,7 @@
   
   
     <li class="md-tabs__item">
-      <a href="../../../.." class="md-tabs__link">
+      <a href="../../.." class="md-tabs__link">
         
   
     
@@ -237,12 +237,32 @@
     
     
       <li class="md-tabs__item">
-        <a href="../../../../Blogs/" class="md-tabs__link">
+        <a href="../../../Blogs/" class="md-tabs__link">
           
   
     
   
   Blogs
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../../Dev/" class="md-tabs__link">
+          
+  
+    
+  
+  Dev
 
         </a>
       </li>
@@ -259,27 +279,7 @@
     
     
       <li class="md-tabs__item md-tabs__item--active">
-        <a href="../../../" class="md-tabs__link">
-          
-  
-    
-  
-  Dev
-
-        </a>
-      </li>
-    
-  
-
-      
-        
-  
-  
-  
-    
-    
-      <li class="md-tabs__item">
-        <a href="../../../../M%26P/" class="md-tabs__link">
+        <a href="../../" class="md-tabs__link">
           
   
     
@@ -299,7 +299,7 @@
     
     
       <li class="md-tabs__item">
-        <a href="../../../../Quotes/" class="md-tabs__link">
+        <a href="../../../Quotes/" class="md-tabs__link">
           
   
     
@@ -319,7 +319,7 @@
     
     
       <li class="md-tabs__item">
-        <a href="../../../../Relax/" class="md-tabs__link">
+        <a href="../../../Relax/" class="md-tabs__link">
           
   
     
@@ -339,7 +339,7 @@
     
     
       <li class="md-tabs__item">
-        <a href="../../../../Site/" class="md-tabs__link">
+        <a href="../../../Site/" class="md-tabs__link">
           
   
     
@@ -374,7 +374,7 @@
 
 <nav class="md-nav md-nav--primary md-nav--lifted" aria-label="Navigation" data-md-level="0">
   <label class="md-nav__title" for="__drawer">
-    <a href="../../../.." title="Chase&#39;s Blog" class="md-nav__button md-logo" aria-label="Chase's Blog" data-md-component="logo">
+    <a href="../../.." title="Chase&#39;s Blog" class="md-nav__button md-logo" aria-label="Chase's Blog" data-md-component="logo">
       
   
   <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M8.35 3c1.18-.17 2.43 1.12 2.79 2.9.36 1.77-.29 3.35-1.47 3.53-1.17.18-2.43-1.11-2.8-2.89-.37-1.77.3-3.35 1.48-3.54m7.15 0c1.19.19 1.85 1.77 1.5 3.54-.38 1.78-1.63 3.07-2.81 2.89-1.19-.18-1.84-1.76-1.47-3.53.36-1.78 1.61-3.07 2.78-2.9M3 7.6c1.14-.49 2.69.4 3.5 1.95.76 1.58.5 3.24-.63 3.73-1.13.49-2.67-.39-3.46-1.96C1.62 9.75 1.9 8.08 3 7.6m18 0c1.1.48 1.38 2.15.59 3.72-.79 1.57-2.33 2.45-3.46 1.96-1.13-.49-1.39-2.15-.63-3.73C18.31 8 19.86 7.11 21 7.6m-1.67 10.78c.04.94-.68 1.98-1.54 2.37-1.79.82-3.91-.88-5.9-.88-1.99 0-4.13 1.77-5.89.88-1-.49-1.69-1.79-1.56-2.87.18-1.49 1.97-2.29 3.03-3.38 1.41-1.41 2.41-4.06 4.42-4.06 2 0 3.06 2.61 4.41 4.06 1.11 1.22 2.96 2.25 3.03 3.88Z"/></svg>
@@ -392,7 +392,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../.." class="md-nav__link">
+      <a href="../../.." class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -443,7 +443,7 @@
           
           
           <div class="md-nav__link md-nav__container">
-            <a href="../../../../Blogs/" class="md-nav__link ">
+            <a href="../../../Blogs/" class="md-nav__link ">
               
   
   <span class="md-ellipsis">
@@ -520,7 +520,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../Blogs/Git/Git/" class="md-nav__link">
+      <a href="../../../Blogs/Git/Git/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -541,7 +541,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../Blogs/Git/%E4%BD%BF%E7%94%A8Git%E5%AE%9E%E7%8E%B0Windows%E4%B8%8EMac%E6%96%87%E4%BB%B6%E5%90%8C%E6%AD%A5/" class="md-nav__link">
+      <a href="../../../Blogs/Git/%E4%BD%BF%E7%94%A8Git%E5%AE%9E%E7%8E%B0Windows%E4%B8%8EMac%E6%96%87%E4%BB%B6%E5%90%8C%E6%AD%A5/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -612,7 +612,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../Blogs/Markdown/Markdown%E8%AF%AD%E6%B3%95/" class="md-nav__link">
+      <a href="../../../Blogs/Markdown/Markdown%E8%AF%AD%E6%B3%95/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -683,7 +683,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../Blogs/Matlab/MATLAB%E5%9F%BA%E7%A1%80%E8%AF%AD%E6%B3%95/" class="md-nav__link">
+      <a href="../../../Blogs/Matlab/MATLAB%E5%9F%BA%E7%A1%80%E8%AF%AD%E6%B3%95/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -754,7 +754,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../Blogs/Toolkit/01_RSS%E5%AE%9A%E5%88%B6%E6%8E%A8%E9%80%81/" class="md-nav__link">
+      <a href="../../../Blogs/Toolkit/01_RSS%E5%AE%9A%E5%88%B6%E6%8E%A8%E9%80%81/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -837,7 +837,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../Blogs/macOS/b-01-Mac%E5%B8%B8%E7%94%A8%E6%93%8D%E4%BD%9C%E5%8F%8A%E5%BF%AB%E6%8D%B7%E9%94%AE/" class="md-nav__link">
+      <a href="../../../Blogs/macOS/b-01-Mac%E5%B8%B8%E7%94%A8%E6%93%8D%E4%BD%9C%E5%8F%8A%E5%BF%AB%E6%8D%B7%E9%94%AE/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -858,7 +858,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../Blogs/macOS/b-02-Xcode%E7%94%9F%E6%88%90%E7%9A%84%E5%8F%AF%E6%89%A7%E8%A1%8C%E6%96%87%E4%BB%B6%E5%9C%A8%E5%93%AA%E9%87%8C/" class="md-nav__link">
+      <a href="../../../Blogs/macOS/b-02-Xcode%E7%94%9F%E6%88%90%E7%9A%84%E5%8F%AF%E6%89%A7%E8%A1%8C%E6%96%87%E4%BB%B6%E5%9C%A8%E5%93%AA%E9%87%8C/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -879,7 +879,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../Blogs/macOS/b-03-%E6%9B%B4%E6%94%B9Mac%E6%96%87%E4%BB%B6%E7%9A%84%E9%BB%98%E8%AE%A4%E6%89%93%E5%BC%80%E6%96%B9%E5%BC%8F/" class="md-nav__link">
+      <a href="../../../Blogs/macOS/b-03-%E6%9B%B4%E6%94%B9Mac%E6%96%87%E4%BB%B6%E7%9A%84%E9%BB%98%E8%AE%A4%E6%89%93%E5%BC%80%E6%96%B9%E5%BC%8F/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -900,7 +900,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../Blogs/macOS/f-01-Mac%E7%9A%84%E6%96%87%E4%BB%B6%E7%B3%BB%E7%BB%9F/" class="md-nav__link">
+      <a href="../../../Blogs/macOS/f-01-Mac%E7%9A%84%E6%96%87%E4%BB%B6%E7%B3%BB%E7%BB%9F/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -921,7 +921,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../Blogs/macOS/f-02-%E8%AE%A4%E8%AF%86%E7%A8%8B%E5%BA%8F/" class="md-nav__link">
+      <a href="../../../Blogs/macOS/f-02-%E8%AE%A4%E8%AF%86%E7%A8%8B%E5%BA%8F/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -942,7 +942,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../Blogs/macOS/f-03-%E8%AE%A4%E8%AF%86%E7%BB%88%E7%AB%AF%E5%92%8Cshell/" class="md-nav__link">
+      <a href="../../../Blogs/macOS/f-03-%E8%AE%A4%E8%AF%86%E7%BB%88%E7%AB%AF%E5%92%8Cshell/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -963,7 +963,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../Blogs/macOS/f-04-%E5%BC%80%E5%90%AFVSCode%E7%9A%84%E5%A4%A7%E9%97%A8/" class="md-nav__link">
+      <a href="../../../Blogs/macOS/f-04-%E5%BC%80%E5%90%AFVSCode%E7%9A%84%E5%A4%A7%E9%97%A8/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -996,8 +996,6 @@
       
   
   
-    
-  
   
   
     
@@ -1014,22 +1012,19 @@
     
     
       
-        
-        
-      
       
     
     
-    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--nested">
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" checked>
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" >
         
           
           
           <div class="md-nav__link md-nav__container">
-            <a href="../../../" class="md-nav__link ">
+            <a href="../../../Dev/" class="md-nav__link ">
               
   
   <span class="md-ellipsis">
@@ -1040,13 +1035,13 @@
             </a>
             
               
-              <label class="md-nav__link " for="__nav_3" id="__nav_3_label" tabindex="">
+              <label class="md-nav__link " for="__nav_3" id="__nav_3_label" tabindex="0">
                 <span class="md-nav__icon md-icon"></span>
               </label>
             
           </div>
         
-        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="true">
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="false">
           <label class="md-nav__title" for="__nav_3">
             <span class="md-nav__icon md-icon"></span>
             Dev
@@ -1059,10 +1054,8 @@
                 
   
   
-    
   
   
-  
     
     
       
@@ -1078,11 +1071,11 @@
       
     
     
-    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--nested">
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_2" checked>
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_2" >
         
           
           <label class="md-nav__link" for="__nav_3_2" id="__nav_3_2_label" tabindex="0">
@@ -1096,7 +1089,7 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_3_2_label" aria-expanded="true">
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_3_2_label" aria-expanded="false">
           <label class="md-nav__title" for="__nav_3_2">
             <span class="md-nav__icon md-icon"></span>
             Coding
@@ -1152,7 +1145,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../C/1_C%E8%AF%AD%E8%A8%80%E5%A4%8D%E4%B9%A0%E7%AC%94%E8%AE%B0/" class="md-nav__link">
+      <a href="../../../Dev/Coding/C/1_C%E8%AF%AD%E8%A8%80%E5%A4%8D%E4%B9%A0%E7%AC%94%E8%AE%B0/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1223,7 +1216,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../Java/Java%E7%AC%94%E8%AE%B0/" class="md-nav__link">
+      <a href="../../../Dev/Coding/Java/Java%E7%AC%94%E8%AE%B0/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1249,10 +1242,8 @@
                 
   
   
-    
   
   
-  
     
     
       
@@ -1282,11 +1273,11 @@
       
     
     
-    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--nested">
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_2_3" checked>
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_2_3" >
         
           
           <label class="md-nav__link" for="__nav_3_2_3" id="__nav_3_2_3_label" tabindex="0">
@@ -1300,7 +1291,7 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_3_2_3_label" aria-expanded="true">
+        <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_3_2_3_label" aria-expanded="false">
           <label class="md-nav__title" for="__nav_3_2_3">
             <span class="md-nav__icon md-icon"></span>
             Python
@@ -1314,7 +1305,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../CS50P%200.%20Functions%2C%20Variables/" class="md-nav__link">
+      <a href="../../../Dev/Coding/Python/CS50P%200.%20Functions%2C%20Variables/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1332,30 +1323,10 @@
                 
   
   
-    
   
   
-  
-    <li class="md-nav__item md-nav__item--active">
-      
-      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
-      
-      
-        
-      
-      
-        <label class="md-nav__link md-nav__link--active" for="__toc">
-          
-  
-  <span class="md-ellipsis">
-    CS50P: 1. Conditionals
-  </span>
-  
-
-          <span class="md-nav__icon md-icon"></span>
-        </label>
-      
-      <a href="./" class="md-nav__link md-nav__link--active">
+    <li class="md-nav__item">
+      <a href="../../../Dev/Coding/Python/CS50P%201.%20Conditionals/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1364,106 +1335,6 @@
   
 
       </a>
-      
-        
-
-  
-
-<nav class="md-nav md-nav--secondary" aria-label="On this page">
-  
-  
-  
-    
-  
-  
-    <label class="md-nav__title" for="__toc">
-      <span class="md-nav__icon md-icon"></span>
-      On this page
-    </label>
-    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#_1" class="md-nav__link">
-    <span class="md-ellipsis">
-      运算符
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#_2" class="md-nav__link">
-    <span class="md-ellipsis">
-      布尔运算
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#_3" class="md-nav__link">
-    <span class="md-ellipsis">
-      选择语句
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="选择语句">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#if" class="md-nav__link">
-    <span class="md-ellipsis">
-      if
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#elif" class="md-nav__link">
-    <span class="md-ellipsis">
-      elif
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#else" class="md-nav__link">
-    <span class="md-ellipsis">
-      else
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#match" class="md-nav__link">
-    <span class="md-ellipsis">
-      match
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#pythonic-expressions" class="md-nav__link">
-    <span class="md-ellipsis">
-      Pythonic Expressions
-    </span>
-  </a>
-  
-</li>
-      
-    </ul>
-  
-</nav>
-      
     </li>
   
 
@@ -1476,7 +1347,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../CS50P%202.%20Loops/" class="md-nav__link">
+      <a href="../../../Dev/Coding/Python/CS50P%202.%20Loops/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1497,7 +1368,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../CS50P%203.%20Exceptions/" class="md-nav__link">
+      <a href="../../../Dev/Coding/Python/CS50P%203.%20Exceptions/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1518,7 +1389,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../CS50P%204.%20Libraries/" class="md-nav__link">
+      <a href="../../../Dev/Coding/Python/CS50P%204.%20Libraries/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1539,7 +1410,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../CS50P%205.%20Unit%20Tests/" class="md-nav__link">
+      <a href="../../../Dev/Coding/Python/CS50P%205.%20Unit%20Tests/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1560,7 +1431,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../CS50P%206.%20File%20IO/" class="md-nav__link">
+      <a href="../../../Dev/Coding/Python/CS50P%206.%20File%20IO/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1581,7 +1452,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../CS50P%207.%20Regular%20Expressions/" class="md-nav__link">
+      <a href="../../../Dev/Coding/Python/CS50P%207.%20Regular%20Expressions/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1602,7 +1473,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../CS50P%208.%20Object-Oriented%20Programming/" class="md-nav__link">
+      <a href="../../../Dev/Coding/Python/CS50P%208.%20Object-Oriented%20Programming/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1623,7 +1494,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../CS50P%209.%20Et%20Cetera/" class="md-nav__link">
+      <a href="../../../Dev/Coding/Python/CS50P%209.%20Et%20Cetera/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1704,7 +1575,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../Data%20Structure/G01_%E9%93%BE%E5%BC%8F%E5%89%8D%E5%90%91%E6%98%9F/" class="md-nav__link">
+      <a href="../../../Dev/Data%20Structure/G01_%E9%93%BE%E5%BC%8F%E5%89%8D%E5%90%91%E6%98%9F/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1725,7 +1596,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../Data%20Structure/S01_%E5%BF%AB%E9%80%9F%E6%8E%92%E5%BA%8F/" class="md-nav__link">
+      <a href="../../../Dev/Data%20Structure/S01_%E5%BF%AB%E9%80%9F%E6%8E%92%E5%BA%8F/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1758,6 +1629,8 @@
       
   
   
+    
+  
   
   
     
@@ -1778,19 +1651,22 @@
     
     
       
+        
+        
+      
       
     
     
-    <li class="md-nav__item md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4" >
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4" checked>
         
           
           
           <div class="md-nav__link md-nav__container">
-            <a href="../../../../M%26P/" class="md-nav__link ">
+            <a href="../../" class="md-nav__link ">
               
   
   <span class="md-ellipsis">
@@ -1801,13 +1677,13 @@
             </a>
             
               
-              <label class="md-nav__link " for="__nav_4" id="__nav_4_label" tabindex="0">
+              <label class="md-nav__link " for="__nav_4" id="__nav_4_label" tabindex="">
                 <span class="md-nav__icon md-icon"></span>
               </label>
             
           </div>
         
-        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="false">
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="true">
           <label class="md-nav__title" for="__nav_4">
             <span class="md-nav__icon md-icon"></span>
             M&P
@@ -1867,7 +1743,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../M%26P/Analysis/01_%E5%B8%B8%E5%BE%AE%E5%88%86%E6%96%B9%E7%A8%8B/" class="md-nav__link">
+      <a href="../../Analysis/01_%E5%B8%B8%E5%BE%AE%E5%88%86%E6%96%B9%E7%A8%8B/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1888,7 +1764,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../M%26P/Analysis/02_%E4%BA%8C%E9%87%8D%E7%A7%AF%E5%88%86%E5%8F%98%E9%87%8F%E4%BB%A3%E6%8D%A2/" class="md-nav__link">
+      <a href="../../Analysis/02_%E4%BA%8C%E9%87%8D%E7%A7%AF%E5%88%86%E5%8F%98%E9%87%8F%E4%BB%A3%E6%8D%A2/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1965,7 +1841,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../M%26P/Discrete%20Maths/00_%E9%9B%86%E5%90%88%E7%9A%84%E5%BD%92%E7%BA%B3%E5%AE%9A%E4%B9%89%E6%B3%95/" class="md-nav__link">
+      <a href="../../Discrete%20Maths/00_%E9%9B%86%E5%90%88%E7%9A%84%E5%BD%92%E7%BA%B3%E5%AE%9A%E4%B9%89%E6%B3%95/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1986,7 +1862,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../M%26P/Discrete%20Maths/01_%E6%9C%89%E5%BA%8F%E5%81%B6%E7%9A%84%E9%9B%86%E5%90%88%E6%9C%AF%E8%AF%AD%E5%AE%9A%E4%B9%89/" class="md-nav__link">
+      <a href="../../Discrete%20Maths/01_%E6%9C%89%E5%BA%8F%E5%81%B6%E7%9A%84%E9%9B%86%E5%90%88%E6%9C%AF%E8%AF%AD%E5%AE%9A%E4%B9%89/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -2007,7 +1883,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../M%26P/Discrete%20Maths/03_%E9%9B%86%E7%B1%BB/" class="md-nav__link">
+      <a href="../../Discrete%20Maths/03_%E9%9B%86%E7%B1%BB/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -2028,7 +1904,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../M%26P/Discrete%20Maths/05_%E8%87%AA%E7%84%B6%E6%95%B0/" class="md-nav__link">
+      <a href="../../Discrete%20Maths/05_%E8%87%AA%E7%84%B6%E6%95%B0/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -2105,7 +1981,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../M%26P/Physics/%E5%8A%9B%E5%AD%A6%EF%BD%9C%E5%A4%8D%E4%B9%A0/" class="md-nav__link">
+      <a href="../../Physics/%E5%8A%9B%E5%AD%A6%EF%BD%9C%E5%A4%8D%E4%B9%A0/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -2126,7 +2002,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../M%26P/Physics/%E7%94%B5%E7%A3%81%E5%AD%A6%EF%BD%9C%E5%A4%8D%E4%B9%A0/" class="md-nav__link">
+      <a href="../../Physics/%E7%94%B5%E7%A3%81%E5%AD%A6%EF%BD%9C%E5%A4%8D%E4%B9%A0/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -2147,7 +2023,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../M%26P/Physics/%E7%94%B5%E7%A3%81%E5%AD%A6%EF%BD%9C%E7%94%B5%E4%BB%8B%E8%B4%A8%E7%9A%84%E6%9E%81%E5%8C%96/" class="md-nav__link">
+      <a href="../../Physics/%E7%94%B5%E7%A3%81%E5%AD%A6%EF%BD%9C%E7%94%B5%E4%BB%8B%E8%B4%A8%E7%9A%84%E6%9E%81%E5%8C%96/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -2168,7 +2044,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../M%26P/Physics/%E8%BF%91%E4%BB%A3%E7%89%A9%E7%90%86%EF%BD%9C%E7%8B%AD%E4%B9%89%E7%9B%B8%E5%AF%B9%E8%AE%BA/" class="md-nav__link">
+      <a href="../../Physics/%E8%BF%91%E4%BB%A3%E7%89%A9%E7%90%86%EF%BD%9C%E7%8B%AD%E4%B9%89%E7%9B%B8%E5%AF%B9%E8%AE%BA/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -2194,8 +2070,10 @@
                 
   
   
+    
   
   
+  
     
     
       
@@ -2211,11 +2089,11 @@
       
     
     
-    <li class="md-nav__item md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4_5" >
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4_5" checked>
         
           
           <label class="md-nav__link" for="__nav_4_5" id="__nav_4_5_label" tabindex="0">
@@ -2229,7 +2107,7 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_4_5_label" aria-expanded="false">
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_4_5_label" aria-expanded="true">
           <label class="md-nav__title" for="__nav_4_5">
             <span class="md-nav__icon md-icon"></span>
             Probability
@@ -2243,7 +2121,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../M%26P/Probability/01_%E6%96%B9%E5%B7%AE%E4%B8%8E%E5%8D%8F%E6%96%B9%E5%B7%AE/" class="md-nav__link">
+      <a href="../01_%E6%96%B9%E5%B7%AE%E4%B8%8E%E5%8D%8F%E6%96%B9%E5%B7%AE/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -2264,7 +2142,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../M%26P/Probability/02_%E5%A4%A7%E6%95%B0%E5%AE%9A%E5%BE%8B%2B%E4%B8%AD%E5%BF%83%E6%9E%81%E9%99%90%E5%AE%9A%E7%90%86/" class="md-nav__link">
+      <a href="../02_%E5%A4%A7%E6%95%B0%E5%AE%9A%E5%BE%8B%2B%E4%B8%AD%E5%BF%83%E6%9E%81%E9%99%90%E5%AE%9A%E7%90%86/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -2282,10 +2160,30 @@
                 
   
   
+    
   
   
-    <li class="md-nav__item">
-      <a href="../../../../M%26P/Probability/03_%E7%BD%AE%E4%BF%A1%E5%8C%BA%E9%97%B4/" class="md-nav__link">
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  <span class="md-ellipsis">
+    置信区间
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
         
   
   <span class="md-ellipsis">
@@ -2294,6 +2192,55 @@
   
 
       </a>
+      
+        
+
+  
+
+<nav class="md-nav md-nav--secondary" aria-label="On this page">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      On this page
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      抽样误差
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_3" class="md-nav__link">
+    <span class="md-ellipsis">
+      置信区间构建
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#95" class="md-nav__link">
+    <span class="md-ellipsis">
+      95%的理解
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
     </li>
   
 
@@ -2346,7 +2293,7 @@
           
           
           <div class="md-nav__link md-nav__container">
-            <a href="../../../../Quotes/" class="md-nav__link ">
+            <a href="../../../Quotes/" class="md-nav__link ">
               
   
   <span class="md-ellipsis">
@@ -2421,7 +2368,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../Quotes/Book/1%E9%BB%91%E5%AE%A2%E4%B8%8E%E7%94%BB%E5%AE%B6/" class="md-nav__link">
+      <a href="../../../Quotes/Book/1%E9%BB%91%E5%AE%A2%E4%B8%8E%E7%94%BB%E5%AE%B6/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -2494,7 +2441,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../Quotes/Speech/David%20Brooks%20at%20Chicago%2C%202017/" class="md-nav__link">
+      <a href="../../../Quotes/Speech/David%20Brooks%20at%20Chicago%2C%202017/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -2515,7 +2462,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../Quotes/Speech/TED%E6%BC%94%E8%AE%B2/" class="md-nav__link">
+      <a href="../../../Quotes/Speech/TED%E6%BC%94%E8%AE%B2/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -2572,7 +2519,7 @@
           
           
           <div class="md-nav__link md-nav__container">
-            <a href="../../../../Relax/" class="md-nav__link ">
+            <a href="../../../Relax/" class="md-nav__link ">
               
   
   <span class="md-ellipsis">
@@ -2636,7 +2583,7 @@
           
           
           <div class="md-nav__link md-nav__container">
-            <a href="../../../../Site/" class="md-nav__link ">
+            <a href="../../../Site/" class="md-nav__link ">
               
   
   <span class="md-ellipsis">
@@ -2669,7 +2616,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../Site/1%E7%BD%91%E7%AB%99%E6%9E%84%E5%BB%BA/" class="md-nav__link">
+      <a href="../../../Site/1%E7%BD%91%E7%AB%99%E6%9E%84%E5%BB%BA/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -2690,7 +2637,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../Site/2%E5%9B%BE%E7%89%87%E6%8F%92%E5%85%A5/" class="md-nav__link">
+      <a href="../../../Site/2%E5%9B%BE%E7%89%87%E6%8F%92%E5%85%A5/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -2711,7 +2658,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../Site/3%E6%96%87%E7%AB%A0%E7%BC%96%E5%86%99/" class="md-nav__link">
+      <a href="../../../Site/3%E6%96%87%E7%AB%A0%E7%BC%96%E5%86%99/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -2732,7 +2679,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../Site/4%E6%9B%B4%E5%A4%9A%E5%8A%9F%E8%83%BD/" class="md-nav__link">
+      <a href="../../../Site/4%E6%9B%B4%E5%A4%9A%E5%8A%9F%E8%83%BD/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -2782,18 +2729,9 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#_1" class="md-nav__link">
-    <span class="md-ellipsis">
-      运算符
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
   <a href="#_2" class="md-nav__link">
     <span class="md-ellipsis">
-      布尔运算
+      抽样误差
     </span>
   </a>
   
@@ -2802,58 +2740,16 @@
         <li class="md-nav__item">
   <a href="#_3" class="md-nav__link">
     <span class="md-ellipsis">
-      选择语句
+      置信区间构建
     </span>
   </a>
-  
-    <nav class="md-nav" aria-label="选择语句">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#if" class="md-nav__link">
-    <span class="md-ellipsis">
-      if
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#elif" class="md-nav__link">
-    <span class="md-ellipsis">
-      elif
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#else" class="md-nav__link">
-    <span class="md-ellipsis">
-      else
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#match" class="md-nav__link">
-    <span class="md-ellipsis">
-      match
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#pythonic-expressions" class="md-nav__link">
+  <a href="#95" class="md-nav__link">
     <span class="md-ellipsis">
-      Pythonic Expressions
+      95%的理解
     </span>
   </a>
   
@@ -2874,120 +2770,31 @@
                   
 
 
-<h1 id="cs50p-1-conditionals">CS50P: 1. Conditionals<a class="headerlink" href="#cs50p-1-conditionals" title="Anchor link to this section for reference">&para;</a></h1>
-<h2 id="_1">运算符<a class="headerlink" href="#_1" title="Anchor link to this section for reference">&para;</a></h2>
-<p>python支持 <code>90 &lt;= score &lt;= 100</code></p>
-<table>
-<thead>
-<tr>
-<th>C</th>
-<th>Python</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>||</td>
-<td>or</td>
-</tr>
-<tr>
-<td>&amp;&amp;</td>
-<td>and</td>
-</tr>
-</tbody>
-</table>
-<h2 id="_2">布尔运算<a class="headerlink" href="#_2" title="Anchor link to this section for reference">&para;</a></h2>
-<p><code>True</code> or <code>False</code></p>
-<h2 id="_3">选择语句<a class="headerlink" href="#_3" title="Anchor link to this section for reference">&para;</a></h2>
-<h3 id="if">if<a class="headerlink" href="#if" title="Anchor link to this section for reference">&para;</a></h3>
-<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-0-1">1</a></span>
-<span class="normal"><a href="#__codelineno-0-2">2</a></span>
-<span class="normal"><a href="#__codelineno-0-3">3</a></span>
-<span class="normal"><a href="#__codelineno-0-4">4</a></span>
-<span class="normal"><a href="#__codelineno-0-5">5</a></span>
-<span class="normal"><a href="#__codelineno-0-6">6</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1"></a><span class="k">if</span> <span class="n">x</span> <span class="o">&lt;</span> <span class="n">y</span><span class="p">:</span>
-<a id="__codelineno-0-2" name="__codelineno-0-2"></a>    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;x is less than y&quot;</span><span class="p">)</span>
-<a id="__codelineno-0-3" name="__codelineno-0-3"></a><span class="k">if</span> <span class="n">x</span> <span class="o">&gt;</span> <span class="n">y</span><span class="p">:</span>
-<a id="__codelineno-0-4" name="__codelineno-0-4"></a>    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;x is greater than y&quot;</span><span class="p">)</span>
-<a id="__codelineno-0-5" name="__codelineno-0-5"></a><span class="k">if</span> <span class="n">x</span> <span class="o">==</span> <span class="n">y</span><span class="p">:</span>
-<a id="__codelineno-0-6" name="__codelineno-0-6"></a>    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;x is equal to y&quot;</span><span class="p">)</span>
-</code></pre></div></td></tr></table></div>
-<ul>
-<li><code>:</code></li>
-<li><code>....</code> 四个缩进，表示只有当 <code>if</code> 为真，该语句才能被执行。有缩进是一个代码块</li>
-</ul>
-<p>代码的逻辑：三个 <code>if</code> 都会被执行</p>
-<p><a class="glightbox" href="../image/%E6%88%AA%E5%B1%8F2024-07-10%2008.42.30.png" data-type="image" data-width="100%" data-height="auto" data-desc-position="bottom"><img alt="截屏2024-07-10 08.42.30" src="../image/%E6%88%AA%E5%B1%8F2024-07-10%2008.42.30.png" /></a></p>
-<h3 id="elif">elif<a class="headerlink" href="#elif" title="Anchor link to this section for reference">&para;</a></h3>
-<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-1-1">1</a></span>
-<span class="normal"><a href="#__codelineno-1-2">2</a></span>
-<span class="normal"><a href="#__codelineno-1-3">3</a></span>
-<span class="normal"><a href="#__codelineno-1-4">4</a></span>
-<span class="normal"><a href="#__codelineno-1-5">5</a></span>
-<span class="normal"><a href="#__codelineno-1-6">6</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1"></a><span class="k">if</span> <span class="n">x</span> <span class="o">&lt;</span> <span class="n">y</span><span class="p">:</span>
-<a id="__codelineno-1-2" name="__codelineno-1-2"></a>    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;x is less than y&quot;</span><span class="p">)</span>
-<a id="__codelineno-1-3" name="__codelineno-1-3"></a><span class="k">elif</span> <span class="n">x</span> <span class="o">&gt;</span> <span class="n">y</span><span class="p">:</span>
-<a id="__codelineno-1-4" name="__codelineno-1-4"></a>    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;x is greater than y&quot;</span><span class="p">)</span>
-<a id="__codelineno-1-5" name="__codelineno-1-5"></a><span class="k">elif</span> <span class="n">x</span> <span class="o">==</span> <span class="n">y</span><span class="p">:</span>
-<a id="__codelineno-1-6" name="__codelineno-1-6"></a>    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;x is equal to y&quot;</span><span class="p">)</span>
-</code></pre></div></td></tr></table></div>
-<p><a class="glightbox" href="../image/%E6%88%AA%E5%B1%8F2024-07-10%2008.49.55.png" data-type="image" data-width="100%" data-height="auto" data-desc-position="bottom"><img alt="截屏2024-07-10 08.49.55" src="../image/%E6%88%AA%E5%B1%8F2024-07-10%2008.49.55.png" /></a></p>
-<h3 id="else">else<a class="headerlink" href="#else" title="Anchor link to this section for reference">&para;</a></h3>
-<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-2-1">1</a></span>
-<span class="normal"><a href="#__codelineno-2-2">2</a></span>
-<span class="normal"><a href="#__codelineno-2-3">3</a></span>
-<span class="normal"><a href="#__codelineno-2-4">4</a></span>
-<span class="normal"><a href="#__codelineno-2-5">5</a></span>
-<span class="normal"><a href="#__codelineno-2-6">6</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1"></a><span class="k">if</span> <span class="n">x</span> <span class="o">&lt;</span> <span class="n">y</span><span class="p">:</span>
-<a id="__codelineno-2-2" name="__codelineno-2-2"></a>    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;x is less than y&quot;</span><span class="p">)</span>
-<a id="__codelineno-2-3" name="__codelineno-2-3"></a><span class="k">elif</span> <span class="n">x</span> <span class="o">&gt;</span> <span class="n">y</span><span class="p">:</span>
-<a id="__codelineno-2-4" name="__codelineno-2-4"></a>    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;x is greater than y&quot;</span><span class="p">)</span>
-<a id="__codelineno-2-5" name="__codelineno-2-5"></a><span class="k">else</span><span class="p">:</span>
-<a id="__codelineno-2-6" name="__codelineno-2-6"></a>    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;x is equal to y&quot;</span><span class="p">)</span>
-</code></pre></div></td></tr></table></div>
-<p><a class="glightbox" href="../image/%E6%88%AA%E5%B1%8F2024-07-10%2008.55.01.png" data-type="image" data-width="100%" data-height="auto" data-desc-position="bottom"><img alt="截屏2024-07-10 08.55.01" src="../image/%E6%88%AA%E5%B1%8F2024-07-10%2008.55.01.png" /></a></p>
-<h3 id="match">match<a class="headerlink" href="#match" title="Anchor link to this section for reference">&para;</a></h3>
-<p>类似 <code>switch</code></p>
-<p>原：</p>
-<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-3-1">1</a></span>
-<span class="normal"><a href="#__codelineno-3-2">2</a></span>
-<span class="normal"><a href="#__codelineno-3-3">3</a></span>
-<span class="normal"><a href="#__codelineno-3-4">4</a></span>
-<span class="normal"><a href="#__codelineno-3-5">5</a></span>
-<span class="normal"><a href="#__codelineno-3-6">6</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-3-1" name="__codelineno-3-1"></a><span class="k">if</span> <span class="n">name</span> <span class="o">==</span> <span class="s2">&quot;Harry&quot;</span> <span class="ow">or</span> <span class="n">name</span> <span class="o">==</span> <span class="s2">&quot;Hermione&quot;</span> <span class="ow">or</span> <span class="n">name</span> <span class="o">==</span> <span class="s2">&quot;Ron&quot;</span><span class="p">:</span>      <span class="c1">#字符串 ==</span>
-<a id="__codelineno-3-2" name="__codelineno-3-2"></a>    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Gryffindor&quot;</span><span class="p">)</span>
-<a id="__codelineno-3-3" name="__codelineno-3-3"></a><span class="k">elif</span> <span class="n">name</span> <span class="o">==</span> <span class="s2">&quot;Draco&quot;</span><span class="p">:</span>
-<a id="__codelineno-3-4" name="__codelineno-3-4"></a>    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Slytherin&quot;</span><span class="p">)</span>
-<a id="__codelineno-3-5" name="__codelineno-3-5"></a><span class="k">else</span><span class="p">:</span>
-<a id="__codelineno-3-6" name="__codelineno-3-6"></a>    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Who?&quot;</span><span class="p">)</span>
-</code></pre></div></td></tr></table></div>
-<p>match：</p>
-<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-4-1">1</a></span>
-<span class="normal"><a href="#__codelineno-4-2">2</a></span>
-<span class="normal"><a href="#__codelineno-4-3">3</a></span>
-<span class="normal"><a href="#__codelineno-4-4">4</a></span>
-<span class="normal"><a href="#__codelineno-4-5">5</a></span>
-<span class="normal"><a href="#__codelineno-4-6">6</a></span>
-<span class="normal"><a href="#__codelineno-4-7">7</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-4-1" name="__codelineno-4-1"></a><span class="k">match</span> <span class="n">name</span><span class="p">:</span>
-<a id="__codelineno-4-2" name="__codelineno-4-2"></a>    <span class="k">case</span> <span class="s2">&quot;Harry&quot;</span> <span class="o">|</span> <span class="s2">&quot;Hermione&quot;</span> <span class="o">|</span> <span class="s2">&quot;Ron&quot;</span><span class="p">:</span> 
-<a id="__codelineno-4-3" name="__codelineno-4-3"></a>        <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Gryffindor&quot;</span><span class="p">)</span>
-<a id="__codelineno-4-4" name="__codelineno-4-4"></a>    <span class="k">case</span> <span class="s2">&quot;Draco&quot;</span><span class="p">:</span>
-<a id="__codelineno-4-5" name="__codelineno-4-5"></a>        <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Slytherin&quot;</span><span class="p">)</span>
-<a id="__codelineno-4-6" name="__codelineno-4-6"></a>    <span class="k">case</span><span class="w"> </span><span class="k">_</span><span class="p">:</span>
-<a id="__codelineno-4-7" name="__codelineno-4-7"></a>        <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Who?&quot;</span><span class="p">)</span>
-</code></pre></div></td></tr></table></div>
-<ul>
-<li><code>case _:</code> 表示else</li>
-<li><code>|</code> 在case中表示或</li>
-</ul>
-<h2 id="pythonic-expressions">Pythonic Expressions<a class="headerlink" href="#pythonic-expressions" title="Anchor link to this section for reference">&para;</a></h2>
-<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-5-1">1</a></span>
-<span class="normal"><a href="#__codelineno-5-2">2</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-5-1" name="__codelineno-5-1"></a><span class="k">def</span> <span class="nf">is_even</span><span class="p">(</span><span class="n">x</span><span class="p">):</span>
-<a id="__codelineno-5-2" name="__codelineno-5-2"></a>    <span class="k">return</span> <span class="kc">True</span> <span class="k">if</span> <span class="n">x</span> <span class="o">%</span> <span class="mi">2</span> <span class="o">==</span> <span class="mi">0</span> <span class="k">else</span> <span class="kc">False</span>
-</code></pre></div></td></tr></table></div>
-<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-6-1">1</a></span>
-<span class="normal"><a href="#__codelineno-6-2">2</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-6-1" name="__codelineno-6-1"></a><span class="k">def</span> <span class="nf">is_even</span><span class="p">(</span><span class="n">x</span><span class="p">):</span>
-<a id="__codelineno-6-2" name="__codelineno-6-2"></a>    <span class="k">return</span> <span class="n">x</span> <span class="o">%</span> <span class="mi">2</span> <span class="o">==</span> <span class="mi">0</span>
-</code></pre></div></td></tr></table></div>
+<h1 id="_1">置信区间<a class="headerlink" href="#_1" title="Anchor link to this section for reference">&para;</a></h1>
+<p>2024/11/25</p>
+<p>在同一个总体中，多次抽取样本量为n的样本，每一组样本可以计算出一个样本均值，将这些样本均值汇集在一起就获得了样本均值的抽样分布。我们把样本均值看做一个新“随机变量”，我们可以对其进行分析。</p>
+<p>规律: 总体 <span class="arithmatex">\(X\)</span> 的均值为 <span class="arithmatex">\(\mu\)</span>，方差为 <span class="arithmatex">\(\sigma^2\)</span>，则样本均值服从正态分布 <span class="arithmatex">\(N(\mu, \frac{\sigma^2}{n})\)</span></p>
+<p>如果我们抽取了一个样本，可以算出样本均值，那么如何就此估计总体均值呢？</p>
+<h2 id="_2">抽样误差<a class="headerlink" href="#_2" title="Anchor link to this section for reference">&para;</a></h2>
+<p>定义抽样误差 = <span class="arithmatex">\(|\bar{x} - \mu|\)</span>，我们如果知道样本均值和抽样误差，就可以计算总体均值</p>
+<h2 id="_3">置信区间构建<a class="headerlink" href="#_3" title="Anchor link to this section for reference">&para;</a></h2>
+<p>样本均值 <span class="arithmatex">\(\bar{x}\)</span> 服从正态分布，则 95% 的样本均值会落在 <span class="arithmatex">\(\mu \pm 1.96\frac{\sigma}{\sqrt{n}}\)</span> 的范围内，即满足:</p>
+<div class="arithmatex">\[
+\mu - 1.96 \times \frac{\sigma}{\sqrt{n}} \leqslant \bar{x} \leqslant \mu + 1.96 \times \frac{\sigma}{\sqrt{n}}
+\]</div>
+<p>有 95% 的 <span class="arithmatex">\(\bar{x}\)</span> 满足:</p>
+<div class="arithmatex">\[
+\bar{x} - 1.96 \times \frac{\sigma}{\sqrt{n}} \leqslant \mu \leqslant \bar{x} + 1.96 \times \frac{\sigma}{\sqrt{n}}
+\]</div>
+<p>这个区间就是 95% 的置信区间</p>
+<h2 id="95">95%的理解<a class="headerlink" href="#95" title="Anchor link to this section for reference">&para;</a></h2>
+<p>每抽取一个样本，按照上面的计算方法，就可以获得一个95%置信区间，这些区间不完全相同，并且有的可能包括总体均数，有的可能不包括。</p>
+<p>假设我们重复抽样100次，95%的含义是: 我们几乎可以断定其中有95个区间是包括总体均值的。(图中 <span class="arithmatex">\(\bar{x}\)</span> 在 <span class="arithmatex">\(\mu \pm 1.96 \frac{\sigma}{\sqrt{n}}\)</span> 内，则区间会覆盖总体均值 <span class="arithmatex">\(\mu\)</span> )</p>
+<p>图示:</p>
+<p><a class="glightbox" href="../images_note/%E6%88%AA%E5%B1%8F2024-11-29%2020.12.32.png" data-type="image" data-width="100%" data-height="auto" data-desc-position="bottom"><img alt="alt text" src="../images_note/%E6%88%AA%E5%B1%8F2024-11-29%2020.12.32.png" /></a></p>
+<hr />
+<p>Reference:</p>
+<p><a href="https://zhuanlan.zhihu.com/p/140194206">知乎｜怎样全面理解95%置信区间</a></p>
 
 
 
@@ -3025,7 +2832,7 @@
       <nav class="md-footer__inner md-grid" aria-label="Footer" >
         
           
-          <a href="../CS50P%200.%20Functions%2C%20Variables/" class="md-footer__link md-footer__link--prev" aria-label="Previous: CS50P: 0. Functions, Variables">
+          <a href="../02_%E5%A4%A7%E6%95%B0%E5%AE%9A%E5%BE%8B%2B%E4%B8%AD%E5%BF%83%E6%9E%81%E9%99%90%E5%AE%9A%E7%90%86/" class="md-footer__link md-footer__link--prev" aria-label="Previous: 大数定律与中心极限定理">
             <div class="md-footer__button md-icon">
               
               <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"/></svg>
@@ -3035,20 +2842,20 @@
                 Previous
               </span>
               <div class="md-ellipsis">
-                CS50P: 0. Functions, Variables
+                大数定律与中心极限定理
               </div>
             </div>
           </a>
         
         
           
-          <a href="../CS50P%202.%20Loops/" class="md-footer__link md-footer__link--next" aria-label="Next: CS50P: 2. Loops">
+          <a href="../../../Quotes/" class="md-footer__link md-footer__link--next" aria-label="Next: Quotes">
             <div class="md-footer__title">
               <span class="md-footer__direction">
                 Next
               </span>
               <div class="md-ellipsis">
-                CS50P: 2. Loops
+                Quotes
               </div>
             </div>
             <div class="md-footer__button md-icon">
@@ -3114,12 +2921,12 @@
     </div>
     
     
-    <script id="__config" type="application/json">{"base": "../../../..", "features": ["navigation.tabs", "navigation.top", "navigation.indexes", "navigation.footer", "toc.follow", "search.suggest", "search.highlight", "content.tabs.link", "content.code.annotate", "content.code.copy"], "search": "../../../../assets/javascripts/workers/search.b8dbb3d2.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
+    <script id="__config" type="application/json">{"base": "../../..", "features": ["navigation.tabs", "navigation.top", "navigation.indexes", "navigation.footer", "toc.follow", "search.suggest", "search.highlight", "content.tabs.link", "content.code.annotate", "content.code.copy"], "search": "../../../assets/javascripts/workers/search.b8dbb3d2.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
     
     
-      <script src="../../../../assets/javascripts/bundle.fe8b6f2b.min.js"></script>
+      <script src="../../../assets/javascripts/bundle.fe8b6f2b.min.js"></script>
       
-        <script src="../../../../javascripts/mathjax.js"></script>
+        <script src="../../../javascripts/mathjax.js"></script>
       
         <script src="https://unpkg.com/mathjax@3/es5/tex-mml-chtml.js"></script>
       

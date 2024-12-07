@@ -1803,6 +1803,8 @@
       
         
       
+        
+      
     
     
       
@@ -1909,6 +1911,27 @@
   
   <span class="md-ellipsis">
     自然数
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Discrete%20Maths/06_%E5%9F%BA%E6%95%B0/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    基数
   </span>
   
 
@@ -2941,12 +2964,20 @@
 </div>
 <h2 id="_2">重要不等式<a class="headerlink" href="#_2" title="Anchor link to this section for reference">&para;</a></h2>
 <h3 id="markov">马尔可夫(Markov)不等式<a class="headerlink" href="#markov" title="Anchor link to this section for reference">&para;</a></h3>
-<p>设非负随机变量 <span class="arithmatex">\(X\)</span> 的期望 <span class="arithmatex">\(E(X)\)</span> 存在，则对 <span class="arithmatex">\(\forall \varepsilon &gt; 0\)</span>，<span class="arithmatex">\(P(\left| x\right| \geq \varepsilon ) \leq  \frac{E(X)}{\varepsilon }\)</span></p>
+<p>设非负随机变量 <span class="arithmatex">\(X\)</span> 的期望 <span class="arithmatex">\(E(X)\)</span> 存在，则对 <span class="arithmatex">\(\forall \varepsilon &gt; 0\)</span>，<span class="arithmatex">\(P(x \geq \varepsilon ) \leq  \frac{E(X)}{\varepsilon }\)</span></p>
 <p>理解: 如果我们知道所有人的平均收入为 <span class="arithmatex">\(a\)</span>，那么随机抽一个人，收入超过 <span class="arithmatex">\(10a\)</span> 的概率不超过 <span class="arithmatex">\(10\%\)</span></p>
 <h3 id="chebyshev">切比雪夫(Chebyshev)不等式<a class="headerlink" href="#chebyshev" title="Anchor link to this section for reference">&para;</a></h3>
 <p>设 <span class="arithmatex">\(X\)</span> 的方差 <span class="arithmatex">\(D(X)\)</span> 存在，则对 <span class="arithmatex">\(\forall \varepsilon &gt;0\)</span>，<span class="arithmatex">\(P(\left| x-E(X)\right| \geq \varepsilon ) \leq  \frac{D(X)}{\varepsilon^2}\)</span></p>
 <h2 id="_3">大数定律<a class="headerlink" href="#_3" title="Anchor link to this section for reference">&para;</a></h2>
 <h3 id="_4">切比雪夫大数定律<a class="headerlink" href="#_4" title="Anchor link to this section for reference">&para;</a></h3>
+<p><span class="arithmatex">\(X_1,X_2, \cdots, X_n, \cdots\)</span> 是相互独立的随机变量序列，每个 <span class="arithmatex">\(X_k\)</span> 都有有限方差，且有公共上界，则有 </p>
+<div class="arithmatex">\[
+\lim\limits_{n\rightarrow \infty}D(\frac{1}{n}\sum\limits_{k=1}^{n}X_k) = 0\\
+\lim\limits_{n\rightarrow \infty}P(|\frac{1}{n}\sum\limits_{k=1}^{n}X_k-\frac{1}{n}\sum\limits_{k=1}^{n}E(X_k)|\geqslant \varepsilon) =0
+\]</div>
+<p>证明:</p>
+<p>设 <span class="arithmatex">\(D(X_k) \leqslant c\)</span>，则 <span class="arithmatex">\(D(\frac{1}{n}\sum\limits_{k=1}^{n}X_k)=\frac{1}{n^2}\sum\limits_{k=1}^{n}D(X_k) \leqslant \frac{1}{n^2} \cdot nc\)</span></p>
+<p>由切比雪夫不等式: <span class="arithmatex">\(P(|\sum\limits_{k=1}^{n}\frac{1}{n}X_k-E(\sum\limits_{k=1}^{n}\frac{1}{n}X_k)|\geqslant \varepsilon) \leqslant \frac{D(\frac{1}{n}\sum\limits_{k=1}^{n}X_k)}{\varepsilon^2}\)</span></p>
 <h3 id="_5">辛钦大数定律<a class="headerlink" href="#_5" title="Anchor link to this section for reference">&para;</a></h3>
 <p><a class="glightbox" href="../images_note/%E6%88%AA%E5%B1%8F2024-11-09%2013.39.58.png" data-type="image" data-width="100%" data-height="auto" data-desc-position="bottom"><img alt="截屏2024-11-09 13.39.58" src="../images_note/%E6%88%AA%E5%B1%8F2024-11-09%2013.39.58.png" /></a></p>
 <p>理解: 具有相同分布的独立随机变量 <span class="arithmatex">\(X_1, \cdots X_n\)</span>，当 <span class="arithmatex">\(n\)</span> 很大时，它们的算数平均值很接近于 <span class="arithmatex">\(\mu\)</span></p>

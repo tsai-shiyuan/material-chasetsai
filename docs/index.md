@@ -1,11 +1,7 @@
 ---
 comments: false
 hide:
-  - navigation
-  - toc
 ---
-
-<div style="max-width: 800px; margin: 0 auto; padding: 0 2rem;" markdown="1">
 
 # 你好
 
@@ -21,8 +17,8 @@ hide:
 
 ## 个人简介
 
-- 2020.09 - 2023.06  成都树德中学
-- 2023.09 - now      北京仰望星空大学 ✈️ 6系 ✨
+- 2020.09 - 2023.06 成都树德中学
+- 2023.09 - now 北京仰望星空大学 ✈️ 6系 ✨
 
 喜灰fans | 喜欢学新知识 | 爱听歌 | 有点完美主义 | 学习ing | ~~伪~~数学迷
 

@@ -1,156 +1,158 @@
-site_name: Chase's Blog     # 左上角标题
-repo_url: https://github.com/tsai-shiyuan/material-chasetsai
+site_name: Chase's Blog # 左上角标题
+repo_url: https://github.com/tsai-shiyuan/blog
 repo_name: tsai-shiyuan
 
 nav:
-  - 我:
-    - index.md
   - 博客:
-    - BLOG/index.md
-    - Git:
-      - Git: BLOG/Git/git.md
-      - 使用 Git 实现文件同步: BLOG/Git/sync-with-git.md
-    - Markdown:
-      - Markdown 语法: BLOG/markdown/markdown-grammar.md
-      - LaTeX: BLOG/markdown/latex.md
-    - Cool Stuff:
-      - RSS｜定制信息推送: BLOG/Toolkit/rss.md
-      - Mermaid｜代码绘图: BLOG/Toolkit/mermaid.md
+      - BLOG/index.md
+      - Git:
+          - Git: BLOG/Git/git.md
+          - 使用 Git 实现文件同步: BLOG/Git/sync-with-git.md
+      - Markdown:
+          - Markdown 语法: BLOG/markdown/markdown-grammar.md
+          - LaTeX: BLOG/markdown/latex.md
+      - Cool Stuff:
+          - RSS｜定制信息推送: BLOG/Toolkit/rss.md
+          - Mermaid｜代码绘图: BLOG/Toolkit/mermaid.md
+          - 网易云音乐下载 MP3: BLOG/Toolkit/netease-mp3.md
   - 笔记:
-    - COURSE/index.md
-    - 面向对象先导:
-      - Lecture Notes: COURSE/面向对象先导/1-oopre-lecture.md
-      - 递归下降解析表达式: COURSE/面向对象先导/2-top-down-parsing.md
-      - 设计模式: COURSE/面向对象先导/3-design-pattern.md
-    - 信号处理与信息推断:
-      - COURSE/信号处理与信息推断/index.md
-      - COURSE/信号处理与信息推断/贝叶斯.md
-    - C 语言系统级编程:
-      - COURSE/C语言系统级编程/index.md
-      - COURSE/C语言系统级编程/Lecture-1.md
-      - COURSE/C语言系统级编程/Lecture-2.md
-      - COURSE/C语言系统级编程/Lecture-3.md
-      - COURSE/C语言系统级编程/Lecture-4.md
-      - COURSE/C语言系统级编程/Lecture-5.md
-      - COURSE/C语言系统级编程/Lecture-6.md
-      - COURSE/C语言系统级编程/Lecture-7.md
-      - COURSE/C语言系统级编程/Lecture-8.md      
+      - COURSE/index.md
+      - 面向对象先导:
+          - Lecture Notes: COURSE/面向对象先导/1-oopre-lecture.md
+          - 递归下降解析表达式: COURSE/面向对象先导/2-top-down-parsing.md
+          - 设计模式: COURSE/面向对象先导/3-design-pattern.md
+      - 信号处理与信息推断:
+          - COURSE/信号处理与信息推断/index.md
+          - COURSE/信号处理与信息推断/贝叶斯.md
+      - C 语言系统级编程:
+          - COURSE/C语言系统级编程/index.md
+          - COURSE/C语言系统级编程/Lecture-1.md
+          - COURSE/C语言系统级编程/Lecture-2.md
+          - COURSE/C语言系统级编程/Lecture-3.md
+          - COURSE/C语言系统级编程/Lecture-4.md
+          - COURSE/C语言系统级编程/Lecture-5.md
+          - COURSE/C语言系统级编程/Lecture-6.md
+          - COURSE/C语言系统级编程/Lecture-7.md
+          - COURSE/C语言系统级编程/Lecture-8.md
+      - 数据库:
+          - 数据库笔记（佛脚版）: COURSE/数据库/all-sub.md
   - 开发:
-    - DEV/index.md
-    - C:
-      - C 语言复习笔记: DEV/coding-c/c-review-notes.md
-    - Java:
-      - Java 学习笔记: DEV/coding-java/java-notes.md
-      - 命令行编译运行 Java 项目: DEV/coding-java/cmd-run.md
-    - Python:
-      - CS50P 0. Functions, Variables: DEV/coding-python/CS50P0-Functions-Variables.md
-      - CS50P 1. Conditionals: DEV/coding-python/CS50P1-Conditionals.md
-      - CS50P 2. Loops: DEV/coding-python/CS50P2-Loops.md
-      - CS50P 3. Exceptions: DEV/coding-python/CS50P3-Exceptions.md
-      - CS50P 4. Libraries: DEV/coding-python/CS50P4-Libraries.md
-      - CS50P 5. Unit Tests: DEV/coding-python/CS50P5-Unit-Tests.md
-      - CS50P 6. File I/O: DEV/coding-python/CS50P6-File-IO.md
-      - CS50P 7. Regular Expressions: DEV/coding-python/CS50P7-Regular-Expressions.md
-      - CS50P 8. Object-Oriented Programming: DEV/coding-python/CS50P8-Object-Oriented-Programming.md
-      - CS50P 9. Et Cetera: DEV/coding-python/CS50P9-Et-Cetera.md
-    - Computer Organization:
-      - 实验记录:
-        - P0 Logisim: DEV/computer-organization/labs/P0-Logisim.md
-        - P1 Verilog: DEV/computer-organization/labs/P1-Verilog.md
-        - P2 MIPS汇编: DEV/computer-organization/labs/P2-MIPS汇编.md
-        - P3 单周期CPU-Logisim: DEV/computer-organization/labs/P3-单周期CPU-Logisim.md
-        - P4 单周期CPU-Verilog: DEV/computer-organization/labs/P4-单周期CPU-Verilog.md
-        - P5 流水线CPU-1: DEV/computer-organization/labs/P5-流水线CPU-1.md
-        - P6 流水线CPU-2: DEV/computer-organization/labs/P6-流水线CPU-2.md
-        - P7 MIPS微体系: DEV/computer-organization/labs/P7-MIPS微体系.md
-    - Data Structure:
-      - Graph｜链式前向星: DEV/data-structure/G01_链式前向星.md
-      - Sorting｜快速排序: DEV/data-structure/S01_快速排序.md
-    - Operating System:
-      - Bootstrap: DEV/operating-system/lab1_thinking.md
-      - Memory: DEV/operating-system/lab2_thinking.md
-      - Process: DEV/operating-system/lab3_thinking.md
-      - Syscall & Fork: DEV/operating-system/lab4_thinking.md 
-      - File System: DEV/operating-system/lab5_thinking.md
-      - Shell: DEV/operating-system/lab6_thinking.md
+      - DEV/index.md
+      - C:
+          - C 语言复习笔记: DEV/coding-c/c-review-notes.md
+      - Java:
+          - Java 学习笔记: DEV/coding-java/java-notes.md
+          - 命令行编译运行 Java 项目: DEV/coding-java/cmd-run.md
+      - Python:
+          - CS50P 0. Functions, Variables: DEV/coding-python/CS50P0-Functions-Variables.md
+          - CS50P 1. Conditionals: DEV/coding-python/CS50P1-Conditionals.md
+          - CS50P 2. Loops: DEV/coding-python/CS50P2-Loops.md
+          - CS50P 3. Exceptions: DEV/coding-python/CS50P3-Exceptions.md
+          - CS50P 4. Libraries: DEV/coding-python/CS50P4-Libraries.md
+          - CS50P 5. Unit Tests: DEV/coding-python/CS50P5-Unit-Tests.md
+          - CS50P 6. File I/O: DEV/coding-python/CS50P6-File-IO.md
+          - CS50P 7. Regular Expressions: DEV/coding-python/CS50P7-Regular-Expressions.md
+          - CS50P 8. Object-Oriented Programming: DEV/coding-python/CS50P8-Object-Oriented-Programming.md
+          - CS50P 9. Et Cetera: DEV/coding-python/CS50P9-Et-Cetera.md
+          - Python 库: DEV/coding-python/python-library.md
+      - Computer Organization:
+          - 实验记录:
+              - P0 Logisim: DEV/computer-organization/labs/P0-Logisim.md
+              - P1 Verilog: DEV/computer-organization/labs/P1-Verilog.md
+              - P2 MIPS汇编: DEV/computer-organization/labs/P2-MIPS汇编.md
+              - P3 单周期CPU-Logisim: DEV/computer-organization/labs/P3-单周期CPU-Logisim.md
+              - P4 单周期CPU-Verilog: DEV/computer-organization/labs/P4-单周期CPU-Verilog.md
+              - P5 流水线CPU-1: DEV/computer-organization/labs/P5-流水线CPU-1.md
+              - P6 流水线CPU-2: DEV/computer-organization/labs/P6-流水线CPU-2.md
+              - P7 MIPS微体系: DEV/computer-organization/labs/P7-MIPS微体系.md
+      - Data Structure:
+          - Graph｜链式前向星: DEV/data-structure/G01_链式前向星.md
+          - Sorting｜快速排序: DEV/data-structure/S01_快速排序.md
+      - Operating System:
+          - Bootstrap: DEV/operating-system/lab1_thinking.md
+          - Memory: DEV/operating-system/lab2_thinking.md
+          - Process: DEV/operating-system/lab3_thinking.md
+          - Syscall & Fork: DEV/operating-system/lab4_thinking.md
+          - File System: DEV/operating-system/lab5_thinking.md
+          - Shell: DEV/operating-system/lab6_thinking.md
   - 数学:
-    - MATHS/index.md
-    - Analysis:
-      - MATHS/Analysis/01_常微分方程.md
-      - MATHS/Analysis/02_二重积分变量代换.md
-      - MATHS/Analysis/03_Cauchy_Schwarz.md
-      - MATHS/Analysis/04_taylor.md
-    - Discrete Maths:
-      - 集合的归纳定义法: MATHS/Discrete-Maths/00_集合的归纳定义法.md
-      - 有序偶的集合术语定义: MATHS/Discrete-Maths/01_有序偶的集合术语定义.md
-      - 集类: MATHS/Discrete-Maths/03_集类.md
-      - 自然数: MATHS/Discrete-Maths/05_自然数.md
-      - 基数: MATHS/Discrete-Maths/06_基数.md
-      - 笔记｜集合论: MATHS/Discrete-Maths/07_笔记_集合论.md
-      - 笔记｜关系: MATHS/Discrete-Maths/08_笔记_关系.md
-      - 笔记｜函数: MATHS/Discrete-Maths/09_笔记_函数.md
-      - 笔记｜图论: MATHS/Discrete-Maths/10_笔记_图论.md
-    - Combinatorics:
-      - MATHS/Combinatorics/L01_组合数学概览.md
-      - MATHS/Combinatorics/L02_排列组合.md
-      - MATHS/Combinatorics/L03_鸽巢原理.md
-      - MATHS/Combinatorics/L04_生成排列和组合.md
-      - MATHS/Combinatorics/L05_二项式系数.md
-      - MATHS/Combinatorics/L06_容斥原理.md
-      - MATHS/Combinatorics/L07_生成函数.md
-      - MATHS/Combinatorics/L08_特殊计数序列.md
-      - MATHS/Combinatorics/L09_Polya计数.md
-    - Probability:
-      - 方差与协方差: MATHS/Probability/01_方差与协方差.md
-      - 大数定律与中心极限定理: MATHS/Probability/02_大数定律_中心极限定理.md
-      - 置信区间: MATHS/Probability/03_置信区间.md
-      - 方差分析及回归分析: MATHS/Probability/04_方差分析及回归分析.md
-      - 似然与似然函数: MATHS/Probability/05_似然与似然函数.md
-      - BUAA｜概统复习: MATHS/Probability/06_probability-review.md
+      - MATHS/index.md
+      - Analysis:
+          - MATHS/Analysis/01_常微分方程.md
+          - MATHS/Analysis/02_二重积分变量代换.md
+          - MATHS/Analysis/03_Cauchy_Schwarz.md
+          - MATHS/Analysis/04_taylor.md
+      - Discrete Maths:
+          - 集合的归纳定义法: MATHS/Discrete-Maths/00_集合的归纳定义法.md
+          - 有序偶的集合术语定义: MATHS/Discrete-Maths/01_有序偶的集合术语定义.md
+          - 集类: MATHS/Discrete-Maths/03_集类.md
+          - 自然数: MATHS/Discrete-Maths/05_自然数.md
+          - 基数: MATHS/Discrete-Maths/06_基数.md
+          - 笔记｜集合论: MATHS/Discrete-Maths/07_笔记_集合论.md
+          - 笔记｜关系: MATHS/Discrete-Maths/08_笔记_关系.md
+          - 笔记｜函数: MATHS/Discrete-Maths/09_笔记_函数.md
+          - 笔记｜图论: MATHS/Discrete-Maths/10_笔记_图论.md
+      - Combinatorics:
+          - MATHS/Combinatorics/L01_组合数学概览.md
+          - MATHS/Combinatorics/L02_排列组合.md
+          - MATHS/Combinatorics/L03_鸽巢原理.md
+          - MATHS/Combinatorics/L04_生成排列和组合.md
+          - MATHS/Combinatorics/L05_二项式系数.md
+          - MATHS/Combinatorics/L06_容斥原理.md
+          - MATHS/Combinatorics/L07_生成函数.md
+          - MATHS/Combinatorics/L08_特殊计数序列.md
+          - MATHS/Combinatorics/L09_Polya计数.md
+      - Probability:
+          - 方差与协方差: MATHS/Probability/01_方差与协方差.md
+          - 大数定律与中心极限定理: MATHS/Probability/02_大数定律_中心极限定理.md
+          - 置信区间: MATHS/Probability/03_置信区间.md
+          - 方差分析及回归分析: MATHS/Probability/04_方差分析及回归分析.md
+          - 似然与似然函数: MATHS/Probability/05_似然与似然函数.md
+          - BUAA｜概统复习: MATHS/Probability/06_probability-review.md
   - 文摘:
-    - QUOTE/index.md
-    - 摘录: 
-      - 黑客与画家: QUOTE/Book/hacker-and-painter.md
-      - 认知觉醒｜开启自我改变的原动力: QUOTE/Book/认知觉醒.md
-    - 演讲:
-      - David Brooks at Chicago, 2017: QUOTE/Speech/david-brooks-at-chicago-2017.md
-      - TED 演讲: QUOTE/Speech/TED.md
+      - QUOTE/index.md
+      - 摘录:
+          - 黑客与画家: QUOTE/Book/hacker-and-painter.md
+          - 认知觉醒｜开启自我改变的原动力: QUOTE/Book/认知觉醒.md
+      - 演讲:
+          - David Brooks at Chicago, 2017: QUOTE/Speech/david-brooks-at-chicago-2017.md
+          - TED 演讲: QUOTE/Speech/TED.md
   - 随想:
-    - RELAX/index.md
-    - 数学家的笑话: RELAX/01-jokes.md
-    - 一席｜在 AI 和人之间做好对齐: RELAX/02-yixi-0511.md
+      - RELAX/index.md
+      - 数学家的笑话: RELAX/01-jokes.md
+      - 一席｜在 AI 和人之间做好对齐: RELAX/02-yixi-0511.md
   - 网站:
-    - WEBSITE/index.md
-    - WEBSITE/1-网站构建.md
-    - WEBSITE/2-图片插入.md
-    - WEBSITE/3-文章编写.md
-    - WEBSITE/4-更多功能.md
+      - WEBSITE/index.md
+      - WEBSITE/1-网站构建.md
+      - WEBSITE/2-图片插入.md
+      - WEBSITE/3-文章编写.md
+      - WEBSITE/4-更多功能.md
 
 theme:
   name: material
   custom_dir: overrides
   favicon: images/adl6i-63hs3-001.ico
   features:
-    - navigation.tabs     # 用 tab 来分类
-    - navigation.top      # 返回顶部的按钮，在上滑时出现
-    - navigation.indexes  # tab 下有一个 index 文件, 而非直接打开第一个    
-    - navigation.footer   # 上一篇和下一篇文章的链接
+    - navigation.tabs # 用 tab 来分类
+    - navigation.top # 返回顶部的按钮，在上滑时出现
+    - navigation.indexes # tab 下有一个 index 文件, 而非直接打开第一个
+    - navigation.footer # 上一篇和下一篇文章的链接
     - toc.follow
     # - navigation.expand   # 打开 Tab 时左侧目录全部展开
     # - navigation.sections
     # - navigation.prune    # 仅包含可见的导航, 去掉
-    
-    - search.suggest      # 搜索输入一些字母时推荐补全整个单词
-    - search.highlight    # 搜索的关键词文章加入高亮
+
+    - search.suggest # 搜索输入一些字母时推荐补全整个单词
+    - search.highlight # 搜索的关键词文章加入高亮
 
     - content.tabs.link
     - content.code.annotate
-    - content.code.copy   # 可以通过按钮复制代码
+    - content.code.copy # 可以通过按钮复制代码
 
   icon:
     # logo: material/weather-partly-snowy-rainy
     # logo: material/snowboard
-    logo: material/paw    # 狼爪
+    logo: material/paw # 狼爪
     repo: fontawesome/brands/github-alt
 
   palette:
@@ -177,22 +179,22 @@ plugins:
   - tags
   # 图片缩放
   - glightbox:
-       touchNavigation: true
-       loop: false
-       effect: zoom
-       slide_effect: slide
-       width: 100%
-       height: auto
-       zoomable: true
-       draggable: true
-       skip_classes:
-         - custom-skip-class-name
-       auto_caption: false
-       caption_position: bottom
-       background: white
-       shadow: true
-       manual: false
-  # 显示编辑日期     
+      touchNavigation: true
+      loop: false
+      effect: zoom
+      slide_effect: slide
+      width: 100%
+      height: auto
+      zoomable: true
+      draggable: true
+      skip_classes:
+        - custom-skip-class-name
+      auto_caption: false
+      caption_position: bottom
+      background: white
+      shadow: true
+      manual: false
+  # 显示编辑日期
   # date:
   # - git-revision-date-localized:
   #    fallback_to_build_date: false
@@ -200,12 +202,11 @@ plugins:
   #    exclude:
   #      - index.md
   #    enabled: true
-      # strict: true
-      # enabled: !ENV [CI, false]
-      # enable_creation_date: true
-      # type: date
-      
-      
+  # strict: true
+  # enabled: !ENV [CI, false]
+  # enable_creation_date: true
+  # type: date
+
 extra:
   social:
     - icon: fontawesome/brands/github
@@ -217,30 +218,31 @@ extra:
     - icon: simple/notion
       link: https://blush-coyote-517.notion.site/10f6c2fa7a33815f9710f316d3e2db42?v=1116c2fa7a338041964d000c56009ad2
       name: Notion
-    
+
 markdown_extensions:
   # 数学公式支持
   - pymdownx.arithmatex:
       generic: true
-    
+
   # 图片功能支持
   - attr_list
   - md_in_html
-  
+
   - pymdownx.emoji:
       emoji_index: !!python/name:material.extensions.emoji.twemoji
-      emoji_generator: !!python/name:material.extensions.emoji.to_svg
-  
-  # 给标题添加链接
+      emoji_generator:
+        !!python/name:material.extensions.emoji.to_svg # 给标题添加链接
+
+
   - toc:
       permalink: true
       title: On this page
       permalink_title: Anchor link to this section for reference
-  
+
   # 代码语法高亮
   - pymdownx.highlight:
       anchor_linenums: true
-      linenums: true      
+      linenums: true
 
   - pymdownx.inlinehilite
   - pymdownx.snippets
@@ -248,19 +250,19 @@ markdown_extensions:
   - admonition
   - pymdownx.details
   - footnotes
-  
+
   - pymdownx.critic
   - pymdownx.mark
   - pymdownx.caret
   - pymdownx.tilde
-  
+
   - pymdownx.tabbed:
       alternate_style: true
-      
+
   # 任务列表
   - pymdownx.tasklist:
       custom_checkbox: true
-      
+
   - admonition
   - pymdownx.details
   - pymdownx.superfences:
@@ -272,7 +274,7 @@ markdown_extensions:
 extra_javascript:
   - javascripts/mathjax.js
   - https://unpkg.com/mathjax@3/es5/tex-mml-chtml.js
-  
+
 extra_css:
   # [数学公式支持]
   - https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.16.7/katex.min.css
@@ -282,5 +284,5 @@ extra_css:
   # 无序列表符号自定义
   - mkdocs/css/unordered-list-symbols.css
   - stylesheets/extra.css
-  
-copyright: Copyright &copy; 2025 Chase Tsai
+
+copyright: Copyright &copy; 2026 Chase Tsai
